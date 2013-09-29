@@ -1,0 +1,45 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "description": "Roger Steve Ruiz Portfolio",
+  "repository": {
+    "type": "git",
+    "url": "git@rogeruiz.com:portfolio.git"
+  },
+  "author": {
+    "name": "Roger Steve Ruiz",
+    "email": "firstworldman@gmail.com",
+    "url": "http://rog.gr"
+  },
+  "dir": {
+    "src": {
+      "templates": "src/templates",
+      "js": "src/js",
+      "less": "src/less"
+    },
+    "public": {
+      "templates": "public/js/tmp",
+      "js": "public/js",
+      "css": "public/css",
+      "img": "public/img"
+    }
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "3.x",
+    "passport": "~0.1.17",
+    "passport-github": "~0.1.5"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-qunit": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-imagemin": "~0.3.0",
+    "grunt-contrib-handlebars": "~0.5.11",
+    "grunt-express-server": "~0.4.3"
+  }
+}
