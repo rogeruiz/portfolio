@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: @cl-main;
+  color: @cl-text;
+  font-family: @ff-merriweather;
+}
+
+a, a:visited {
+  font-family: @ff-lato;
+  color: @cl-link;
+  text-decoration: none;
+  &:hover {
+    color: @cl-link-hover;
+    text-decoration: underline;
+  }
+}
+
+
+.main--hat__inner,
+.main__inner {
+  margin: 0 auto;
+  .clearfix;
+}
+
+.button {
+  background: @cl-main;
+  padding: 10px;
+}
