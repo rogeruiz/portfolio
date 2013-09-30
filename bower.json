@@ -8,7 +8,8 @@
     "jquery-ui": "~1.10.3",
     "requirejs": "~2.1.8",
     "html5-boilerplate": "~4.3.0",
-    "handlebars": "~1.0.0",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "requirejs-text": "~2.0.10",
+    "requirejs-handlebars": "~0.0.3"
   }
 }

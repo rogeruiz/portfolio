@@ -13,12 +13,11 @@
   },
   "dir": {
     "src": {
-      "templates": "src/templates",
+      "tmp": "src/tmp",
       "js": "src/js",
       "less": "src/less"
     },
     "public": {
-      "templates": "public/js/tmp",
       "js": "public/js",
       "css": "public/css",
       "img": "public/img"
@@ -39,7 +38,7 @@
     "grunt-contrib-less": "~0.7.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-imagemin": "~0.3.0",
-    "grunt-contrib-handlebars": "~0.5.11",
-    "grunt-express-server": "~0.4.3"
+    "grunt-express-server": "~0.4.3",
+    "handlebars": "~1.0.12"
   }
 }
