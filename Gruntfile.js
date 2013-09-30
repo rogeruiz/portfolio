@@ -6,17 +6,11 @@ module.exports = function (grunt) {
     watch: {
       css: {
         files: '<%= pkg.dir.src.less %>/**/*.less',
-        tasks: ['less:dev'],
-        options: {
-          interrupt: true
-        }
+        tasks: ['lescompile']
       },
       js: {
-        files: '<%= pkg.dir.src.js %>/**/*.js',
-        tasks: ['requirejs'],
-        options: {
-          interrupt: true
-        }
+        files: ['<%= pkg.dir.src.js %>/**/*.js', '<%= pkg.dir.src.tmp %>/**/*.hbs'],
+        tasks: ['requirejs']
       }
     },
     copy: {
@@ -39,7 +33,7 @@ module.exports = function (grunt) {
       }
     },
     less: {
-      dev: {
+      compile: {
         files: {
           '<%= pkg.dir.public.css %>/app.css': '<%= pkg.dir.src.less %>/app.less'
         }
@@ -52,17 +46,23 @@ module.exports = function (grunt) {
           name: 'js/main',
           paths: {
             'src': 'js',
-            'jquery': '../public/js/lib/jquery',
-            'underscore': '../public/js/lib/underscore',
-            'backbone': '../public/js/lib/backbone'
+            'tmp': '../<%= pkg.dir.src.tmp %>',
+            'jquery': '../<%= pkg.dir.public.js %>/lib/jquery',
+            'underscore': '../<%= pkg.dir.public.js %>/lib/underscore',
+            'backbone': '../<%= pkg.dir.public.js %>/lib/backbone',
+            'text': '../<%= pkg.dir.public.js %>/lib/text',
+            'hb': '../<%= pkg.dir.public.js %>/lib/hb'
           },
           shim: {
             underscore: {
               exports: '_'
             },
             backbone: {
-              deps: ["underscore", "jquery"],
-              exports: "Backbone"
+              deps: ['underscore', 'jquery'],
+              exports: 'Backbone'
+            },
+            handlebars: {
+              exports: 'Handlebars'
             }
           },
           out: 'public/js/app.js',
@@ -83,6 +83,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-express-server');
 
   // Tasks
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['less', 'requirejs', 'watch']);
 
 };
