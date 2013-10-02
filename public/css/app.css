@@ -650,10 +650,16 @@ a:visited:hover {
   background: #feffff;
   padding: 20px 20px;
 }
+.hero__title {
+  display: none;
+}
 .hero__title a,
 .hero__title a:visited {
   text-decoration: none;
   border-bottom: 1px dotted;
+}
+.hero__title.is-active {
+  display: block;
 }
 /* ==========================================================================
    Projects Styles
