@@ -861,7 +861,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a> \n  at <a eachef=\"";
+    + "</a> \n  at <a href=\"";
   if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
