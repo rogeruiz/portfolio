@@ -17,7 +17,8 @@
     border-bottom: 1px dotted;
   }
   &.is-active {
-    position: static;
+    position: relative;
+    z-index: 2;
     opacity: 1;
     -webkit-transition: opacity 0.125s ease-in;
     -moz-transition: opacity 0.125s ease-in;
@@ -29,6 +30,6 @@
 
 .hero__button {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     float: right;
 }
