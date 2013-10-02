@@ -1,17 +1,21 @@
-define(['jquery', 'underscore', 'backbone', 'hb!tmp/heroes.hbs'], function ($, _, Backbone, heroes) {
+define(function (require) {
 
-  var heroText = {
-    heroes: [
-      {
-        nameLink: 'mailto:hi@rog.gr',
-        name: 'Roger Steve Ruiz',
-        role: 'about',
-        roleDescription: 'senior technologist',
-        placeWebsite: 'http://rokkan.com',
-        place: 'Rokkan'
-      }
-    ]
-  };
+  var $ =  require('jquery');
+  var _ =  require('underscore');
+  var Backbone =  require('backbone');
+  var Handlebars =  require('handlebars');
+  var heroTemplate =  require('hb!tmp/hero.hbs');
+  var heroData =  require('text!data/hero.json');
+
+  // var Hero = Backbone.Model.extend({
+  //   initialize: function () {
+
+  //   }
+  // });
+
+  Handlebars.registerHelper('list', function(context, options) {
+    return options.fn(context);
+  });
 
   var HeroView = Backbone.View.extend({
     initialize: function () {
@@ -19,7 +23,7 @@ define(['jquery', 'underscore', 'backbone', 'hb!tmp/heroes.hbs'], function ($, _
     },
     render: function () {
       var $el = $(this.el);
-      $el.html(heroes(heroText));
+      $el.html(heroTemplate);
     }
   });
 
