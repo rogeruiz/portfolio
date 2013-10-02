@@ -5,11 +5,13 @@
 .hero {
   background: @cl-main;
   padding: 20px 20px;
+  .clearfix;
 }
 
 .hero__title {
   position: absolute;
   opacity: 0;
+  z-index: 0;
   a, a:visited {
     text-decoration: none;
     border-bottom: 1px dotted;
@@ -22,4 +24,11 @@
     -o-transition: opacity 0.125s ease-in;
     transition: opacity 0.125s ease-in;
   }
+}
+
+
+.hero__button {
+    position: relative;
+    z-index: 2;
+    float: right;
 }

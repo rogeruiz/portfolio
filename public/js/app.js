@@ -977,7 +977,7 @@ function program7(depth0,data) {
   buffer += "\n";
   stack1 = helpers.each.call(depth0, depth0.pinboard, {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n<a href=\"javascript:\" class=\"js-hero-change button\">More.</a>";
+  buffer += "\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">More.</a>";
   return buffer;
   })});
 define('text!data/hero.json',[],function () { return '{\n  "main": [\n    {\n      "nameUrl": "mailto:hi@rog.gr",\n      "name": "Roger Steve Ruiz",\n      "roleUrl": "/#/about",\n      "role": "senior technologist",\n      "placeUrl": "http://rokkan.com",\n      "place": "Rokkan"\n    }\n  ],\n  "github": [\n    {\n      "nameUrl": "https://github.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n      "role": "pushes code",\n      "placeUrl": "https://github.com",\n      "place": "Github"\n    }\n  ],\n  "twitter": [\n    {\n      "nameUrl": "https://twitter.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://twitter.com/rogeruiz/lists",\n      "role": "interesting people",\n      "placeUrl": "https://twitter.com",\n      "place": "Twitter"\n    }\n  ],\n  "pinboard": [\n    {\n      "nameUrl": "https://pinboard.in/u:rogeruiz",\n      "name": "u:rogeruiz",\n      "roleUrl": "https://pinboard.in/u:rogeruiz/t:helpful/",\n      "role": "helpful topics",\n      "placeUrl": "https://pinboard.in",\n      "place": "Pinboard"\n    }\n  ]\n}';});
