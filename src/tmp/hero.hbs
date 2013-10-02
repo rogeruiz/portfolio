@@ -1,6 +1,41 @@
-{{#heroes}}
+{{#list main}}
 <h2 class="hero__title">
-  I'm <a href="{{nameLink}}">{{name}}</a>, a <a href="/#/{{role}}">{{roleDescription}}</a> at <a href="{{placeWebsite}}">{{place}}</a> in NYC.
+  I'm <a href="{{nameUrl}}">{{name}}</a>, 
+  {{#roles}}
+  a <a href="{{roleUrl}}">{{role}}</a> 
+  {{/roles}}
+  at <a href="{{placeUrl}}">{{place}}</a> 
+  in NYC.
 </h2>
-{{/heroes}}
-{{!-- <a href="javascript:" class="button">More.</a> --}}
+{{/list}}
+{{#list github}}
+<h2 class="hero__title">
+  I'm @<a href="{{nameUrl}}">{{name}}</a>, 
+  {{#roles}}
+  a serial-commiter who pushes <a href="{{roleUrl}}">{{role}}</a> 
+  and <a href="{{roleUrl}}">{{role}}</a> 
+  {{/roles}}
+  to <a href="{{placeUrl}}">{{place}}</a>.
+</h2>
+{{/list}}
+{{#list twitter}}
+<h2 class="hero__title">
+  I'm @<a href="{{nameUrl}}">{{name}}</a>, 
+  {{#roles}}
+  an average-joe who <a href="{{roleUrl}}">{{role}}</a> 
+  and follows <a href="{{roleUrl}}">{{role}}</a> 
+  {{/roles}}
+  on <a href="{{placeUrl}}">{{place}}</a>.
+</h2>
+{{/list}}
+{{#list pinboard}}
+<h2 class="hero__title">
+  I'm u:<a href="{{nameUrl}}">{{name}}</a>, 
+  {{#roles}}
+  a hoarder of articles on <a href="{{roleUrl}}">{{role}}</a> 
+  and some <a href="{{roleUrl}}">{{role}}</a> 
+  {{/roles}}
+  using <a href="{{placeUrl}}">{{place}}</a>.
+</h2>
+{{/list}}
+<a href="javascript:" class="button">More.</a>
