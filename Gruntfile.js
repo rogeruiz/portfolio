@@ -47,9 +47,11 @@ module.exports = function (grunt) {
           paths: {
             'src': 'js',
             'tmp': '../<%= pkg.dir.src.tmp %>',
+            'data': '../<%= pkg.dir.src.data %>',
             'jquery': '../<%= pkg.dir.public.js %>/lib/jquery',
             'underscore': '../<%= pkg.dir.public.js %>/lib/underscore',
             'backbone': '../<%= pkg.dir.public.js %>/lib/backbone',
+            'handlebars': '../<%= pkg.dir.public.js %>/lib/handlebars.runtime',
             'text': '../<%= pkg.dir.public.js %>/lib/text',
             'hb': '../<%= pkg.dir.public.js %>/lib/hb'
           },
