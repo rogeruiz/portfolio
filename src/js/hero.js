@@ -12,14 +12,14 @@ define(function (require) {
       this.data = heroTemplate(heroData);
     },
     events: {
-      'click .js-hero-change': 'updateHero'
+      'click .js-hero-change': 'update'
     },
     el: '#js-hero',
     render: function () {
       this.$el.html(this.data);
       return this;
     },
-    updateHero: function () {
+    update: function () {
       var _random = Math.floor(Math.random() * 4);
       var _old = this.$el.find('.is-active').index();
       var $heroes = this.$el.find('.hero__title');

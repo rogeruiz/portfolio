@@ -8,12 +8,18 @@
 }
 
 .hero__title {
-  display: none;
+  position: absolute;
+  opacity: 0;
   a, a:visited {
     text-decoration: none;
     border-bottom: 1px dotted;
   }
   &.is-active {
-    display: block;
+    position: static;
+    opacity: 1;
+    -webkit-transition: opacity 0.125s ease-in;
+    -moz-transition: opacity 0.125s ease-in;
+    -o-transition: opacity 0.125s ease-in;
+    transition: opacity 0.125s ease-in;
   }
 }

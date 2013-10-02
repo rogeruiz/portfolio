@@ -651,7 +651,8 @@ a:visited:hover {
   padding: 20px 20px;
 }
 .hero__title {
-  display: none;
+  position: absolute;
+  opacity: 0;
 }
 .hero__title a,
 .hero__title a:visited {
@@ -659,7 +660,12 @@ a:visited:hover {
   border-bottom: 1px dotted;
 }
 .hero__title.is-active {
-  display: block;
+  position: static;
+  opacity: 1;
+  -webkit-transition: opacity 0.125s ease-in;
+  -moz-transition: opacity 0.125s ease-in;
+  -o-transition: opacity 0.125s ease-in;
+  transition: opacity 0.125s ease-in;
 }
 /* ==========================================================================
    Projects Styles
