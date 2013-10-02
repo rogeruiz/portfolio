@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     watch: {
       css: {
         files: '<%= pkg.dir.src.less %>/**/*.less',
-        tasks: ['lescompile']
+        tasks: ['less:compile']
       },
       js: {
         files: ['<%= pkg.dir.src.js %>/**/*.js', '<%= pkg.dir.src.tmp %>/**/*.hbs'],
