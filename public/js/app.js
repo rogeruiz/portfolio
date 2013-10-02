@@ -845,7 +845,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a href=\"";
+  buffer += "\n<h2 class=\"hero__title is-active\">\n  I'm <a href=\"";
   if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -977,7 +977,7 @@ function program7(depth0,data) {
   buffer += "\n";
   stack1 = helpers.each.call(depth0, depth0.pinboard, {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
+  buffer += "\n<a href=\"javascript:\" class=\"js-hero-change button\">More.</a>";
   return buffer;
   })});
 define('text!data/hero.json',[],function () { return '{\n  "main": [\n    {\n      "nameUrl": "mailto:hi@rog.gr",\n      "name": "Roger Steve Ruiz",\n      "roleUrl": "/#/about",\n      "role": "senior technologist",\n      "placeUrl": "http://rokkan.com",\n      "place": "Rokkan"\n    }\n  ],\n  "github": [\n    {\n      "nameUrl": "https://github.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n      "role": "pushes code",\n      "placeUrl": "https://github.com",\n      "place": "Github"\n    }\n  ],\n  "twitter": [\n    {\n      "nameUrl": "https://twitter.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://twitter.com/rogeruiz/lists",\n      "role": "interesting people",\n      "placeUrl": "https://twitter.com",\n      "place": "Twitter"\n    }\n  ],\n  "pinboard": [\n    {\n      "nameUrl": "https://pinboard.in/u:rogeruiz",\n      "name": "u:rogeruiz",\n      "roleUrl": "https://pinboard.in/u:rogeruiz/t:helpful/",\n      "role": "helpful topics",\n      "placeUrl": "https://pinboard.in",\n      "place": "Pinboard"\n    }\n  ]\n}';});
@@ -993,18 +993,30 @@ define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!t
 
   var HeroView = Backbone.View.extend({
     initialize: function () {
-      this.render();
+      this.data = heroTemplate(heroData);
     },
+    events: {
+      'click .js-hero-change': 'updateHero'
+    },
+    el: '#js-hero',
     render: function () {
-      var $el = $(this.el);
-      $el.html(heroTemplate(heroData));
-      $el.find('h2').eq(Math.floor(Math.random() * 4)).addClass('is-active');
+      this.$el.html(this.data);
+      return this;
+    },
+    updateHero: function () {
+      var _random = Math.floor(Math.random() * 4);
+      var _old = this.$el.find('.is-active').index();
+      var $heroes = this.$el.find('.hero__title');
+      $heroes.removeClass('is-active');
+      if (_random === _old) {
+        _random = (_random + 1 < $heroes.length) ? _random + 1 : _random - 1;
+      }
+      $heroes.eq(_random).addClass('is-active');
     }
   });
 
-  var hero_view = new HeroView({
-    el: '#js-hero'
-  });
+  var hero = new HeroView;
+  hero.render();
 
   return function () {};
 });
