@@ -678,7 +678,7 @@ a:visited:hover {
   border-bottom: 1px dotted;
 }
 .hero__title.is-active {
-  position: relative;
+  position: static;
   z-index: 2;
   opacity: 1;
   -webkit-transition: opacity 0.125s ease-in;
