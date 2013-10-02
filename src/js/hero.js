@@ -14,7 +14,7 @@ define(function (require) {
     render: function () {
       var $el = $(this.el);
       $el.html(heroTemplate(heroData));
-      $el.find('h2').eq(Math.floor(Math.random() * (3 - 0 + 0) + 0)).addClass('is-active');
+      $el.find('h2').eq(Math.floor(Math.random() * 4)).addClass('is-active');
     }
   });
 
