@@ -5,17 +5,7 @@ define(function (require) {
   var Backbone =  require('backbone');
   var Handlebars =  require('handlebars');
   var heroTemplate =  require('hb!tmp/hero.hbs');
-  var heroData =  require('text!data/hero.json');
-
-  // var Hero = Backbone.Model.extend({
-  //   initialize: function () {
-
-  //   }
-  // });
-
-  Handlebars.registerHelper('list', function(context, options) {
-    return options.fn(context);
-  });
+  var heroData =  JSON.parse(require('text!data/hero.json'));
 
   var HeroView = Backbone.View.extend({
     initialize: function () {
@@ -23,7 +13,7 @@ define(function (require) {
     },
     render: function () {
       var $el = $(this.el);
-      $el.html(heroTemplate);
+      $el.html(heroTemplate(heroData));
     }
   });
 

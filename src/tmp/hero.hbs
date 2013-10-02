@@ -1,41 +1,30 @@
-{{#list main}}
+{{#each main}}
 <h2 class="hero__title">
   I'm <a href="{{nameUrl}}">{{name}}</a>, 
-  {{#roles}}
   a <a href="{{roleUrl}}">{{role}}</a> 
-  {{/roles}}
-  at <a href="{{placeUrl}}">{{place}}</a> 
+  at <a eachef="{{placeUrl}}">{{place}}</a> 
   in NYC.
 </h2>
-{{/list}}
-{{#list github}}
+{{/each}}
+{{#each github}}
 <h2 class="hero__title">
-  I'm @<a href="{{nameUrl}}">{{name}}</a>, 
-  {{#roles}}
-  a serial-commiter who pushes <a href="{{roleUrl}}">{{role}}</a> 
-  and <a href="{{roleUrl}}">{{role}}</a> 
-  {{/roles}}
+  I'm <a href="{{nameUrl}}">{{name}}</a>, 
+  a serial-commiter who <a href="{{roleUrl}}">{{role}}</a> 
   to <a href="{{placeUrl}}">{{place}}</a>.
 </h2>
-{{/list}}
-{{#list twitter}}
+{{/each}}
+{{#each twitter}}
 <h2 class="hero__title">
-  I'm @<a href="{{nameUrl}}">{{name}}</a>, 
-  {{#roles}}
-  an average-joe who <a href="{{roleUrl}}">{{role}}</a> 
-  and follows <a href="{{roleUrl}}">{{role}}</a> 
-  {{/roles}}
+  I'm <a href="{{nameUrl}}">{{name}}</a>, 
+  an average-joe who follows <a href="{{roleUrl}}">{{role}}</a> 
   on <a href="{{placeUrl}}">{{place}}</a>.
 </h2>
-{{/list}}
-{{#list pinboard}}
+{{/each}}
+{{#each pinboard}}
 <h2 class="hero__title">
-  I'm u:<a href="{{nameUrl}}">{{name}}</a>, 
-  {{#roles}}
+  I'm <a href="{{nameUrl}}">{{name}}</a>, 
   a hoarder of articles on <a href="{{roleUrl}}">{{role}}</a> 
-  and some <a href="{{roleUrl}}">{{role}}</a> 
-  {{/roles}}
   using <a href="{{placeUrl}}">{{place}}</a>.
 </h2>
-{{/list}}
-<a href="javascript:" class="button">More.</a>
+{{/each}}
+{{!-- <a href="javascript:" class="button">More.</a> --}}

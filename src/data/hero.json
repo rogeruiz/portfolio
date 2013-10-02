@@ -3,12 +3,8 @@
     {
       "nameUrl": "mailto:hi@rog.gr",
       "name": "Roger Steve Ruiz",
-      "roles": [
-        {
-          "roleUrl": "/#/about",
-          "roleDescription": "senior technologist"
-        }
-      ]
+      "roleUrl": "/#/about",
+      "role": "senior technologist",
       "placeUrl": "http://rokkan.com",
       "place": "Rokkan"
     }
@@ -16,17 +12,9 @@
   "github": [
     {
       "nameUrl": "https://github.com/rogeruiz",
-      "name": "rogeruiz",
-      "roles": [
-        {
-          "roleUrl": "https://github.com/rogeruiz/sublime-settings",
-          "roleDescription": "sublime-settings"
-        },
-        {
-          "roleUrl": "https://github.com/rogeruiz?tab=repositories",
-          "roleDescription": "other things"
-        }
-      ]
+      "name": "@rogeruiz",
+      "roleUrl": "https://github.com/rogeruiz?tab=repositories",
+      "role": "pushes code",
       "placeUrl": "https://github.com",
       "place": "Github"
     }
@@ -34,17 +22,9 @@
   "twitter": [
     {
       "nameUrl": "https://twitter.com/rogeruiz",
-      "name": "rogeruiz",
-      "roles": [
-        {
-          "roleUrl": "https://twitter.com/search?q=%40rogeruiz%20instapaper&src=typd",
-          "roleDescription": "posts articles"
-        },
-        {
-          "roleUrl": "https://twitter.com/rogeruiz/lists",
-          "roleDescription": "some nice people"
-        }
-      ]
+      "name": "@rogeruiz",
+      "roleUrl": "https://twitter.com/rogeruiz/lists",
+      "role": "interesting people",
       "placeUrl": "https://twitter.com",
       "place": "Twitter"
     }
@@ -52,17 +32,9 @@
   "pinboard": [
     {
       "nameUrl": "https://pinboard.in/u:rogeruiz",
-      "name": "rogeruiz",
-      "roles": [
-        {
-          "roleUrl": "https://pinboard.in/u:rogeruiz/t:javascript/",
-          "role": "javascript"
-        },
-        {
-          "roleUrl": "https://pinboard.in/u:rogeruiz/t:helpful/",
-          "role": "helpful topics"
-        }
-      ],
+      "name": "u:rogeruiz",
+      "roleUrl": "https://pinboard.in/u:rogeruiz/t:helpful/",
+      "role": "helpful topics",
       "placeUrl": "https://pinboard.in",
       "place": "Pinboard"
     }
