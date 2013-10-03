@@ -12,22 +12,31 @@ define(function (require) {
       this.data = heroTemplate(heroData);
     },
     events: {
+      'mouseover': 'stopUpdate',
+      'mouseout': 'startUpdate',
       'click .js-hero-change': 'update'
     },
+    order: [],
     el: '#js-hero',
     render: function () {
       this.$el.html(this.data);
+      this.startUpdate();
       return this;
     },
+    startUpdate: function () {
+      var self = this;
+      window.heroInterval = setInterval(function () {
+        self.update();
+      }, 5000);
+    },
+    stopUpdate: function () {
+      clearInterval(window.heroInterval);
+    },
     update: function () {
-      var _random = Math.floor(Math.random() * 4);
-      var _old = this.$el.find('.is-active').index();
-      var $heroes = this.$el.find('.hero__title');
-      $heroes.removeClass('is-active');
-      if (_random === _old) {
-        _random = (_random + 1 < $heroes.length) ? _random + 1 : _random - 1;
-      }
-      $heroes.eq(_random).addClass('is-active');
+      var total = this.$('.hero__title').length;
+      var index = this.$('.is-active').index();
+      var next = index + 1 < total ? index + 1 : 0;
+      this.$('.hero__title').removeClass('is-active').eq(next).addClass('is-active');
     }
   });
 

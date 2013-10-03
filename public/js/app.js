@@ -845,7 +845,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title is-active\">\n  I'm <a href=\"";
+  buffer += "\n<h2 class=\"hero__title is-active\">\n  I'm <a target=\"_blank\" href=\"";
   if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -853,7 +853,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a>, \n  a <a href=\"";
+    + "</a>, \n  a <a target=\"_blank\" href=\"";
   if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -861,7 +861,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a> \n  at <a href=\"";
+    + "</a> \n  at <a target=\"_blank\" href=\"";
   if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -869,14 +869,14 @@ function program1(depth0,data) {
   if (stack1 = helpers.place) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a> \n  in NYC.\n</h2>\n";
+    + "</a> \n  in New York.\n</h2>\n";
   return buffer;
   }
 
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a href=\"";
+  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\"";
   if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -884,7 +884,7 @@ function program3(depth0,data) {
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a>, \n  a serial-committer who <a href=\"";
+    + "</a>, \n  a <a target=\"_blank\" href=\"";
   if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -892,7 +892,7 @@ function program3(depth0,data) {
   if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a> \n  to <a href=\"";
+    + "</a> \n  on <a target=\"_blank\" href=\"";
   if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -907,7 +907,7 @@ function program3(depth0,data) {
 function program5(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a href=\"";
+  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\"";
   if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -915,7 +915,7 @@ function program5(depth0,data) {
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a>, \n  an average-joe who follows <a href=\"";
+    + "</a>, \n  a <a target=\"_blank\" href=\"";
   if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -923,38 +923,7 @@ function program5(depth0,data) {
   if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a> \n  on <a href=\"";
-  if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.place) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>.\n</h2>\n";
-  return buffer;
-  }
-
-function program7(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a href=\"";
-  if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>, \n  a hoarder of articles on <a href=\"";
-  if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a> \n  using <a href=\"";
+    + "</a> \n  using <a target=\"_blank\" href=\"";
   if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -972,15 +941,15 @@ function program7(depth0,data) {
   stack1 = helpers.each.call(depth0, depth0.github, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n";
-  stack1 = helpers.each.call(depth0, depth0.twitter, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  stack1 = helpers.each.call(depth0, depth0.twitter, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n";
-  stack1 = helpers.each.call(depth0, depth0.pinboard, {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
+  stack1 = helpers.each.call(depth0, depth0.pinboard, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">More.</a>";
+  buffer += "\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">And?</a>";
   return buffer;
   })});
-define('text!data/hero.json',[],function () { return '{\n  "main": [\n    {\n      "nameUrl": "mailto:hi@rog.gr",\n      "name": "Roger Steve Ruiz",\n      "roleUrl": "/#/about",\n      "role": "senior technologist",\n      "placeUrl": "http://rokkan.com",\n      "place": "Rokkan"\n    }\n  ],\n  "github": [\n    {\n      "nameUrl": "https://github.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n      "role": "pushes code",\n      "placeUrl": "https://github.com",\n      "place": "Github"\n    }\n  ],\n  "twitter": [\n    {\n      "nameUrl": "https://twitter.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://twitter.com/rogeruiz/lists",\n      "role": "interesting people",\n      "placeUrl": "https://twitter.com",\n      "place": "Twitter"\n    }\n  ],\n  "pinboard": [\n    {\n      "nameUrl": "https://pinboard.in/u:rogeruiz",\n      "name": "u:rogeruiz",\n      "roleUrl": "https://pinboard.in/u:rogeruiz/t:helpful/",\n      "role": "helpful topics",\n      "placeUrl": "https://pinboard.in",\n      "place": "Pinboard"\n    }\n  ]\n}';});
+define('text!data/hero.json',[],function () { return '{\n  "main": [\n    {\n      "nameUrl": "mailto:hi@rog.gr",\n      "name": "Roger Steve Ruiz",\n      "roleUrl": "/#/about",\n      "role": "senior technologist",\n      "placeUrl": "http://rokkan.com",\n      "place": "Rokkan"\n    }\n  ],\n  "github": [\n    {\n      "nameUrl": "https://github.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n      "role": "regular committer",\n      "placeUrl": "https://github.com",\n      "place": "Github"\n    }\n  ],\n  "twitter": [\n    {\n      "nameUrl": "https://twitter.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://twitter.com/rogeruiz/lists",\n      "role": "follower",\n      "placeUrl": "https://twitter.com",\n      "place": "Twitter"\n    }\n  ],\n  "pinboard": [\n    {\n      "nameUrl": "https://pinboard.in/u:rogeruiz",\n      "name": "u:rogeruiz",\n      "roleUrl": "https://pinboard.in/u:rogeruiz/",\n      "role": "collector",\n      "placeUrl": "https://pinboard.in",\n      "place": "Pinboard"\n    }\n  ]\n}';});
 
 define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!tmp/hero.hbs','text!data/hero.json'],function (require) {
 
@@ -996,22 +965,31 @@ define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!t
       this.data = heroTemplate(heroData);
     },
     events: {
+      'mouseover': 'stopUpdate',
+      'mouseout': 'startUpdate',
       'click .js-hero-change': 'update'
     },
+    order: [],
     el: '#js-hero',
     render: function () {
       this.$el.html(this.data);
+      this.startUpdate();
       return this;
     },
+    startUpdate: function () {
+      var self = this;
+      window.heroInterval = setInterval(function () {
+        self.update();
+      }, 5000);
+    },
+    stopUpdate: function () {
+      clearInterval(window.heroInterval);
+    },
     update: function () {
-      var _random = Math.floor(Math.random() * 4);
-      var _old = this.$el.find('.is-active').index();
-      var $heroes = this.$el.find('.hero__title');
-      $heroes.removeClass('is-active');
-      if (_random === _old) {
-        _random = (_random + 1 < $heroes.length) ? _random + 1 : _random - 1;
-      }
-      $heroes.eq(_random).addClass('is-active');
+      var total = this.$('.hero__title').length;
+      var index = this.$('.is-active').index();
+      var next = index + 1 < total ? index + 1 : 0;
+      this.$('.hero__title').removeClass('is-active').eq(next).addClass('is-active');
     }
   });
 

@@ -14,7 +14,7 @@
       "nameUrl": "https://github.com/rogeruiz",
       "name": "@rogeruiz",
       "roleUrl": "https://github.com/rogeruiz?tab=repositories",
-      "role": "pushes code",
+      "role": "regular committer",
       "placeUrl": "https://github.com",
       "place": "Github"
     }
@@ -24,7 +24,7 @@
       "nameUrl": "https://twitter.com/rogeruiz",
       "name": "@rogeruiz",
       "roleUrl": "https://twitter.com/rogeruiz/lists",
-      "role": "interesting people",
+      "role": "follower",
       "placeUrl": "https://twitter.com",
       "place": "Twitter"
     }
@@ -33,8 +33,8 @@
     {
       "nameUrl": "https://pinboard.in/u:rogeruiz",
       "name": "u:rogeruiz",
-      "roleUrl": "https://pinboard.in/u:rogeruiz/t:helpful/",
-      "role": "helpful topics",
+      "roleUrl": "https://pinboard.in/u:rogeruiz/",
+      "role": "collector",
       "placeUrl": "https://pinboard.in",
       "place": "Pinboard"
     }
