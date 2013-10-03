@@ -840,147 +840,61 @@ define('hb',['text', 'handlebars'], function(text, handlebars) {
 define("hb!tmp/hero.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title is-active\">\n  I'm <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>, \n  a <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a> \n  at <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.place) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a> \n  in New York.\n</h2>\n";
-  return buffer;
-  }
 
-function program3(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>, \n  a <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a> \n  on <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.place) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>.\n</h2>\n";
-  return buffer;
-  }
-
-function program5(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>, \n  an <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a> \n  on <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.place) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>.\n</h2>\n";
-  return buffer;
-  }
-
-function program7(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>, \n  an <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a> \n  using <a target=\"_blank\" href=\"";
-  if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.place) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>.\n</h2>\n";
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, depth0.main, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  stack1 = helpers.each.call(depth0, depth0.github, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  stack1 = helpers.each.call(depth0, depth0.twitter, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  stack1 = helpers.each.call(depth0, depth0.pinboard, {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">And?</a>";
+  buffer += "<h2 class=\"hero__title is-active\">\n  I'm <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>, \n  a <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a> \n  at <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a> \n  in New York.\n</h2>\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>, \n  a <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a> \n  on <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>.\n</h2>\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>, \n  an <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a> \n  on <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>.\n</h2>\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>, \n  an <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a> \n  using <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>.\n</h2>\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">And?</a>";
   return buffer;
   })});
-define('text!data/hero.json',[],function () { return '{\n  "main": [\n    {\n      "nameUrl": "mailto:hi@rog.gr",\n      "name": "Roger Steve Ruiz",\n      "roleUrl": "/#/about",\n      "role": "senior technologist",\n      "placeUrl": "http://rokkan.com",\n      "place": "Rokkan"\n    }\n  ],\n  "github": [\n    {\n      "nameUrl": "https://github.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n      "role": "regular contributor",\n      "placeUrl": "https://github.com",\n      "place": "Github"\n    }\n  ],\n  "twitter": [\n    {\n      "nameUrl": "https://twitter.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://twitter.com/rogeruiz/lists",\n      "role": "involved follower",\n      "placeUrl": "https://twitter.com",\n      "place": "Twitter"\n    }\n  ],\n  "pinboard": [\n    {\n      "nameUrl": "https://pinboard.in/u:rogeruiz",\n      "name": "u:rogeruiz",\n      "roleUrl": "https://pinboard.in/u:rogeruiz/",\n      "role": "avid collector",\n      "placeUrl": "https://pinboard.in",\n      "place": "Pinboard"\n    }\n  ]\n}';});
+define('text!data/hero.json',[],function () { return '{\n  "main": {\n    "nameUrl": "mailto:hi@rog.gr",\n    "name": "Roger Steve Ruiz",\n    "roleUrl": "/#/about",\n    "role": "senior technologist",\n    "placeUrl": "http://rokkan.com",\n    "place": "Rokkan"\n  },\n  "github": {\n    "nameUrl": "https://github.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n    "role": "regular contributor",\n    "placeUrl": "https://github.com",\n    "place": "Github"\n  },\n  "twitter": {\n    "nameUrl": "https://twitter.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://twitter.com/rogeruiz/lists",\n    "role": "involved follower",\n    "placeUrl": "https://twitter.com",\n    "place": "Twitter"\n  },\n  "pinboard": {\n    "nameUrl": "https://pinboard.in/u:rogeruiz",\n    "name": "u:rogeruiz",\n    "roleUrl": "https://pinboard.in/u:rogeruiz/",\n    "role": "avid collector",\n    "placeUrl": "https://pinboard.in",\n    "place": "Pinboard"\n  }\n}';});
 
 define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!tmp/hero.hbs','text!data/hero.json'],function (require) {
 
@@ -991,10 +905,20 @@ define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!t
   var heroTemplate = require('hb!tmp/hero.hbs');
   var heroData = JSON.parse(require('text!data/hero.json'));
 
-  var HeroView = Backbone.View.extend({
+  var HeroModel = Backbone.Model.extend({
     initialize: function () {
-      this.data = heroTemplate(heroData);
-    },
+      this.set({
+        main: heroData.main,
+        github: heroData.github,
+        twitter: heroData.twitter,
+        pinboard: heroData.pinboard
+      });
+    }
+  });
+
+  var HeroView = Backbone.View.extend({
+    initialize: function () {},
+    model: new HeroModel,
     events: {
       'mouseover': 'stopUpdate',
       'mouseout': 'startUpdate',
@@ -1002,7 +926,7 @@ define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!t
     },
     el: '#js-hero',
     render: function () {
-      this.$el.html(this.data);
+      this.$el.html(heroTemplate(this.model.attributes));
       this.startUpdate();
       return this;
     },
@@ -1063,7 +987,7 @@ function program1(depth0,data) {
   buffer += "\n  </nav>\n</div>";
   return buffer;
   })});
-define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/jetblue",\n      "project": "JetBlue",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/dish-network",\n      "project": "Dish Network",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/nxnw",\n      "project": "NXNW",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/git-config",\n      "project": "Git Config",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ]\n}';});
+define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/jetblue",\n      "project": "JetBlue",\n      "projectImg": "/img/project_fpo.gif",\n      "projectDescription": "...",\n      "codePen": [\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        },\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        }\n      ],\n      "pullQuote": [\n        {\n          "quote": "..."\n        },\n        {\n          "quote": "..."\n        }\n      ]\n    },\n    {\n      "projectUrl": "/#/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/dish-network",\n      "project": "Dish Network",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/nxnw",\n      "project": "NXNW",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/git-config",\n      "project": "Git Config",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ]\n}';});
 
 define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tmp/nav.hbs','text!data/project.json'],function (require) {
 
@@ -1074,17 +998,27 @@ define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tm
   var navTemplate = require('hb!tmp/nav.hbs');
   var navData = JSON.parse(require('text!data/project.json'));
 
-  var NavView = Backbone.View.extend({
+  var NavModel = Backbone.Model.extend({
     initialize: function () {
-      this.data = navTemplate(navData);
-    },
+      this.set({
+        rokkan: navData.rokkan,
+        talk: navData.talk,
+        personal: navData.personal,
+        tool: navData.tool
+      });
+    }
+  });
+
+  var NavView = Backbone.View.extend({
+    initialize: function () {},
+    model: new NavModel,
     events: {
       'click .nav-coffin__toggler': 'open',
       'click .is-open': 'close'
     },
     el: '#js-nav',
     render: function() {
-      this.$el.html(this.data);
+      this.$el.html(navTemplate(this.model.attributes));
       return this;
     },
     open: function () {
@@ -1158,14 +1092,24 @@ define('src/project',['require','jquery','underscore','backbone','handlebars','h
   var projectTemplate = require('hb!tmp/project.hbs');
   var projectData = JSON.parse(require('text!data/project.json'));
 
-  var ProjectView = Backbone.View.extend({
+  var ProjectModel = Backbone.Model.extend({
     initialize: function () {
-      this.data = projectTemplate(projectData);
-    },
+      this.set({
+        rokkan: projectData.rokkan,
+        talk: projectData.talk,
+        personal: projectData.personal,
+        tool: projectData.tool
+      });
+    }
+  });
+
+  var ProjectView = Backbone.View.extend({
+    initialize: function () {},
+    model: new ProjectModel,
     events: {},
     el: '#js-project-list',
     render: function() {
-      this.$el.html(this.data);
+      this.$el.html(projectTemplate(this.model.attributes));
       return this;
     }
   });
