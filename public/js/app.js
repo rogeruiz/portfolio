@@ -1058,9 +1058,9 @@ define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tm
     },
     open: function () {
       var self = this;
-      var height = parseInt(this.$('.nav-coffin__inner').height(), 10);
+      var height = parseInt(this.$('.nav-coffin__inner').outerHeight(true), 10);
       $('.main--hat').animate({
-        height: '' + height + 'px'
+        height: '' + (height + 20) + 'px'
       }, {
         duration: 'fast',
         complete: function () {
@@ -1070,7 +1070,7 @@ define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tm
     },
     close: function () {
       var self = this;
-      var height = parseInt(this.$('.nav-coffin__inner').height(), 10);
+      // var height = parseInt(this.$('.nav-coffin__inner').height(true), 10);
       $('.main--hat').animate({
         height: '' + 40 + 'px'
       }, {

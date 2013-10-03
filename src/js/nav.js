@@ -22,9 +22,9 @@ define(function (require) {
     },
     open: function () {
       var self = this;
-      var height = parseInt(this.$('.nav-coffin__inner').height(), 10);
+      var height = parseInt(this.$('.nav-coffin__inner').outerHeight(true), 10);
       $('.main--hat').animate({
-        height: '' + height + 'px'
+        height: '' + (height + 20) + 'px'
       }, {
         duration: 'fast',
         complete: function () {
@@ -34,7 +34,7 @@ define(function (require) {
     },
     close: function () {
       var self = this;
-      var height = parseInt(this.$('.nav-coffin__inner').height(), 10);
+      // var height = parseInt(this.$('.nav-coffin__inner').height(true), 10);
       $('.main--hat').animate({
         height: '' + 40 + 'px'
       }, {
