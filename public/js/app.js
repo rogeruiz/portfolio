@@ -915,7 +915,38 @@ function program5(depth0,data) {
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a>, \n  a <a target=\"_blank\" href=\"";
+    + "</a>, \n  an <a target=\"_blank\" href=\"";
+  if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  if (stack1 = helpers.role) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.role; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a> \n  on <a target=\"_blank\" href=\"";
+  if (stack1 = helpers.placeUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.placeUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  if (stack1 = helpers.place) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.place; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a>.\n</h2>\n";
+  return buffer;
+  }
+
+function program7(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\"";
+  if (stack1 = helpers.nameUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.nameUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a>, \n  an <a target=\"_blank\" href=\"";
   if (stack1 = helpers.roleUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.roleUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -941,15 +972,15 @@ function program5(depth0,data) {
   stack1 = helpers.each.call(depth0, depth0.github, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n";
-  stack1 = helpers.each.call(depth0, depth0.twitter, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  stack1 = helpers.each.call(depth0, depth0.twitter, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n";
-  stack1 = helpers.each.call(depth0, depth0.pinboard, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  stack1 = helpers.each.call(depth0, depth0.pinboard, {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">And?</a>";
   return buffer;
   })});
-define('text!data/hero.json',[],function () { return '{\n  "main": [\n    {\n      "nameUrl": "mailto:hi@rog.gr",\n      "name": "Roger Steve Ruiz",\n      "roleUrl": "/#/about",\n      "role": "senior technologist",\n      "placeUrl": "http://rokkan.com",\n      "place": "Rokkan"\n    }\n  ],\n  "github": [\n    {\n      "nameUrl": "https://github.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n      "role": "regular committer",\n      "placeUrl": "https://github.com",\n      "place": "Github"\n    }\n  ],\n  "twitter": [\n    {\n      "nameUrl": "https://twitter.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://twitter.com/rogeruiz/lists",\n      "role": "follower",\n      "placeUrl": "https://twitter.com",\n      "place": "Twitter"\n    }\n  ],\n  "pinboard": [\n    {\n      "nameUrl": "https://pinboard.in/u:rogeruiz",\n      "name": "u:rogeruiz",\n      "roleUrl": "https://pinboard.in/u:rogeruiz/",\n      "role": "collector",\n      "placeUrl": "https://pinboard.in",\n      "place": "Pinboard"\n    }\n  ]\n}';});
+define('text!data/hero.json',[],function () { return '{\n  "main": [\n    {\n      "nameUrl": "mailto:hi@rog.gr",\n      "name": "Roger Steve Ruiz",\n      "roleUrl": "/#/about",\n      "role": "senior technologist",\n      "placeUrl": "http://rokkan.com",\n      "place": "Rokkan"\n    }\n  ],\n  "github": [\n    {\n      "nameUrl": "https://github.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n      "role": "regular committer",\n      "placeUrl": "https://github.com",\n      "place": "Github"\n    }\n  ],\n  "twitter": [\n    {\n      "nameUrl": "https://twitter.com/rogeruiz",\n      "name": "@rogeruiz",\n      "roleUrl": "https://twitter.com/rogeruiz/lists",\n      "role": "involved follower",\n      "placeUrl": "https://twitter.com",\n      "place": "Twitter"\n    }\n  ],\n  "pinboard": [\n    {\n      "nameUrl": "https://pinboard.in/u:rogeruiz",\n      "name": "u:rogeruiz",\n      "roleUrl": "https://pinboard.in/u:rogeruiz/",\n      "role": "avid collector",\n      "placeUrl": "https://pinboard.in",\n      "place": "Pinboard"\n    }\n  ]\n}';});
 
 define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!tmp/hero.hbs','text!data/hero.json'],function (require) {
 
@@ -1032,7 +1063,7 @@ function program1(depth0,data) {
   buffer += "\n  </nav>\n</div>";
   return buffer;
   })});
-define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/jetblue",\n      "project": "JetBlue",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/dish-network",\n      "project": "Dish Network",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/nxnw",\n      "project": "NXNW",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/git-config",\n      "project": "Git Config",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    }\n  ]\n}';});
+define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/jetblue",\n      "project": "JetBlue",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/dish-network",\n      "project": "Dish Network",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/nxnw",\n      "project": "NXNW",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/git-config",\n      "project": "Git Config",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ]\n}';});
 
 define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tmp/nav.hbs','text!data/project.json'],function (require) {
 
@@ -1070,7 +1101,6 @@ define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tm
     },
     close: function () {
       var self = this;
-      // var height = parseInt(this.$('.nav-coffin__inner').height(true), 10);
       $('.main--hat').animate({
         height: '' + 40 + 'px'
       }, {
