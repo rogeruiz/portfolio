@@ -34,7 +34,6 @@ define(function (require) {
     },
     close: function () {
       var self = this;
-      // var height = parseInt(this.$('.nav-coffin__inner').height(true), 10);
       $('.main--hat').animate({
         height: '' + 40 + 'px'
       }, {
