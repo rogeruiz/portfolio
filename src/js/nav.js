@@ -7,20 +7,30 @@ define(function (require) {
   var navTemplate = require('hb!tmp/nav.hbs');
   var navData = JSON.parse(require('text!data/project.json'));
 
-  var NavView = Backbone.View.extend({
+  var NavModel = Backbone.Model.extend({
     initialize: function () {
-      this.data = navTemplate(navData);
-    },
+      this.set({
+        rokkan: navData.rokkan,
+        talk: navData.talk,
+        personal: navData.personal,
+        tool: navData.tool
+      });
+    }
+  });
+
+  var NavView = Backbone.View.extend({
+    initialize: function () {},
+    model: new NavModel,
     events: {
       'click .nav-coffin__toggler': 'open',
       'click .is-open': 'close'
     },
     el: '#js-nav',
     render: function() {
-      this.$el.html(this.data);
+      this.$el.html(navTemplate(this.model.attributes));
       return this;
     },
-    open: function () {
+    open: function (evt) {
       var self = this;
       var height = parseInt(this.$('.nav-coffin__inner').outerHeight(true), 10);
       $('.main--hat').animate({
@@ -32,7 +42,7 @@ define(function (require) {
         }
       });
     },
-    close: function () {
+    close: function (evt) {
       var self = this;
       $('.main--hat').animate({
         height: '' + 40 + 'px'

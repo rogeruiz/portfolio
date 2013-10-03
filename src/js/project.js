@@ -7,14 +7,24 @@ define(function (require) {
   var projectTemplate = require('hb!tmp/project.hbs');
   var projectData = JSON.parse(require('text!data/project.json'));
 
-  var ProjectView = Backbone.View.extend({
+  var ProjectModel = Backbone.Model.extend({
     initialize: function () {
-      this.data = projectTemplate(projectData);
-    },
+      this.set({
+        rokkan: projectData.rokkan,
+        talk: projectData.talk,
+        personal: projectData.personal,
+        tool: projectData.tool
+      });
+    }
+  });
+
+  var ProjectView = Backbone.View.extend({
+    initialize: function () {},
+    model: new ProjectModel,
     events: {},
     el: '#js-project-list',
     render: function() {
-      this.$el.html(this.data);
+      this.$el.html(projectTemplate(this.model.attributes));
       return this;
     }
   });

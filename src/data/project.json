@@ -3,7 +3,28 @@
     {
       "projectUrl": "/#/jetblue",
       "project": "JetBlue",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "/img/project_fpo.gif",
+      "projectDescription": "...",
+      "codePen": [
+        {
+          "url": "//codepen.io",
+          "title": "cool slider",
+          "description": "..."
+        },
+        {
+          "url": "//codepen.io",
+          "title": "cool slider",
+          "description": "..."
+        }
+      ],
+      "pullQuote": [
+        {
+          "quote": "..."
+        },
+        {
+          "quote": "..."
+        }
+      ]
     },
     {
       "projectUrl": "/#/ford-escape-routes-2012",
