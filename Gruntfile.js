@@ -9,7 +9,7 @@ module.exports = function (grunt) {
         tasks: ['less:compile']
       },
       js: {
-        files: ['<%= pkg.dir.src.js %>/**/*.js', '<%= pkg.dir.src.tmp %>/**/*.hbs'],
+        files: ['<%= pkg.dir.src.data %>/**/*.json', '<%= pkg.dir.src.js %>/**/*.js', '<%= pkg.dir.src.tmp %>/**/*.hbs'],
         tasks: ['requirejs']
       }
     },
