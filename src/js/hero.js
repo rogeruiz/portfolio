@@ -1,11 +1,11 @@
 define(function (require) {
 
-  var $ =  require('jquery');
-  var _ =  require('underscore');
-  var Backbone =  require('backbone');
-  var Handlebars =  require('handlebars');
-  var heroTemplate =  require('hb!tmp/hero.hbs');
-  var heroData =  JSON.parse(require('text!data/hero.json'));
+  var $ = require('jquery');
+  var _ = require('underscore');
+  var Backbone = require('backbone');
+  var Handlebars = require('handlebars');
+  var heroTemplate = require('hb!tmp/hero.hbs');
+  var heroData = JSON.parse(require('text!data/hero.json'));
 
   var HeroView = Backbone.View.extend({
     initialize: function () {
@@ -16,7 +16,6 @@ define(function (require) {
       'mouseout': 'startUpdate',
       'click .js-hero-change': 'update'
     },
-    order: [],
     el: '#js-hero',
     render: function () {
       this.$el.html(this.data);
