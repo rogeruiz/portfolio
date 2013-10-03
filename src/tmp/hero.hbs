@@ -1,30 +1,22 @@
-{{#each main}}
 <h2 class="hero__title is-active">
-  I'm <a target="_blank" href="{{nameUrl}}">{{name}}</a>, 
-  a <a target="_blank" href="{{roleUrl}}">{{role}}</a> 
-  at <a target="_blank" href="{{placeUrl}}">{{place}}</a> 
+  I'm <a target="_blank" href="{{main.nameUrl}}">{{main.name}}</a>, 
+  a <a target="_blank" href="{{main.roleUrl}}">{{main.role}}</a> 
+  at <a target="_blank" href="{{main.placeUrl}}">{{main.place}}</a> 
   in New York.
 </h2>
-{{/each}}
-{{#each github}}
 <h2 class="hero__title">
-  I'm <a target="_blank" href="{{nameUrl}}">{{name}}</a>, 
-  a <a target="_blank" href="{{roleUrl}}">{{role}}</a> 
-  on <a target="_blank" href="{{placeUrl}}">{{place}}</a>.
+  I'm <a target="_blank" href="{{github.nameUrl}}">{{github.name}}</a>, 
+  a <a target="_blank" href="{{github.roleUrl}}">{{github.role}}</a> 
+  on <a target="_blank" href="{{github.placeUrl}}">{{github.place}}</a>.
 </h2>
-{{/each}}
-{{#each twitter}}
 <h2 class="hero__title">
-  I'm <a target="_blank" href="{{nameUrl}}">{{name}}</a>, 
-  an <a target="_blank" href="{{roleUrl}}">{{role}}</a> 
-  on <a target="_blank" href="{{placeUrl}}">{{place}}</a>.
+  I'm <a target="_blank" href="{{twitter.nameUrl}}">{{twitter.name}}</a>, 
+  an <a target="_blank" href="{{twitter.roleUrl}}">{{twitter.role}}</a> 
+  on <a target="_blank" href="{{twitter.placeUrl}}">{{twitter.place}}</a>.
 </h2>
-{{/each}}
-{{#each pinboard}}
 <h2 class="hero__title">
-  I'm <a target="_blank" href="{{nameUrl}}">{{name}}</a>, 
-  an <a target="_blank" href="{{roleUrl}}">{{role}}</a> 
-  using <a target="_blank" href="{{placeUrl}}">{{place}}</a>.
+  I'm <a target="_blank" href="{{pinboard.nameUrl}}">{{pinboard.name}}</a>, 
+  an <a target="_blank" href="{{pinboard.roleUrl}}">{{pinboard.role}}</a> 
+  using <a target="_blank" href="{{pinboard.placeUrl}}">{{pinboard.place}}</a>.
 </h2>
-{{/each}}
 <a href="javascript:" class="js-hero-change button hero__button">And?</a>

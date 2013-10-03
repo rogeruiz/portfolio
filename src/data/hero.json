@@ -1,42 +1,34 @@
 {
-  "main": [
-    {
-      "nameUrl": "mailto:hi@rog.gr",
-      "name": "Roger Steve Ruiz",
-      "roleUrl": "/#/about",
-      "role": "senior technologist",
-      "placeUrl": "http://rokkan.com",
-      "place": "Rokkan"
-    }
-  ],
-  "github": [
-    {
-      "nameUrl": "https://github.com/rogeruiz",
-      "name": "@rogeruiz",
-      "roleUrl": "https://github.com/rogeruiz?tab=repositories",
-      "role": "regular contributor",
-      "placeUrl": "https://github.com",
-      "place": "Github"
-    }
-  ],
-  "twitter": [
-    {
-      "nameUrl": "https://twitter.com/rogeruiz",
-      "name": "@rogeruiz",
-      "roleUrl": "https://twitter.com/rogeruiz/lists",
-      "role": "involved follower",
-      "placeUrl": "https://twitter.com",
-      "place": "Twitter"
-    }
-  ],
-  "pinboard": [
-    {
-      "nameUrl": "https://pinboard.in/u:rogeruiz",
-      "name": "u:rogeruiz",
-      "roleUrl": "https://pinboard.in/u:rogeruiz/",
-      "role": "avid collector",
-      "placeUrl": "https://pinboard.in",
-      "place": "Pinboard"
-    }
-  ]
+  "main": {
+    "nameUrl": "mailto:hi@rog.gr",
+    "name": "Roger Steve Ruiz",
+    "roleUrl": "/#/about",
+    "role": "senior technologist",
+    "placeUrl": "http://rokkan.com",
+    "place": "Rokkan"
+  },
+  "github": {
+    "nameUrl": "https://github.com/rogeruiz",
+    "name": "@rogeruiz",
+    "roleUrl": "https://github.com/rogeruiz?tab=repositories",
+    "role": "regular contributor",
+    "placeUrl": "https://github.com",
+    "place": "Github"
+  },
+  "twitter": {
+    "nameUrl": "https://twitter.com/rogeruiz",
+    "name": "@rogeruiz",
+    "roleUrl": "https://twitter.com/rogeruiz/lists",
+    "role": "involved follower",
+    "placeUrl": "https://twitter.com",
+    "place": "Twitter"
+  },
+  "pinboard": {
+    "nameUrl": "https://pinboard.in/u:rogeruiz",
+    "name": "u:rogeruiz",
+    "roleUrl": "https://pinboard.in/u:rogeruiz/",
+    "role": "avid collector",
+    "placeUrl": "https://pinboard.in",
+    "place": "Pinboard"
+  }
 }
