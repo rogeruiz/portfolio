@@ -1032,7 +1032,7 @@ function program1(depth0,data) {
   buffer += "\n  </nav>\n</div>";
   return buffer;
   })});
-define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/real-health",\n      "project": "Real Health"\n    },\n    {\n      "projectUrl": "/#/jetblue",\n      "project": "JetBlue"\n    },\n    {\n      "projectUrl": "/#/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012"\n    },\n    {\n      "projectUrl": "/#/caesars-palace-casino",\n      "project": "Caesars Palace Casino"\n    },\n    {\n      "projectUrl": "/#/shophouse",\n      "project": "ShopHouse"\n    },\n    {\n      "projectUrl": "/#/dish-network",\n      "project": "Dish Network"\n    },\n    {\n      "projectUrl": "/#/canon-cinema-eos",\n      "project": "Canon Cinema EOS"\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/svn-to-git",\n      "project": "SVN to Git"\n    },\n    {\n      "projectUrl": "/#/introducing-grunt",\n      "project": "Introducing Grunt"\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/nxnw",\n      "project": "NXNW"\n    },\n    {\n      "projectUrl": "/#/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme"\n    },\n    {\n      "projectUrl": "/#/593instagram",\n      "project": "#593Instagram"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook"\n    },\n    {\n      "projectUrl": "/#/git-config",\n      "project": "Git Config"\n    },\n    {\n      "projectUrl": "/#/sublime-settings",\n      "project": "Sublime Settings"\n    },\n    {\n      "projectUrl": "/#/oh-my-zsh",\n      "project": "Oh-My-Zsh"\n    }\n  ]\n}';});
+define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/jetblue",\n      "project": "JetBlue",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/dish-network",\n      "project": "Dish Network",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/nxnw",\n      "project": "NXNW",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/git-config",\n      "project": "Git Config",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    },\n    {\n      "projectUrl": "/#/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"\n    }\n  ]\n}';});
 
 define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tmp/nav.hbs','text!data/project.json'],function (require) {
 
@@ -1086,7 +1086,66 @@ define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tm
   nav.render();
 
 });
+define("hb!tmp/project.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"project\">\n  <h4 class=\"project__title\">";
+  if (stack1 = helpers.project) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.project; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h4>\n  <img src=\"";
+  if (stack1 = helpers.projectImg) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.projectImg; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" alt=\"\" class=\"project__img\">\n</div>\n";
+  return buffer;
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  stack1 = helpers.each.call(depth0, depth0.talk, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  stack1 = helpers.each.call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  stack1 = helpers.each.call(depth0, depth0.tool, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  return buffer;
+  })});
+define('src/project',['require','jquery','underscore','backbone','handlebars','hb!tmp/project.hbs','text!data/project.json'],function (require) {
+
+  var $ = require('jquery');
+  var _ = require('underscore');
+  var Backbone = require('backbone');
+  var Handlebars = require('handlebars');
+  var projectTemplate = require('hb!tmp/project.hbs');
+  var projectData = JSON.parse(require('text!data/project.json'));
+
+  var ProjectView = Backbone.View.extend({
+    initialize: function () {
+      this.data = projectTemplate(projectData);
+    },
+    events: {},
+    el: '#js-project-list',
+    render: function() {
+      this.$el.html(this.data);
+      return this;
+    }
+  });
+
+  var project = new ProjectView;
+  project.render();
+
+});
 require(['src/hero']);
 require(['src/nav']);
+require(['src/project']);
 
 define("js/main", function(){});

@@ -1,74 +1,85 @@
 {
   "rokkan": [
     {
-      "projectUrl": "/#/real-health",
-      "project": "Real Health"
-    },
-    {
       "projectUrl": "/#/jetblue",
-      "project": "JetBlue"
+      "project": "JetBlue",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/ford-escape-routes-2012",
-      "project": "Ford Escape Routes 2012"
+      "project": "Ford Escape Routes 2012",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/caesars-palace-casino",
-      "project": "Caesars Palace Casino"
+      "project": "Caesars Palace Casino",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/shophouse",
-      "project": "ShopHouse"
+      "project": "ShopHouse",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/dish-network",
-      "project": "Dish Network"
+      "project": "Dish Network",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/canon-cinema-eos",
-      "project": "Canon Cinema EOS"
+      "project": "Canon Cinema EOS",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     }
   ],
   "talk": [
     {
       "projectUrl": "/#/svn-to-git",
-      "project": "SVN to Git"
+      "project": "SVN to Git",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/introducing-grunt",
-      "project": "Introducing Grunt"
+      "project": "Introducing Grunt",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     }
   ],
   "personal": [
     {
       "projectUrl": "/#/nxnw",
-      "project": "NXNW"
+      "project": "NXNW",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/cdt-solarized-dark-theme",
-      "project": "CDT Solarized Dark Theme"
+      "project": "CDT Solarized Dark Theme",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/593instagram",
-      "project": "#593Instagram"
+      "project": "#593Instagram",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     }
   ],
   "tool": [
     {
       "projectUrl": "/#/gitolite-post-receive-hook",
-      "project": "Gitolite post-receive hook"
+      "project": "Gitolite post-receive hook",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/git-config",
-      "project": "Git Config"
+      "project": "Git Config",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/sublime-settings",
-      "project": "Sublime Settings"
+      "project": "Sublime Settings",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     },
     {
       "projectUrl": "/#/oh-my-zsh",
-      "project": "Oh-My-Zsh"
+      "project": "Oh-My-Zsh",
+      "projectImg": "//placehold.it/250/E5FFF1/D1E2E8//&text=FPO"
     }
   ]
 }
