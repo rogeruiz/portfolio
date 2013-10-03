@@ -5,6 +5,7 @@
 .main--hat {
   width: 100%;
   height: 40px;
+  overflow: hidden;
   background: @cl-secondary-left;
 }
 
@@ -27,15 +28,15 @@
 }
 
 .nav-coffin {
-  position: absolute;
-  background-color: @cl-secondary-left;
-  width: 100%;
-  top: -999px; /* Hidden by default. */
-  left: -999px;
 }
 
 .nav-coffin__inner {
-  padding: 10px;
+  // position: absolute;
+  background-color: @cl-secondary-left;
+  width: 100%;
+  // top: -999px; /* Hidden by default. */
+  // left: -999px;
+  padding: 30px 10px 10px;
 }
 
 .main--hat__contact {
@@ -43,11 +44,14 @@
   float: right;
 }
 
-.nav-toggler {
+.nav-coffin__toggler {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
   background: transparent url(../img/hamburger@2x.png) 0 0 no-repeat;
   background-size: 20px 20px;
   width: 20px;
   height: 20px;
-  float: left;
   cursor: pointer;
 }

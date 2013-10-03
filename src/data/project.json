@@ -1,0 +1,74 @@
+{
+  "rokkan": [
+    {
+      "projectUrl": "/#/real-health",
+      "project": "Real Health"
+    },
+    {
+      "projectUrl": "/#/jetblue",
+      "project": "JetBlue"
+    },
+    {
+      "projectUrl": "/#/ford-escape-routes-2012",
+      "project": "Ford Escape Routes 2012"
+    },
+    {
+      "projectUrl": "/#/caesars-palace-casino",
+      "project": "Caesars Palace Casino"
+    },
+    {
+      "projectUrl": "/#/shophouse",
+      "project": "ShopHouse"
+    },
+    {
+      "projectUrl": "/#/dish-network",
+      "project": "Dish Network"
+    },
+    {
+      "projectUrl": "/#/canon-cinema-eos",
+      "project": "Canon Cinema EOS"
+    }
+  ],
+  "talk": [
+    {
+      "projectUrl": "/#/svn-to-git",
+      "project": "SVN to Git"
+    },
+    {
+      "projectUrl": "/#/introducing-grunt",
+      "project": "Introducing Grunt"
+    }
+  ],
+  "personal": [
+    {
+      "projectUrl": "/#/nxnw",
+      "project": "NXNW"
+    },
+    {
+      "projectUrl": "/#/cdt-solarized-dark-theme",
+      "project": "CDT Solarized Dark Theme"
+    },
+    {
+      "projectUrl": "/#/593instagram",
+      "project": "#593Instagram"
+    }
+  ],
+  "tool": [
+    {
+      "projectUrl": "/#/gitolite-post-receive-hook",
+      "project": "Gitolite post-receive hook"
+    },
+    {
+      "projectUrl": "/#/git-config",
+      "project": "Git Config"
+    },
+    {
+      "projectUrl": "/#/sublime-settings",
+      "project": "Sublime Settings"
+    },
+    {
+      "projectUrl": "/#/oh-my-zsh",
+      "project": "Oh-My-Zsh"
+    }
+  ]
+}

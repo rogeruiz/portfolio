@@ -953,12 +953,12 @@ define('text!data/hero.json',[],function () { return '{\n  "main": [\n    {\n   
 
 define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!tmp/hero.hbs','text!data/hero.json'],function (require) {
 
-  var $ =  require('jquery');
-  var _ =  require('underscore');
-  var Backbone =  require('backbone');
-  var Handlebars =  require('handlebars');
-  var heroTemplate =  require('hb!tmp/hero.hbs');
-  var heroData =  JSON.parse(require('text!data/hero.json'));
+  var $ = require('jquery');
+  var _ = require('underscore');
+  var Backbone = require('backbone');
+  var Handlebars = require('handlebars');
+  var heroTemplate = require('hb!tmp/hero.hbs');
+  var heroData = JSON.parse(require('text!data/hero.json'));
 
   var HeroView = Backbone.View.extend({
     initialize: function () {
@@ -969,7 +969,6 @@ define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!t
       'mouseout': 'startUpdate',
       'click .js-hero-change': 'update'
     },
-    order: [],
     el: '#js-hero',
     render: function () {
       this.$el.html(this.data);
@@ -998,6 +997,96 @@ define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!t
 
   return function () {};
 });
+define("hb!tmp/nav.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <a href=\"";
+  if (stack1 = helpers.projectUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.projectUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  if (stack1 = helpers.project) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.project; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a>\n    ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"nav-coffin__toggler js-coffin-toggle\"></div>\n<div class=\"nav-coffin__inner\">\n  <nav class=\"nav\">\n    ";
+  stack1 = helpers.each.call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </nav>\n  <nav class=\"nav\">\n    ";
+  stack1 = helpers.each.call(depth0, depth0.talk, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </nav>\n  <nav class=\"nav\">\n    ";
+  stack1 = helpers.each.call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </nav>\n  <nav class=\"nav\">\n    ";
+  stack1 = helpers.each.call(depth0, depth0.tool, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </nav>\n</div>";
+  return buffer;
+  })});
+define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/real-health",\n      "project": "Real Health"\n    },\n    {\n      "projectUrl": "/#/jetblue",\n      "project": "JetBlue"\n    },\n    {\n      "projectUrl": "/#/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012"\n    },\n    {\n      "projectUrl": "/#/caesars-palace-casino",\n      "project": "Caesars Palace Casino"\n    },\n    {\n      "projectUrl": "/#/shophouse",\n      "project": "ShopHouse"\n    },\n    {\n      "projectUrl": "/#/dish-network",\n      "project": "Dish Network"\n    },\n    {\n      "projectUrl": "/#/canon-cinema-eos",\n      "project": "Canon Cinema EOS"\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/svn-to-git",\n      "project": "SVN to Git"\n    },\n    {\n      "projectUrl": "/#/introducing-grunt",\n      "project": "Introducing Grunt"\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/nxnw",\n      "project": "NXNW"\n    },\n    {\n      "projectUrl": "/#/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme"\n    },\n    {\n      "projectUrl": "/#/593instagram",\n      "project": "#593Instagram"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook"\n    },\n    {\n      "projectUrl": "/#/git-config",\n      "project": "Git Config"\n    },\n    {\n      "projectUrl": "/#/sublime-settings",\n      "project": "Sublime Settings"\n    },\n    {\n      "projectUrl": "/#/oh-my-zsh",\n      "project": "Oh-My-Zsh"\n    }\n  ]\n}';});
+
+define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tmp/nav.hbs','text!data/project.json'],function (require) {
+
+  var $ = require('jquery');
+  var _ = require('underscore');
+  var Backbone = require('backbone');
+  var Handlebars = require('handlebars');
+  var navTemplate = require('hb!tmp/nav.hbs');
+  var navData = JSON.parse(require('text!data/project.json'));
+
+  var NavView = Backbone.View.extend({
+    initialize: function () {
+      this.data = navTemplate(navData);
+    },
+    events: {
+      'click .nav-coffin__toggler': 'open',
+      'click .is-open': 'close'
+    },
+    el: '#js-nav',
+    render: function() {
+      this.$el.html(this.data);
+      return this;
+    },
+    open: function () {
+      var self = this;
+      var height = parseInt(this.$('.nav-coffin__inner').height(), 10);
+      $('.main--hat').animate({
+        height: '' + height + 'px'
+      }, {
+        duration: 'fast',
+        complete: function () {
+          self.$('.nav-coffin__toggler').addClass('is-open');
+        }
+      });
+    },
+    close: function () {
+      var self = this;
+      var height = parseInt(this.$('.nav-coffin__inner').height(), 10);
+      $('.main--hat').animate({
+        height: '' + 40 + 'px'
+      }, {
+        duration: 'fast',
+        complete: function () {
+          self.$('.nav-coffin__toggler').removeClass('is-open');
+        }
+      });
+    }
+  });
+
+  var nav = new NavView;
+  nav.render();
+
+});
 require(['src/hero']);
+require(['src/nav']);
 
 define("js/main", function(){});
