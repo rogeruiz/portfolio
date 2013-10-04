@@ -1,7 +1,7 @@
 {
   "rokkan": [
     {
-      "projectUrl": "/#/jetblue",
+      "projectUrl": "/work/jetblue",
       "project": "JetBlue",
       "projectImg": "/img/project_fpo.gif",
       "projectDescription": "...",
@@ -27,78 +27,78 @@
       ]
     },
     {
-      "projectUrl": "/#/ford-escape-routes-2012",
+      "projectUrl": "/work/ford-escape-routes-2012",
       "project": "Ford Escape Routes 2012",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/caesars-palace-casino",
+      "projectUrl": "/work/caesars-palace-casino",
       "project": "Caesars Palace Casino",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/shophouse",
+      "projectUrl": "/work/shophouse",
       "project": "ShopHouse",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/dish-network",
+      "projectUrl": "/work/dish-network",
       "project": "Dish Network",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/canon-cinema-eos",
+      "projectUrl": "/work/canon-cinema-eos",
       "project": "Canon Cinema EOS",
       "projectImg": "/img/project_fpo.gif"
     }
   ],
   "talk": [
     {
-      "projectUrl": "/#/svn-to-git",
+      "projectUrl": "/work/svn-to-git",
       "project": "SVN to Git",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/introducing-grunt",
+      "projectUrl": "/work/introducing-grunt",
       "project": "Introducing Grunt",
       "projectImg": "/img/project_fpo.gif"
     }
   ],
   "personal": [
     {
-      "projectUrl": "/#/nxnw",
+      "projectUrl": "/work/nxnw",
       "project": "NXNW",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/cdt-solarized-dark-theme",
+      "projectUrl": "/work/cdt-solarized-dark-theme",
       "project": "CDT Solarized Dark Theme",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/593instagram",
+      "projectUrl": "/work/593instagram",
       "project": "#593Instagram",
       "projectImg": "/img/project_fpo.gif"
     }
   ],
   "tool": [
     {
-      "projectUrl": "/#/gitolite-post-receive-hook",
+      "projectUrl": "/work/gitolite-post-receive-hook",
       "project": "Gitolite post-receive hook",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/git-config",
+      "projectUrl": "/work/git-config",
       "project": "Git Config",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/sublime-settings",
+      "projectUrl": "/work/sublime-settings",
       "project": "Sublime Settings",
       "projectImg": "/img/project_fpo.gif"
     },
     {
-      "projectUrl": "/#/oh-my-zsh",
+      "projectUrl": "/work/oh-my-zsh",
       "project": "Oh-My-Zsh",
       "projectImg": "/img/project_fpo.gif"
     }
