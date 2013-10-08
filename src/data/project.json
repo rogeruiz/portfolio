@@ -1,10 +1,10 @@
 {
   "rokkan": [
     {
-      "projectUrl": "/work/jetblue",
-      "project": "JetBlue",
-      "projectImg": "/img/project_fpo.gif",
-      "projectDescription": "...",
+      "projectUrl": "/#/work/real-health",
+      "project": "Real Health",
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "An informational website about the Affordable Care Act and information about the Exchange portals.",
       "codePen": [
         {
           "url": "//codepen.io",
@@ -27,80 +27,132 @@
       ]
     },
     {
-      "projectUrl": "/work/ford-escape-routes-2012",
+      "projectUrl": "/#/work/jetblue",
+      "project": "JetBlue",
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "JetBlue 2012 / TrueBlue 2013 redesign.",
+      "codePen": [
+        {
+          "url": "//codepen.io",
+          "title": "cool slider",
+          "description": "..."
+        },
+        {
+          "url": "//codepen.io",
+          "title": "cool slider",
+          "description": "..."
+        }
+      ],
+      "pullQuote": [
+        {
+          "quote": "..."
+        },
+        {
+          "quote": "..."
+        }
+      ]
+    },
+    {
+      "projectUrl": "/#/work/ford-escape-routes-2012",
       "project": "Ford Escape Routes 2012",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "The sophmore year release of Ford Escape Routes."
     },
     {
-      "projectUrl": "/work/caesars-palace-casino",
+      "projectUrl": "/#/work/caesars-palace-casino",
       "project": "Caesars Palace Casino",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "Caesars Palace Booking Redesign"
     },
     {
-      "projectUrl": "/work/shophouse",
+      "projectUrl": "/#/work/shophouse",
       "project": "ShopHouse",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "Maintanence and Google Maps API for ShopHouse Kitchen."
     },
     {
-      "projectUrl": "/work/dish-network",
+      "projectUrl": "/#/work/dish-network",
       "project": "Dish Network",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "Dish Network 2013 redesign."
     },
     {
-      "projectUrl": "/work/canon-cinema-eos",
+      "projectUrl": "/#/work/canon-cinema-eos",
       "project": "Canon Cinema EOS",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "Canon Cinema EOS product launch site."
     }
   ],
   "talk": [
     {
-      "projectUrl": "/work/svn-to-git",
+      "projectUrl": "/#/work/svn-to-git",
       "project": "SVN to Git",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "A git workflow primer given internally at Rokkan."
     },
     {
-      "projectUrl": "/work/introducing-grunt",
+      "projectUrl": "/#/work/introducing-grunt",
       "project": "Introducing Grunt",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "A grunt workflow primer given internally at Rokkan."
     }
   ],
   "personal": [
     {
-      "projectUrl": "/work/nxnw",
+      "projectUrl": "/#/work/nxnw",
       "project": "NXNW",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "A proof-of-concept list interface."
     },
     {
-      "projectUrl": "/work/cdt-solarized-dark-theme",
+      "projectUrl": "/#/work/cdt-solarized-dark-theme",
       "project": "CDT Solarized Dark Theme",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "Custom solarized theme for Chrome Dev Tools"
     },
     {
-      "projectUrl": "/work/593instagram",
+      "projectUrl": "/#/work/593instagram",
       "project": "#593Instagram",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "A quick & dirty Instagram hashtag viewer."
+    },
+    {
+      "projectUrl": "/#/work/fatrin-portfolio",
+      "project": "Fatrin Portfolio",
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "Portfolio website for musical composer Fatrin"
     }
   ],
   "tool": [
     {
-      "projectUrl": "/work/gitolite-post-receive-hook",
+      "projectUrl": "/#/work/gitolite-post-receive-hook",
       "project": "Gitolite post-receive hook",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "NodeJS-based post-receive hook for Gitolite."
     },
     {
-      "projectUrl": "/work/git-config",
+      "projectUrl": "/#/work/git-config",
       "project": "Git Config",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "My personal .gitconfig file."
     },
     {
-      "projectUrl": "/work/sublime-settings",
+      "projectUrl": "/#/work/sublime-settings",
       "project": "Sublime Settings",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "My Sublime settings."
     },
     {
-      "projectUrl": "/work/oh-my-zsh",
+      "projectUrl": "/#/work/oh-my-zsh",
       "project": "Oh-My-Zsh",
-      "projectImg": "/img/project_fpo.gif"
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "My personal oh-my-zsh fork."
+    },
+    {
+      "projectUrl": "/#/work/jquery.scrollsync",
+      "project": "jQuery.scrollSync",
+      "projectImg": "//placehold.it/440x239.gif",
+      "projectDescription": "ScrollSync - a jQuery plugin."
     }
   ]
 }

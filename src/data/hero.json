@@ -2,7 +2,7 @@
   "main": {
     "nameUrl": "mailto:hi@rog.gr",
     "name": "Roger Steve Ruiz",
-    "roleUrl": "/about",
+    "roleUrl": "/#/about",
     "role": "senior technologist",
     "placeUrl": "http://rokkan.com",
     "place": "Rokkan"
