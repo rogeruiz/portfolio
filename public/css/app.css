@@ -696,10 +696,18 @@ a:visited:hover {
 .project--list {
   padding: 20px 20px;
 }
+.project__title {
+  margin-bottom: 0;
+}
 .project__img {
   width: 90%;
+  max-width: 440px;
   display: block;
+  border: 10px solid white;
   margin: 0 auto;
+}
+.project__img img {
+  max-width: 100%;
 }
 /* ==========================================================================
    Helper classes
