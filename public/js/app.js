@@ -787,6 +787,25 @@ define('text',['module'], function (module) {
     return text;
 });
 
+define('text!data/hero.json',[],function () { return '{\n  "main": {\n    "nameUrl": "mailto:hi@rog.gr",\n    "name": "Roger Steve Ruiz",\n    "roleUrl": "/#/about",\n    "role": "senior technologist",\n    "placeUrl": "http://rokkan.com",\n    "place": "Rokkan"\n  },\n  "github": {\n    "nameUrl": "https://github.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n    "role": "regular contributor",\n    "placeUrl": "https://github.com",\n    "place": "Github"\n  },\n  "twitter": {\n    "nameUrl": "https://twitter.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://twitter.com/rogeruiz/lists",\n    "role": "involved follower",\n    "placeUrl": "https://twitter.com",\n    "place": "Twitter"\n  },\n  "pinboard": {\n    "nameUrl": "https://pinboard.in/u:rogeruiz",\n    "name": "u:rogeruiz",\n    "roleUrl": "https://pinboard.in/u:rogeruiz/",\n    "role": "avid collector",\n    "placeUrl": "https://pinboard.in",\n    "place": "Pinboard"\n  }\n}';});
+
+define('src/HeroModel',['require','backbone','text!data/hero.json'],function (require) {
+  var Backbone = require('backbone');
+  var HeroData = JSON.parse(require('text!data/hero.json'));
+
+  var HeroModel = Backbone.Model.extend({
+    initialize: function () {
+      this.set({
+        main: HeroData.main,
+        github: HeroData.github,
+        twitter: HeroData.twitter,
+        pinboard: HeroData.pinboard
+      });
+    }
+  });
+
+  return HeroModel;
+});
 define('hb',['text', 'handlebars'], function(text, handlebars) {
 
     var buildCache = {},
@@ -843,11 +862,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<h2 class=\"hero__title is-active\">\n  I'm <a target=\"_blank\" href=\""
+  buffer += "<h2 class=\"hero__title is-active\">\n  I'm <a href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>, \n  a <a target=\"_blank\" href=\""
+    + "</a>, \n  a <a href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -894,27 +913,14 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + "</a>.\n</h2>\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">And?</a>";
   return buffer;
   })});
-define('text!data/hero.json',[],function () { return '{\n  "main": {\n    "nameUrl": "mailto:hi@rog.gr",\n    "name": "Roger Steve Ruiz",\n    "roleUrl": "/#/about",\n    "role": "senior technologist",\n    "placeUrl": "http://rokkan.com",\n    "place": "Rokkan"\n  },\n  "github": {\n    "nameUrl": "https://github.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n    "role": "regular contributor",\n    "placeUrl": "https://github.com",\n    "place": "Github"\n  },\n  "twitter": {\n    "nameUrl": "https://twitter.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://twitter.com/rogeruiz/lists",\n    "role": "involved follower",\n    "placeUrl": "https://twitter.com",\n    "place": "Twitter"\n  },\n  "pinboard": {\n    "nameUrl": "https://pinboard.in/u:rogeruiz",\n    "name": "u:rogeruiz",\n    "roleUrl": "https://pinboard.in/u:rogeruiz/",\n    "role": "avid collector",\n    "placeUrl": "https://pinboard.in",\n    "place": "Pinboard"\n  }\n}';});
-
-define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!tmp/hero.hbs','text!data/hero.json'],function (require) {
+define('src/HeroView',['require','jquery','underscore','backbone','handlebars','src/HeroModel','hb!tmp/hero.hbs'],function (require) {
 
   var $ = require('jquery');
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
-  var heroTemplate = require('hb!tmp/hero.hbs');
-  var heroData = JSON.parse(require('text!data/hero.json'));
-
-  var HeroModel = Backbone.Model.extend({
-    initialize: function () {
-      this.set({
-        main: heroData.main,
-        github: heroData.github,
-        twitter: heroData.twitter,
-        pinboard: heroData.pinboard
-      });
-    }
-  });
+  var HeroModel = require('src/HeroModel');
+  var HeroTemplate = require('hb!tmp/hero.hbs');
 
   var HeroView = Backbone.View.extend({
     initialize: function () {},
@@ -926,20 +932,20 @@ define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!t
     },
     el: '#js-hero',
     render: function () {
-      this.$el.html(heroTemplate(this.model.attributes));
+      this.$el.html(HeroTemplate(this.model.attributes));
       this.startUpdate();
       return this;
     },
-    startUpdate: function () {
+    startUpdate: function (evt) {
       var self = this;
-      window.heroInterval = setInterval(function () {
+      window.HeroInterval = setInterval(function () {
         self.update();
       }, 5000);
     },
-    stopUpdate: function () {
-      clearInterval(window.heroInterval);
+    stopUpdate: function (evt) {
+      clearInterval(window.HeroInterval);
     },
-    update: function () {
+    update: function (evt) {
       var total = this.$('.hero__title').length;
       var index = this.$('.is-active').index();
       var next = index + 1 < total ? index + 1 : 0;
@@ -947,11 +953,31 @@ define('src/hero',['require','jquery','underscore','backbone','handlebars','hb!t
     }
   });
 
-  var hero = new HeroView;
-  hero.render();
+  // var hero = new HeroView;
+  // hero.render();
 
-  return function () {};
+  return HeroView;
 });
+define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/work/real-health",\n      "project": "Real Health",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "codePen": [\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        },\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        }\n      ],\n      "pullQuote": [\n        {\n          "quote": "..."\n        },\n        {\n          "quote": "..."\n        }\n      ]\n    },\n    {\n      "projectUrl": "/#/work/jetblue",\n      "project": "JetBlue",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "codePen": [\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        },\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        }\n      ],\n      "pullQuote": [\n        {\n          "quote": "..."\n        },\n        {\n          "quote": "..."\n        }\n      ]\n    },\n    {\n      "projectUrl": "/#/work/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "The sophmore year release of Ford Escape Routes."\n    },\n    {\n      "projectUrl": "/#/work/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Caesars Palace Booking Redesign"\n    },\n    {\n      "projectUrl": "/#/work/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Maintanence and Google Maps API for ShopHouse Kitchen."\n    },\n    {\n      "projectUrl": "/#/work/dish-network",\n      "project": "Dish Network",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Dish Network 2013 redesign."\n    },\n    {\n      "projectUrl": "/#/work/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Canon Cinema EOS product launch site."\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/work/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "A git workflow primer given internally at Rokkan."\n    },\n    {\n      "projectUrl": "/#/work/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "A grunt workflow primer given internally at Rokkan."\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/work/nxnw",\n      "project": "NXNW",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "A proof-of-concept list interface."\n    },\n    {\n      "projectUrl": "/#/work/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Custom solarized theme for Chrome Dev Tools"\n    },\n    {\n      "projectUrl": "/#/work/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "A quick & dirty Instagram hashtag viewer."\n    },\n    {\n      "projectUrl": "/#/work/fatrin-portfolio",\n      "project": "Fatrin Portfolio",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Portfolio website for musical composer Fatrin"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/work/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "NodeJS-based post-receive hook for Gitolite."\n    },\n    {\n      "projectUrl": "/#/work/git-config",\n      "project": "Git Config",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "My personal .gitconfig file."\n    },\n    {\n      "projectUrl": "/#/work/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "My Sublime settings."\n    },\n    {\n      "projectUrl": "/#/work/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "My personal oh-my-zsh fork."\n    },\n    {\n      "projectUrl": "/#/work/jquery.scrollsync",\n      "project": "jQuery.scrollSync",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "ScrollSync - a jQuery plugin."\n    }\n  ]\n}';});
+
+define('src/NavModel',['require','backbone','text!data/project.json'],function (require) {
+  var Backbone = require('backbone');
+  var NavData = JSON.parse(require('text!data/project.json'));
+
+  var NavModel = Backbone.Model.extend({
+    initialize: function () {
+      this.set({
+        rokkan: NavData.rokkan,
+        talk: NavData.talk,
+        personal: NavData.personal,
+        tool: NavData.tool
+      });
+    }
+  });
+
+  return NavModel;
+});
+
 define("hb!tmp/nav.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -987,30 +1013,19 @@ function program1(depth0,data) {
   buffer += "\n  </nav>\n</div>";
   return buffer;
   })});
-define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/jetblue",\n      "project": "JetBlue",\n      "projectImg": "/img/project_fpo.gif",\n      "projectDescription": "...",\n      "codePen": [\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        },\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        }\n      ],\n      "pullQuote": [\n        {\n          "quote": "..."\n        },\n        {\n          "quote": "..."\n        }\n      ]\n    },\n    {\n      "projectUrl": "/#/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/dish-network",\n      "project": "Dish Network",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/nxnw",\n      "project": "NXNW",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/git-config",\n      "project": "Git Config",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "/img/project_fpo.gif"\n    },\n    {\n      "projectUrl": "/#/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "/img/project_fpo.gif"\n    }\n  ]\n}';});
-
-define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tmp/nav.hbs','text!data/project.json'],function (require) {
+define('src/NavView',['require','jquery','underscore','backbone','handlebars','src/NavModel','hb!tmp/nav.hbs'],function (require) {
 
   var $ = require('jquery');
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
-  var navTemplate = require('hb!tmp/nav.hbs');
-  var navData = JSON.parse(require('text!data/project.json'));
-
-  var NavModel = Backbone.Model.extend({
-    initialize: function () {
-      this.set({
-        rokkan: navData.rokkan,
-        talk: navData.talk,
-        personal: navData.personal,
-        tool: navData.tool
-      });
-    }
-  });
+  var NavModel = require('src/NavModel');
+  var NavTemplate = require('hb!tmp/nav.hbs');
 
   var NavView = Backbone.View.extend({
-    initialize: function () {},
+    initialize: function () {
+      this.render();
+    },
     model: new NavModel,
     events: {
       'click .nav-coffin__toggler': 'open',
@@ -1018,10 +1033,10 @@ define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tm
     },
     el: '#js-nav',
     render: function() {
-      this.$el.html(navTemplate(this.model.attributes));
+      this.$el.html(NavTemplate(this.model.attributes));
       return this;
     },
-    open: function () {
+    open: function (evt) {
       var self = this;
       var height = parseInt(this.$('.nav-coffin__inner').outerHeight(true), 10);
       $('.main--hat').animate({
@@ -1033,7 +1048,7 @@ define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tm
         }
       });
     },
-    close: function () {
+    close: function (evt) {
       var self = this;
       $('.main--hat').animate({
         height: '' + 40 + 'px'
@@ -1046,9 +1061,28 @@ define('src/nav',['require','jquery','underscore','backbone','handlebars','hb!tm
     }
   });
 
-  var nav = new NavView;
-  nav.render();
+  // var nav = new NavView;
+  // nav.render();
 
+  return NavView;
+
+});
+define('src/ProjectModel',['require','backbone','text!data/project.json'],function (require) {
+  var Backbone = require('backbone');
+  var ProjectData = JSON.parse(require('text!data/project.json'));
+
+  var ProjectModel = Backbone.Model.extend({
+    initialize: function () {
+      this.set({
+        rokkan: ProjectData.rokkan,
+        talk: ProjectData.talk,
+        personal: ProjectData.personal,
+        tool: ProjectData.tool
+      });
+    }
+  });
+
+  return ProjectModel;
 });
 define("hb!tmp/project.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
@@ -1058,15 +1092,23 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<div class=\"project\">\n  <h4 class=\"project__title\">";
+  buffer += "\n<div class=\"project\">\n  <h4 class=\"project__title\"><a href=\"";
+  if (stack1 = helpers.projectUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.projectUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
   if (stack1 = helpers.project) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.project; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</h4>\n  <img src=\"";
+    + "</a></h4>\n  <p class=\"project__description\">";
+  if (stack1 = helpers.projectDescription) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.projectDescription; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n  <div  class=\"project__img\">\n    <img src=\"";
   if (stack1 = helpers.projectImg) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.projectImg; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\" alt=\"\" class=\"project__img\">\n</div>\n";
+    + "\" alt=\"\">\n  </div>\n</div>\n";
   return buffer;
   }
 
@@ -1083,43 +1125,75 @@ function program1(depth0,data) {
   if(stack1 || stack1 === 0) { buffer += stack1; }
   return buffer;
   })});
-define('src/project',['require','jquery','underscore','backbone','handlebars','hb!tmp/project.hbs','text!data/project.json'],function (require) {
+define('src/ProjectListView',['require','jquery','underscore','backbone','handlebars','src/ProjectModel','hb!tmp/project.hbs'],function (require) {
 
   var $ = require('jquery');
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
-  var projectTemplate = require('hb!tmp/project.hbs');
-  var projectData = JSON.parse(require('text!data/project.json'));
+  var ProjectModel = require('src/ProjectModel');
+  var ProjectTemplate = require('hb!tmp/project.hbs');
 
-  var ProjectModel = Backbone.Model.extend({
-    initialize: function () {
-      this.set({
-        rokkan: projectData.rokkan,
-        talk: projectData.talk,
-        personal: projectData.personal,
-        tool: projectData.tool
-      });
-    }
-  });
-
-  var ProjectView = Backbone.View.extend({
+  var ProjectListView = Backbone.View.extend({
     initialize: function () {},
     model: new ProjectModel,
     events: {},
     el: '#js-project-list',
     render: function() {
-      this.$el.html(projectTemplate(this.model.attributes));
+      this.$el.html(ProjectTemplate(this.model.attributes));
       return this;
     }
   });
 
-  var project = new ProjectView;
-  project.render();
+  // var project = new ProjectView;
+  // project.render();
+
+  return ProjectListView;
 
 });
-require(['src/hero']);
-require(['src/nav']);
-require(['src/project']);
+define('src/router',['require','jquery','backbone','src/HeroView','src/NavView','src/ProjectListView'],function (require) {
+  var $ = require('jquery');
+  // var _ = require('underscore');
+  var Backbone = require('backbone');
+  var HeroView = require('src/HeroView');
+  var NavView = require('src/NavView');
+  var ProjectListView = require('src/ProjectListView');
+
+
+  var Router = Backbone.Router.extend({
+
+    routes: {
+      'about': 'showAbout',
+      'work/:project': 'showProject',
+      '*actions': 'showDefault'
+    }
+
+  });
+
+  var routes = new Router;
+
+  routes.on('route:showAbout', function () {
+
+  });
+
+  routes.on('route:showDefault', function () {
+    var heroView = new HeroView;
+    var projectListView = new ProjectListView;
+    heroView.render();
+    projectListView.render();
+  });
+
+  var navView = new NavView;
+
+  Backbone.history.start({
+    pushState: false
+  });
+
+  return function () {};
+});
+// Initialize the portfolio router
+
+
+require(['src/router']);
 
 define("js/main", function(){});
