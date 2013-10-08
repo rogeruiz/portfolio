@@ -1,3 +1,4 @@
-require(['src/hero']);
-require(['src/nav']);
-require(['src/project']);
+// Initialize the portfolio router
+
+
+require(['src/router']);
