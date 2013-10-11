@@ -1144,11 +1144,11 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  buffer += "<h2 class=\"project--about__title\">About Me</h2>\n";
+  buffer += "<h3 class=\"project--about__title\">About Me</h3>\n";
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
   stack2 = ((stack1 = helpers.paragraph || depth0.paragraph),stack1 ? stack1.call(depth0, depth0.biography, options) : helperMissing.call(depth0, "paragraph", depth0.biography, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n<h2 class=\"project--about__title\">Skills</h2>\n";
+  buffer += "\n<h3 class=\"project--about__title\">Skills</h3>\n";
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
   stack2 = ((stack1 = helpers.list || depth0.list),stack1 ? stack1.call(depth0, depth0.skills, options) : helperMissing.call(depth0, "list", depth0.skills, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }

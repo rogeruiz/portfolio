@@ -32,8 +32,25 @@
 .project--about {
   
 }
-.project--about__title {}
-.project--about__skills {}
+.project--about__title {
+  border-bottom: 2px solid @cl-secondary-right;
+}
+.project--about__skills {
+  list-style: none;
+  .clearfix;
+  > li {
+    float: left;
+    padding-right: 20px;
+    &:before {
+      padding-right: 5px;
+      content: "✔";
+      color: green;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
 .project--about__bio {}
 
 /* ==========================================================================
