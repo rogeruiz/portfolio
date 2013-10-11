@@ -21,7 +21,7 @@ define(function (require) {
       this.$el.html(NavTemplate(this.model.attributes));
       return this;
     },
-    open: function (evt) {
+    open: function () {
       var self = this;
       var height = parseInt(this.$('.nav-coffin__inner').outerHeight(true), 10);
       $('.main--hat').animate({
@@ -33,7 +33,7 @@ define(function (require) {
         }
       });
     },
-    close: function (evt) {
+    close: function () {
       var self = this;
       $('.main--hat').animate({
         height: '' + 40 + 'px'
