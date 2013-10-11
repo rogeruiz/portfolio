@@ -618,6 +618,7 @@ a:visited:hover {
   border-bottom: 1px solid #e5fff1;
   margin-bottom: 10px;
   padding-bottom: 10px;
+  text-align: center;
 }
 .nav:last-child {
   border-bottom: 0;
@@ -633,17 +634,19 @@ a:visited:hover {
   padding: 30px 10px 10px;
 }
 .main--hat__contact {
-  margin-right: 10px;
-  float: right;
+  margin: 0 auto;
+  display: block;
+  min-width: 70px;
+  text-align: center;
 }
 .nav-coffin__toggler {
   position: absolute;
   top: 10px;
-  left: 10px;
+  right: 10px;
   z-index: 5;
-  background: transparent url(../img/hamburger@2x.png) 0 0 no-repeat;
+  background: transparent url(../img/hamburger@2x.png) center right no-repeat;
   background-size: 20px 20px;
-  width: 20px;
+  width: 44px;
   height: 20px;
   cursor: pointer;
 }

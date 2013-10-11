@@ -1059,36 +1059,52 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     },
     model: new NavModel,
     events: {
-      'click .nav-coffin__toggler': 'open',
+      'click .is-closed': 'open',
       'click .is-open': 'close'
     },
     el: '#js-nav',
     render: function() {
       this.$el.html(NavTemplate(this.model.attributes));
+      this.$('.js-coffin-toggle').addClass('is-closed');
       return this;
     },
+    isAnimating: false,
     open: function () {
       var self = this;
-      var height = parseInt(this.$('.nav-coffin__inner').outerHeight(true), 10);
-      $('.main--hat').animate({
-        height: '' + (height + 20) + 'px'
-      }, {
-        duration: 'fast',
-        complete: function () {
-          self.$('.nav-coffin__toggler').addClass('is-open');
-        }
-      });
+      var height = parseInt((this.$('.nav-coffin__inner').outerHeight(true) + $('.main--hat').outerHeight(true)), 10);
+      if (!this.isAnimating) {
+        $('.main--hat').animate({
+          height: '' + (height) + 'px'
+        }, {
+          duration: 'fast',
+          step: function () {
+            self.isAnimating = true;
+          },
+          complete: function () {
+            self.$('.nav-coffin__toggler').addClass('is-open');
+            self.$('.nav-coffin__toggler').removeClass('is-closed');
+            self.isAnimating = false;
+          }
+        });
+      }
     },
     close: function () {
       var self = this;
-      $('.main--hat').animate({
-        height: '' + 40 + 'px'
-      }, {
-        duration: 'fast',
-        complete: function () {
-          self.$('.nav-coffin__toggler').removeClass('is-open');
-        }
-      });
+      if (!self.isAnimating) {
+        $('.main--hat').animate({
+          height: '40px'
+        }, {
+          duration: 'fast',
+          step: function () {
+            self.isAnimating = true;
+          },
+          complete: function () {
+            self.$('.nav-coffin__toggler').removeClass('is-open');
+            self.$('.nav-coffin__toggler').addClass('is-closed');
+            self.isAnimating = false;
+          }
+        });
+      }
     }
   });
 
