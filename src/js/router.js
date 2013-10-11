@@ -1,11 +1,15 @@
 define(function (require) {
   var $ = require('jquery');
-  // var _ = require('underscore');
+  var _ = require('underscore');
   var Backbone = require('backbone');
+  var RegionManager = require('src/RegionManager');
   var HeroView = require('src/HeroView');
   var NavView = require('src/NavView');
+  var AboutView = require('src/AboutView');
   var ProjectListView = require('src/ProjectListView');
 
+  var HeroManager = new RegionManager;
+  var ProjectManager = new RegionManager;
 
   var Router = Backbone.Router.extend({
 
@@ -20,20 +24,19 @@ define(function (require) {
   var routes = new Router;
 
   routes.on('route:showAbout', function () {
-
+    HeroManager.show(new AboutView.hero);
+    ProjectManager.show(new AboutView.project);
   });
 
   routes.on('route:showDefault', function () {
-    var heroView = new HeroView;
-    var projectListView = new ProjectListView;
-    heroView.render();
-    projectListView.render();
+    HeroManager.show(new HeroView);
+    ProjectManager.show(new ProjectListView);
   });
 
   var navView = new NavView;
 
   Backbone.history.start({
-    pushState: false
+    pushState: Modernizr.history
   });
 
   return function () {};
