@@ -5,21 +5,25 @@ define(function (require) {
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
   var ProjectModel = require('src/ProjectModel');
-  var ProjectTemplate = require('hb!tmp/project.hbs');
+  var ProjectTemplate = require('hb!tmp/project--list.hbs');
 
   var ProjectListView = Backbone.View.extend({
     initialize: function () {},
     model: new ProjectModel,
     events: {},
-    el: '#js-project-list',
+    el: '#js-project',
     render: function() {
+      this.$el.addClass('project--list');
       this.$el.html(ProjectTemplate(this.model.attributes));
       return this;
+    },
+    close: function () {
+      this.$el.removeClass('project--list');
+      this.$el.children().remove();
+      this.unbind();
+      
     }
   });
-
-  // var project = new ProjectView;
-  // project.render();
 
   return ProjectListView;
 
