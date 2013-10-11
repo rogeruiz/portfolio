@@ -30,6 +30,32 @@ define("backbone", ["underscore","jquery"], (function (global) {
     };
 }(this)));
 
+define('src/RegionManager',['jquery', 'backbone'], function ($, Backbone) {
+
+  var Manager = function Manager() {
+    var currentView;
+
+    var closeView = function (view) {
+      if (view && view.close) {
+        view.close();
+      }
+    };
+
+    var openView = function (view) {
+      view.render();
+      if (view.onShow) {
+          view.onShow();
+      }
+    };
+    this.show = function (view) {
+      closeView(currentView);
+      currentView = view;
+      openView(currentView);
+    };
+  };
+
+  return Manager;
+});
 /*
 
 Copyright (C) 2011 by Yehuda Katz
@@ -787,7 +813,7 @@ define('text',['module'], function (module) {
     return text;
 });
 
-define('text!data/hero.json',[],function () { return '{\n  "main": {\n    "nameUrl": "mailto:hi@rog.gr",\n    "name": "Roger Steve Ruiz",\n    "roleUrl": "/#/about",\n    "role": "senior technologist",\n    "placeUrl": "http://rokkan.com",\n    "place": "Rokkan"\n  },\n  "github": {\n    "nameUrl": "https://github.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n    "role": "regular contributor",\n    "placeUrl": "https://github.com",\n    "place": "Github"\n  },\n  "twitter": {\n    "nameUrl": "https://twitter.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://twitter.com/rogeruiz/lists",\n    "role": "involved follower",\n    "placeUrl": "https://twitter.com",\n    "place": "Twitter"\n  },\n  "pinboard": {\n    "nameUrl": "https://pinboard.in/u:rogeruiz",\n    "name": "u:rogeruiz",\n    "roleUrl": "https://pinboard.in/u:rogeruiz/",\n    "role": "avid collector",\n    "placeUrl": "https://pinboard.in",\n    "place": "Pinboard"\n  }\n}';});
+define('text!data/hero.json',[],function () { return '{\n  "main": {\n    "nameUrl": "mailto:hi@rog.gr",\n    "name": "Roger Steve Ruiz",\n    "roleUrl": "/about",\n    "role": "senior developer",\n    "placeUrl": "http://rokkan.com",\n    "place": "Rokkan"\n  },\n  "github": {\n    "nameUrl": "https://github.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n    "role": "regular contributor",\n    "placeUrl": "https://github.com",\n    "place": "Github"\n  },\n  "twitter": {\n    "nameUrl": "https://twitter.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://twitter.com/rogeruiz/lists",\n    "role": "involved follower",\n    "placeUrl": "https://twitter.com",\n    "place": "Twitter"\n  },\n  "pinboard": {\n    "nameUrl": "https://pinboard.in/u:rogeruiz",\n    "name": "u:rogeruiz",\n    "roleUrl": "https://pinboard.in/u:rogeruiz/",\n    "role": "avid collector",\n    "placeUrl": "https://pinboard.in",\n    "place": "Pinboard"\n  }\n}';});
 
 define('src/HeroModel',['require','backbone','text!data/hero.json'],function (require) {
   var Backbone = require('backbone');
@@ -936,16 +962,21 @@ define('src/HeroView',['require','jquery','underscore','backbone','handlebars','
       this.startUpdate();
       return this;
     },
-    startUpdate: function (evt) {
+    close: function () {
+      this.stopUpdate();
+      this.$el.children().remove();
+      this.unbind();
+    },
+    startUpdate: function () {
       var self = this;
-      window.HeroInterval = setInterval(function () {
+      this.interval = setInterval(function () {
         self.update();
       }, 5000);
     },
-    stopUpdate: function (evt) {
-      clearInterval(window.HeroInterval);
+    stopUpdate: function () {
+      window.clearInterval(this.interval);
     },
-    update: function (evt) {
+    update: function () {
       var total = this.$('.hero__title').length;
       var index = this.$('.is-active').index();
       var next = index + 1 < total ? index + 1 : 0;
@@ -958,7 +989,7 @@ define('src/HeroView',['require','jquery','underscore','backbone','handlebars','
 
   return HeroView;
 });
-define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/#/work/real-health",\n      "project": "Real Health",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "codePen": [\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        },\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        }\n      ],\n      "pullQuote": [\n        {\n          "quote": "..."\n        },\n        {\n          "quote": "..."\n        }\n      ]\n    },\n    {\n      "projectUrl": "/#/work/jetblue",\n      "project": "JetBlue",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "codePen": [\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        },\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        }\n      ],\n      "pullQuote": [\n        {\n          "quote": "..."\n        },\n        {\n          "quote": "..."\n        }\n      ]\n    },\n    {\n      "projectUrl": "/#/work/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "The sophmore year release of Ford Escape Routes."\n    },\n    {\n      "projectUrl": "/#/work/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Caesars Palace Booking Redesign"\n    },\n    {\n      "projectUrl": "/#/work/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Maintanence and Google Maps API for ShopHouse Kitchen."\n    },\n    {\n      "projectUrl": "/#/work/dish-network",\n      "project": "Dish Network",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Dish Network 2013 redesign."\n    },\n    {\n      "projectUrl": "/#/work/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Canon Cinema EOS product launch site."\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/#/work/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "A git workflow primer given internally at Rokkan."\n    },\n    {\n      "projectUrl": "/#/work/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "A grunt workflow primer given internally at Rokkan."\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/#/work/nxnw",\n      "project": "NXNW",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "A proof-of-concept list interface."\n    },\n    {\n      "projectUrl": "/#/work/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Custom solarized theme for Chrome Dev Tools"\n    },\n    {\n      "projectUrl": "/#/work/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "A quick & dirty Instagram hashtag viewer."\n    },\n    {\n      "projectUrl": "/#/work/fatrin-portfolio",\n      "project": "Fatrin Portfolio",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "Portfolio website for musical composer Fatrin"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/#/work/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "NodeJS-based post-receive hook for Gitolite."\n    },\n    {\n      "projectUrl": "/#/work/git-config",\n      "project": "Git Config",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "My personal .gitconfig file."\n    },\n    {\n      "projectUrl": "/#/work/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "My Sublime settings."\n    },\n    {\n      "projectUrl": "/#/work/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "My personal oh-my-zsh fork."\n    },\n    {\n      "projectUrl": "/#/work/jquery.scrollsync",\n      "project": "jQuery.scrollSync",\n      "projectImg": "//placehold.it/440x239.gif",\n      "projectDescription": "ScrollSync - a jQuery plugin."\n    }\n  ]\n}';});
+define('text!data/project.json',[],function () { return '{\n  "rokkan": [\n    {\n      "projectUrl": "/work/real-health",\n      "project": "Real Health",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "codePen": [\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        },\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        }\n      ],\n      "pullQuote": [\n        {\n          "quote": "..."\n        },\n        {\n          "quote": "..."\n        }\n      ]\n    },\n    {\n      "projectUrl": "/work/jetblue",\n      "project": "JetBlue",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "codePen": [\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        },\n        {\n          "url": "//codepen.io",\n          "title": "cool slider",\n          "description": "..."\n        }\n      ],\n      "pullQuote": [\n        {\n          "quote": "..."\n        },\n        {\n          "quote": "..."\n        }\n      ]\n    },\n    {\n      "projectUrl": "/work/ford-escape-routes-2012",\n      "project": "Ford Escape Routes 2012",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "The sophmore year release of Ford Escape Routes."\n    },\n    {\n      "projectUrl": "/work/caesars-palace-casino",\n      "project": "Caesars Palace Casino",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "Caesars Palace Booking Redesign"\n    },\n    {\n      "projectUrl": "/work/shophouse",\n      "project": "ShopHouse",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "Maintanence and Google Maps API for ShopHouse Kitchen."\n    },\n    {\n      "projectUrl": "/work/dish-network",\n      "project": "Dish Network",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "Dish Network 2013 redesign."\n    },\n    {\n      "projectUrl": "/work/canon-cinema-eos",\n      "project": "Canon Cinema EOS",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "Canon Cinema EOS product launch site."\n    }\n  ],\n  "talk": [\n    {\n      "projectUrl": "/work/svn-to-git",\n      "project": "SVN to Git",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "A git workflow primer given internally at Rokkan."\n    },\n    {\n      "projectUrl": "/work/introducing-grunt",\n      "project": "Introducing Grunt",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "A grunt workflow primer given internally at Rokkan."\n    }\n  ],\n  "personal": [\n    {\n      "projectUrl": "/work/nxnw",\n      "project": "NXNW",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "A proof-of-concept list interface."\n    },\n    {\n      "projectUrl": "/work/cdt-solarized-dark-theme",\n      "project": "CDT Solarized Dark Theme",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "Custom solarized theme for Chrome Dev Tools"\n    },\n    {\n      "projectUrl": "/work/593instagram",\n      "project": "#593Instagram",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "A quick & dirty Instagram hashtag viewer."\n    },\n    {\n      "projectUrl": "/work/fatrin-portfolio",\n      "project": "Fatrin Portfolio",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "Portfolio website for musical composer Fatrin"\n    }\n  ],\n  "tool": [\n    {\n      "projectUrl": "/work/gitolite-post-receive-hook",\n      "project": "Gitolite post-receive hook",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "NodeJS-based post-receive hook for Gitolite."\n    },\n    {\n      "projectUrl": "/work/git-config",\n      "project": "Git Config",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "My personal .gitconfig file."\n    },\n    {\n      "projectUrl": "/work/sublime-settings",\n      "project": "Sublime Settings",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "My Sublime settings."\n    },\n    {\n      "projectUrl": "/work/oh-my-zsh",\n      "project": "Oh-My-Zsh",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "My personal oh-my-zsh fork."\n    },\n    {\n      "projectUrl": "/work/jquery.scrollsync",\n      "project": "jQuery.scrollSync",\n      "projectImg": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",\n      "projectDescription": "ScrollSync - a jQuery plugin."\n    }\n  ]\n}';});
 
 define('src/NavModel',['require','backbone','text!data/project.json'],function (require) {
   var Backbone = require('backbone');
@@ -1036,7 +1067,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
       this.$el.html(NavTemplate(this.model.attributes));
       return this;
     },
-    open: function (evt) {
+    open: function () {
       var self = this;
       var height = parseInt(this.$('.nav-coffin__inner').outerHeight(true), 10);
       $('.main--hat').animate({
@@ -1048,7 +1079,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
         }
       });
     },
-    close: function (evt) {
+    close: function () {
       var self = this;
       $('.main--hat').animate({
         height: '' + 40 + 'px'
@@ -1065,6 +1096,131 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
   // nav.render();
 
   return NavView;
+
+});
+define('text!data/about.json',[],function () { return '{\n  "name": "Roger Steve Ruiz",\n  "title": "Senior Developer",\n  "employer": "Rokkan",\n  "biography": [\n    "I was a prepress manager for years. I prepared jobs for an HP Indigo 5000 which could do some serious printing. I no longer do anything in the printing world, but it still fascinates me.",\n    "I\'m currently a senior Developer at Rokkan. I build websites. I build interfaces. I build products. From concept to execution, I\'m interested in all aspects of user experience, interface design, and code optimizations. I\'ve worked with clients such as JetBlue, Caesars Casinos, WellPoint, Chipotle, Ford, and others.",\n    "I specialize in front-end web development. I\'m very passionate about the tools I use. I customize just about every little thing I can. I have years of web development experience, with a proven background in successfully handling all aspects of site development from initial design and architecture to site deployment."\n  ],\n  "skills": [\n    "HTML",\n    "CSS",\n    "Sass",\n    "Less",\n    "Javascript",\n    "jQuery",\n    "Backbone",\n    "RequireJS",\n    "QUnit",\n    "Node",\n    "Grunt",\n    "Bash",\n    "Z Shell",\n    "Git",\n    "SVN",\n    "Mac",\n    "Linux",\n    "Markdown",\n    "Vim",\n    "Sublime Text",\n    "BBEdit",\n    "/r[egx]{2,}p?/i",\n    "DevOps",\n    "Photoshop",\n    "Illustrator",\n    "InDesign"\n  ]\n}';});
+
+define('src/AboutModel',['require','backbone','text!data/about.json'],function (require) {
+  var Backbone = require('backbone');
+  var AboutData = JSON.parse(require('text!data/about.json'));
+
+  var AboutModel = Backbone.Model.extend({
+    initialize: function () {
+      this.set(AboutData);
+    }
+  });
+
+  return AboutModel;
+});
+define("hb!tmp/hero--about.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<h2 class=\"hero--about__name\">";
+  if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h2>\n<p class=\"hero--about__job\">";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n<p class=\"hero--about__employer\">";
+  if (stack1 = helpers.employer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.employer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n\n";
+  return buffer;
+  })});
+define("hb!tmp/project--about.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "";
+  return buffer;
+  }
+
+  buffer += "<h2 class=\"project--about__title\">About Me</h2>\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  stack2 = ((stack1 = helpers.paragraph || depth0.paragraph),stack1 ? stack1.call(depth0, depth0.biography, options) : helperMissing.call(depth0, "paragraph", depth0.biography, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n<h2 class=\"project--about__title\">Skills</h2>\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  stack2 = ((stack1 = helpers.list || depth0.list),stack1 ? stack1.call(depth0, depth0.skills, options) : helperMissing.call(depth0, "list", depth0.skills, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  return buffer;
+  })});
+define('src/AboutView',['require','jquery','underscore','backbone','handlebars','src/AboutModel','hb!tmp/hero--about.hbs','hb!tmp/project--about.hbs'],function (require) {
+
+  var $ = require('jquery');
+  var _ = require('underscore');
+  var Backbone = require('backbone');
+  var Handlebars = require('handlebars');
+  var AboutModel = require('src/AboutModel');
+  var HeroTemplate = require('hb!tmp/hero--about.hbs');
+  var ProjectTemplate = require('hb!tmp/project--about.hbs');
+
+  Handlebars.registerHelper('list', function(context, options) {
+    var ret = '<ul class="project--about__skills">';
+    for(var i=0, j=context.length; i<j; i++) {
+      ret = ret + '<li>' + context[i] + '</li>';
+    }
+    return ret + '</ul>';
+  });
+
+  Handlebars.registerHelper('paragraph', function(context, options) {
+    var ret = '';
+    for(var i=0, j=context.length; i<j; i++) {
+      ret = ret + '<p class="project--about__bio">' + context[i] + '</p>';
+    }
+    return ret;
+  });
+
+  var AboutHero = Backbone.View.extend({
+    initialize: function () {},
+    model: new AboutModel,
+    events: {},
+    el: '#js-hero',
+    onShow: function () {
+      // this.$el.show(300);
+    },
+    render: function() {
+      this.$el.addClass('hero--about');
+      this.$el.html(HeroTemplate(this.model.attributes));
+      return this;
+    },
+    close: function () {
+      this.$el.removeClass('hero--about');
+      this.$el.children().remove();
+      this.unbind();
+    }
+  });
+
+  var AboutProject = Backbone.View.extend({
+    initialize: function () {},
+    model: new AboutModel,
+    events: {},
+    el: '#js-project',
+    render: function() {
+      this.$el.addClass('project--about');
+      this.$el.html(ProjectTemplate(this.model.attributes));
+      return this;
+    },
+    close: function () {
+      this.$el.removeClass('project--about');
+      this.$el.children().remove();
+      this.unbind();
+    }
+  });
+
+  return {
+    hero: AboutHero,
+    project: AboutProject
+  };
 
 });
 define('src/ProjectModel',['require','backbone','text!data/project.json'],function (require) {
@@ -1084,7 +1240,7 @@ define('src/ProjectModel',['require','backbone','text!data/project.json'],functi
 
   return ProjectModel;
 });
-define("hb!tmp/project.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+define("hb!tmp/project--list.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
@@ -1092,7 +1248,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<div class=\"project\">\n  <h4 class=\"project__title\"><a href=\"";
+  buffer += "\n<div class=\"project--list__item\">\n  <h4 class=\"project--list__title\"><a href=\"";
   if (stack1 = helpers.projectUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.projectUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -1100,11 +1256,11 @@ function program1(depth0,data) {
   if (stack1 = helpers.project) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.project; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></h4>\n  <p class=\"project__description\">";
+    + "</a></h4>\n  <p class=\"project--list__description\">";
   if (stack1 = helpers.projectDescription) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.projectDescription; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n  <div  class=\"project__img\">\n    <img src=\"";
+    + "</p>\n  <div  class=\"project--list__img\">\n    <img src=\"";
   if (stack1 = helpers.projectImg) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.projectImg; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -1125,40 +1281,48 @@ function program1(depth0,data) {
   if(stack1 || stack1 === 0) { buffer += stack1; }
   return buffer;
   })});
-define('src/ProjectListView',['require','jquery','underscore','backbone','handlebars','src/ProjectModel','hb!tmp/project.hbs'],function (require) {
+define('src/ProjectListView',['require','jquery','underscore','backbone','handlebars','src/ProjectModel','hb!tmp/project--list.hbs'],function (require) {
 
   var $ = require('jquery');
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
   var ProjectModel = require('src/ProjectModel');
-  var ProjectTemplate = require('hb!tmp/project.hbs');
+  var ProjectTemplate = require('hb!tmp/project--list.hbs');
 
   var ProjectListView = Backbone.View.extend({
     initialize: function () {},
     model: new ProjectModel,
     events: {},
-    el: '#js-project-list',
+    el: '#js-project',
     render: function() {
+      this.$el.addClass('project--list');
       this.$el.html(ProjectTemplate(this.model.attributes));
       return this;
+    },
+    close: function () {
+      this.$el.removeClass('project--list');
+      this.$el.children().remove();
+      this.unbind();
+      
     }
   });
-
-  // var project = new ProjectView;
-  // project.render();
 
   return ProjectListView;
 
 });
-define('src/router',['require','jquery','backbone','src/HeroView','src/NavView','src/ProjectListView'],function (require) {
+define('src/router',['require','jquery','underscore','backbone','src/RegionManager','src/HeroView','src/NavView','src/AboutView','src/ProjectListView'],function (require) {
   var $ = require('jquery');
-  // var _ = require('underscore');
+  var _ = require('underscore');
   var Backbone = require('backbone');
+  var RegionManager = require('src/RegionManager');
   var HeroView = require('src/HeroView');
   var NavView = require('src/NavView');
+  var AboutView = require('src/AboutView');
   var ProjectListView = require('src/ProjectListView');
 
+  var HeroManager = new RegionManager;
+  var ProjectManager = new RegionManager;
 
   var Router = Backbone.Router.extend({
 
@@ -1173,20 +1337,19 @@ define('src/router',['require','jquery','backbone','src/HeroView','src/NavView',
   var routes = new Router;
 
   routes.on('route:showAbout', function () {
-
+    HeroManager.show(new AboutView.hero);
+    ProjectManager.show(new AboutView.project);
   });
 
   routes.on('route:showDefault', function () {
-    var heroView = new HeroView;
-    var projectListView = new ProjectListView;
-    heroView.render();
-    projectListView.render();
+    HeroManager.show(new HeroView);
+    ProjectManager.show(new ProjectListView);
   });
 
   var navView = new NavView;
 
   Backbone.history.start({
-    pushState: false
+    pushState: Modernizr.history
   });
 
   return function () {};
