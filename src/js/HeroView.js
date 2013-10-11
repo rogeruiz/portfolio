@@ -21,16 +21,21 @@ define(function (require) {
       this.startUpdate();
       return this;
     },
-    startUpdate: function (evt) {
+    close: function () {
+      this.stopUpdate();
+      this.$el.children().remove();
+      this.unbind();
+    },
+    startUpdate: function () {
       var self = this;
-      window.HeroInterval = setInterval(function () {
+      this.interval = setInterval(function () {
         self.update();
       }, 5000);
     },
-    stopUpdate: function (evt) {
-      clearInterval(window.HeroInterval);
+    stopUpdate: function () {
+      window.clearInterval(this.interval);
     },
-    update: function (evt) {
+    update: function () {
       var total = this.$('.hero__title').length;
       var index = this.$('.is-active').index();
       var next = index + 1 < total ? index + 1 : 0;
