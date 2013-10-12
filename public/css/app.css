@@ -715,14 +715,14 @@ a:visited:hover {
 .project--list__title {
   margin-bottom: 0;
 }
-.project--list__img {
+.project__img {
   width: 90%;
   max-width: 440px;
   display: block;
   border: 10px solid white;
   margin: 0 auto;
 }
-.project--list__img img {
+.project__img img {
   max-width: 100%;
 }
 /* ==========================================================================
@@ -764,6 +764,13 @@ a:visited:hover {
 /* ==========================================================================
    Single Item Styles
    ========================================================================== */
+.project--view__codepen {
+  width: 100%;
+  max-width: 440px;
+  height: 300px;
+  display: block;
+  margin: 0 auto;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
