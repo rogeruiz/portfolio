@@ -7,18 +7,18 @@ define(function (require) {
   var NavView = require('src/NavView');
   var AboutView = require('src/AboutView');
   var ProjectListView = require('src/ProjectListView');
+  var ProjectView = require('src/ProjectView');
+  var ProjectModel = require('src/ProjectModel');
 
   var HeroManager = new RegionManager;
   var ProjectManager = new RegionManager;
 
   var Router = Backbone.Router.extend({
-
     routes: {
       'about': 'showAbout',
-      'work/:project': 'showProject',
+      'work/:type/:project': 'showProject',
       '*actions': 'showDefault'
     }
-
   });
 
   var routes = new Router;
@@ -31,6 +31,17 @@ define(function (require) {
   routes.on('route:showDefault', function () {
     HeroManager.show(new HeroView);
     ProjectManager.show(new ProjectListView);
+  });
+
+  routes.on('route:showProject', function (type, project) {
+    HeroManager.show(new ProjectView.hero({
+      type: type,
+      project: project
+    }));
+    ProjectManager.show(new ProjectView.project({
+      type: type,
+      project: project
+    }));
   });
 
   var navView = new NavView;
