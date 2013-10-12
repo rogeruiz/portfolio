@@ -1,36 +1,36 @@
 {{#each rokkan}}
 <div class="project--list__item">
-  <h4 class="project--list__title"><a href="{{projectUrl}}">{{project}}</a></h4>
-  <p class="project--list__description">{{projectDescription}}</p>
-  <div  class="project--list__img">
-    <img src="{{projectImg}}" alt="">
+  <h4 class="project--list__title"><a href="{{url}}">{{name}}</a></h4>
+  <p class="project--list__description">{{description}}</p>
+  <div  class="project__img">
+    <img src="{{project.leade.image}}" alt="">
   </div>
 </div>
 {{/each}}
-{{#each talk}}
+{{#each talks}}
 <div class="project--list__item">
-  <h4 class="project--list__title"><a href="{{projectUrl}}">{{project}}</a></h4>
-  <p class="project--list__description">{{projectDescription}}</p>
-  <div  class="project--list__img">
-    <img src="{{projectImg}}" alt="">
+  <h4 class="project--list__title"><a href="{{url}}">{{name}}</a></h4>
+  <p class="project--list__description">{{description}}</p>
+  <div  class="project__img">
+    <img src="{{project.leade.image}}" alt="">
   </div>
 </div>
 {{/each}}
 {{#each personal}}
 <div class="project--list__item">
-  <h4 class="project--list__title"><a href="{{projectUrl}}">{{project}}</a></h4>
-  <p class="project--list__description">{{projectDescription}}</p>
-  <div  class="project--list__img">
-    <img src="{{projectImg}}" alt="">
+  <h4 class="project--list__title"><a href="{{url}}">{{name}}</a></h4>
+  <p class="project--list__description">{{description}}</p>
+  <div  class="project__img">
+    <img src="{{project.leade.image}}" alt="">
   </div>
 </div>
 {{/each}}
-{{#each tool}}
+{{#each tools}}
 <div class="project--list__item">
-  <h4 class="project--list__title"><a href="{{projectUrl}}">{{project}}</a></h4>
-  <p class="project--list__description">{{projectDescription}}</p>
-  <div  class="project--list__img">
-    <img src="{{projectImg}}" alt="">
+  <h4 class="project--list__title"><a href="{{url}}">{{name}}</a></h4>
+  <p class="project--list__description">{{description}}</p>
+  <div  class="project__img">
+    <img src="{{project.leade.image}}" alt="">
   </div>
 </div>
 {{/each}}
