@@ -6,9 +6,9 @@ define(function (require) {
     initialize: function () {
       this.set({
         rokkan: NavData.rokkan,
-        talk: NavData.talk,
+        talks: NavData.talks,
         personal: NavData.personal,
-        tool: NavData.tool
+        tools: NavData.tools
       });
     }
   });
