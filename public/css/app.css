@@ -602,6 +602,17 @@ a:visited:hover {
   color: #feffff;
   padding: 10px;
 }
+.main--shoe {
+  min-height: 40px;
+  background: #d1e2e8;
+}
+.main--shoe__inner {
+  padding: 10px;
+}
+.main--shoe__inner a {
+  display: block;
+  text-align: center;
+}
 /* ==========================================================================
    Navigation Styles
    ========================================================================== */
@@ -654,8 +665,10 @@ a:visited:hover {
    Hero Styles
    ========================================================================== */
 .hero {
+  position: relative;
+  overflow: hidden;
   background: #feffff;
-  padding: 20px 20px;
+  padding: 20px 20px 20px;
   *zoom: 1;
   /* 3 */
 
@@ -704,26 +717,57 @@ a:visited:hover {
    About Styles
    ========================================================================== */
 /* ==========================================================================
+   Project Styles
+   ========================================================================== */
+.hero__title--project {
+  font-family: 'Merriweather', serif;
+  text-align: left;
+  font-size: 24px;
+  line-height: 1.15;
+  margin: 15% 0 0 -20px;
+  padding: 20px 20px 20px 40px;
+  position: absolute !important;
+  white-space: pre-line;
+  background: rgba(254, 255, 255, 0.9);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.hero__img-mask {
+  position: relative;
+  width: 80%;
+  min-height: 250px;
+  margin: 0 auto -20px;
+  overflow: hidden;
+}
+.hero__img--project {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+/* ==========================================================================
    Projects Styles
    ========================================================================== */
 .project {
   padding: 20px 20px;
+}
+.project__img {
+  width: 90%;
+  max-width: 440px;
+  display: block;
+  border: 10px solid #feffff;
+  margin: 0 auto;
+}
+.project__img img {
+  max-width: 100%;
+}
+.project__description {
+  font-size: 13px;
 }
 /* ==========================================================================
    List Styles
    ========================================================================== */
 .project--list__title {
   margin-bottom: 0;
-}
-.project__img {
-  width: 90%;
-  max-width: 440px;
-  display: block;
-  border: 10px solid white;
-  margin: 0 auto;
-}
-.project__img img {
-  max-width: 100%;
 }
 /* ==========================================================================
    About Styles
@@ -764,6 +808,14 @@ a:visited:hover {
 /* ==========================================================================
    Single Item Styles
    ========================================================================== */
+.project--view__quote {
+  font-family: 'Lato', serif;
+  text-align: left;
+  font-size: 14px;
+  color: #0059b2;
+  width: 90%;
+  margin: 0.5em auto;
+}
 .project--view__codepen {
   width: 100%;
   max-width: 440px;

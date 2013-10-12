@@ -6,20 +6,15 @@
       "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",
       "project": {
         "title": "Real Health",
-        "leade": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+        "lede": {
+          "image": "/img/lede--real-health.jpg",
+          "copy": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why healthcare matters to them and suggests healthcare providers to connect with if they live in one of 14 states.",
+          "quote": "Stories about Real Health featuring four influencers."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--real-health.jpg"
         },
-        "conclusion": "...conclusion...",
-        "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
-        }
+        "conclusion": "###"
       }
     },
     "jetblue": {
@@ -28,7 +23,7 @@
       "description": "JetBlue 2012 / TrueBlue 2013 redesign.",
       "project": {
         "title": "JetBlue",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -50,7 +45,7 @@
       "description": "The sophmore year release of Ford Escape Routes.",
       "project": {
         "title": "Ford Escape Routes 2012",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -72,7 +67,7 @@
       "description": "Caesars Palace Booking Redesign",
       "project": {
         "title": "Caesars Palace Casino",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -94,7 +89,7 @@
       "description": "Maintanence and Google Maps API for ShopHouse Kitchen.",
       "project": {
         "title": "ShopHouse",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -116,7 +111,7 @@
       "description": "Dish Network 2013 redesign.",
       "project": {
         "title": "Dish Network",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -138,7 +133,7 @@
       "description": "Canon Cinema EOS product launch site.",
       "project": {
         "title": "Canon Cinema EOS",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -162,7 +157,7 @@
       "description": "A git workflow primer given internally at Rokkan.",
       "project": {
         "title": "SVN to Git",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -184,20 +179,15 @@
       "description": "A grunt workflow primer given internally at Rokkan.",
       "project": {
         "title": "Introducing Grunt",
-        "leade": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+        "lede": {
+          "image": "/img/lede--introducing-grunt.jpg",
+          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt could be introduced into our workflow and that it is runs on top of NodeJS.",
+          "quote": "Change is hard."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--introducing-grunt.jpg"
         },
-        "conclusion": "...conclusion...",
-        "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
-        }
+        "conclusion": "foo"
       }
     }
   },
@@ -208,7 +198,7 @@
       "description": "A proof-of-concept list interface.",
       "project": {
         "title": "NXNW",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -230,7 +220,7 @@
       "description": "Custom solarized theme for Chrome Dev Tools",
       "project": {
         "title": "CDT Solarized Dark Theme",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -252,7 +242,7 @@
       "description": "A quick & dirty Instagram hashtag viewer.",
       "project": {
         "title": "#593Instagram",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -274,7 +264,7 @@
       "description": "Portfolio website for musical composer Fatrin",
       "project": {
         "title": "Fatrin Portfolio",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -298,7 +288,7 @@
       "description": "NodeJS-based post-receive hook for Gitolite.",
       "project": {
         "title": "Gitolite post-receive hook",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -320,7 +310,7 @@
       "description": "My personal .gitconfig file.",
       "project": {
         "title": "Git Config",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -342,7 +332,7 @@
       "description": "My Sublime settings.",
       "project": {
         "title": "Sublime Settings",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -364,7 +354,7 @@
       "description": "My personal oh-my-zsh fork.",
       "project": {
         "title": "Oh-My-Zsh",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
@@ -386,7 +376,7 @@
       "description": "ScrollSync - a jQuery plugin.",
       "project": {
         "title": "jQuery.scrollSync",
-        "leade": {
+        "lede": {
           "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
