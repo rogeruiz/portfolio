@@ -17,7 +17,7 @@
   border-bottom: 1px solid @cl-tertiary-right;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  text-align: center;
+  text-align: left;
   &:last-child {
     border-bottom: 0;
     margin-bottom: 0;
@@ -25,19 +25,24 @@
   }
   > a {
     display: block;
+    padding: 5px 0;
   }
+}
+
+.nav__title {
+  text-align: center;
+  color: @cl-quote;
+  line-height: 0.5em;
+  margin-top: 0;
 }
 
 .nav-coffin {
 }
 
 .nav-coffin__inner {
-  // position: absolute;
   background-color: @cl-secondary-left;
   width: 100%;
-  // top: -999px; /* Hidden by default. */
-  // left: -999px;
-  padding: 30px 10px 10px;
+  padding: 10px;
 }
 
 .main--hat__contact {
@@ -49,12 +54,19 @@
 
 .nav-coffin__toggler {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
   z-index: 5;
-  background: transparent url(../img/hamburger@2x.png) center right no-repeat;
+  background: @cl-tertiary-left url(../img/hamburger@2x.png) 12px 10px no-repeat;
   background-size: 20px 20px;
-  width: 44px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  -o-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in;
+  &.is-open {
+    background-color: @cl-secondary-left;
+  }
 }

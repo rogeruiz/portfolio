@@ -1,14 +1,14 @@
 {
   "rokkan": {
     "real-health": {
-      "url": "/work/rokkan/real-health",
+      "url": "/rokkan/real-health",
       "name": "Real Health",
       "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",
       "project": {
         "title": "Real Health",
         "lede": {
           "image": "/img/lede--real-health.jpg",
-          "copy": "HTML, CSS, JS, PHP, NodeJS",
+          "copy": "HTML, CSS, JS, Twig, PHP, NodeJS",
           "quote": "Stories about Real Health"
         },
         "summary": {
@@ -19,36 +19,32 @@
       }
     },
     "jetblue": {
-      "url": "/work/rokkan/jetblue",
+      "url": "/rokkan/jetblue",
       "name": "JetBlue",
       "description": "JetBlue 2012 / TrueBlue 2013 redesign.",
       "project": {
         "title": "JetBlue",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/lede--jetblue.jpg",
+          "copy": "HTML, CSS, JS, RequireJS",
+          "quote": "A completely new way to book flights"
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--jetblue.jpg",
+          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign of their website. Since then, I've worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."
         },
-        "conclusion": "...conclusion...",
-        "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
-        }
+        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits later, I've learn a lot about working with offshore teams, jQuery UI, Compass project integration, and RequireJS."
       }
     },
     "ford-escape-routes-2012": {
-      "url": "/work/rokkan/ford-escape-routes-2012",
+      "url": "/rokkan/ford-escape-routes-2012",
       "name": "Ford Escape Routes 2012",
       "description": "The sophmore year release of Ford Escape Routes.",
       "project": {
         "title": "Ford Escape Routes 2012",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, JS, Twig",
           "quote": "...quote..."
         },
         "summary": {
@@ -63,14 +59,14 @@
       }
     },
     "caesars-palace-casino": {
-      "url": "/work/rokkan/caesars-palace-casino",
+      "url": "/rokkan/caesars-palace-casino",
       "name": "Caesars Palace Casino",
       "description": "Caesars Palace Booking Redesign",
       "project": {
         "title": "Caesars Palace Casino",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, JS, Compass, Middleman",
           "quote": "...quote..."
         },
         "summary": {
@@ -85,14 +81,14 @@
       }
     },
     "shophouse": {
-      "url": "/work/rokkan/shophouse",
+      "url": "/rokkan/shophouse",
       "name": "ShopHouse",
       "description": "Maintanence and Google Maps API for ShopHouse Kitchen.",
       "project": {
         "title": "ShopHouse",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, JS, Google Maps API",
           "quote": "...quote..."
         },
         "summary": {
@@ -107,14 +103,14 @@
       }
     },
     "dish-network": {
-      "url": "/work/rokkan/dish-network",
+      "url": "/rokkan/dish-network",
       "name": "Dish Network",
       "description": "Dish Network 2013 redesign.",
       "project": {
         "title": "Dish Network",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, JS",
           "quote": "...quote..."
         },
         "summary": {
@@ -129,14 +125,14 @@
       }
     },
     "canon-cinema-eos": {
-      "url": "/work/rokkan/canon-cinema-eos",
+      "url": "/rokkan/canon-cinema-eos",
       "name": "Canon Cinema EOS",
       "description": "Canon Cinema EOS product launch site.",
       "project": {
         "title": "Canon Cinema EOS",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, JS",
           "quote": "...quote..."
         },
         "summary": {
@@ -153,14 +149,14 @@
   },
   "talks": {
     "svn-to-git": {
-      "url": "/work/talks/svn-to-git",
+      "url": "/talks/svn-to-git",
       "name": "SVN to Git",
       "description": "A git workflow primer given internally at Rokkan.",
       "project": {
         "title": "SVN to Git",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, RevealJS",
           "quote": "...quote..."
         },
         "summary": {
@@ -175,18 +171,19 @@
       }
     },
     "introducing-grunt": {
-      "url": "/work/talks/introducing-grunt",
+      "url": "/talks/introducing-grunt",
       "name": "Introducing Grunt",
       "description": "A grunt workflow primer given internally at Rokkan.",
       "project": {
         "title": "Introducing Grunt",
         "lede": {
           "image": "/img/lede--introducing-grunt.jpg",
-          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt could be introduced into our workflow and that it is runs on top of NodeJS.",
+          "copy": "HTML, CSS, JS, BespokeJS",
           "quote": "Change is hard."
         },
         "summary": {
-          "image": "/img/summary--introducing-grunt.jpg"
+          "image": "/img/summary--introducing-grunt.jpg",
+          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt could be introduced into our workflow and that it is runs on top of NodeJS."
         },
         "conclusion": "foo"
       }
@@ -194,14 +191,14 @@
   },
   "personal": {
     "nxnw": {
-      "url": "/work/personal/nxnw",
+      "url": "/personal/nxnw",
       "name": "NXNW",
       "description": "A proof-of-concept list interface.",
       "project": {
         "title": "NXNW",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, JS, RequireJS, Hogan",
           "quote": "...quote..."
         },
         "summary": {
@@ -216,14 +213,14 @@
       }
     },
     "cdt-solarized-dark-theme": {
-      "url": "/work/personal/cdt-solarized-dark-theme",
+      "url": "/personal/cdt-solarized-dark-theme",
       "name": "CDT Solarized Dark Theme",
       "description": "Custom solarized theme for Chrome Dev Tools",
       "project": {
         "title": "CDT Solarized Dark Theme",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "Compass, Chrome Canary",
           "quote": "...quote..."
         },
         "summary": {
@@ -238,14 +235,14 @@
       }
     },
     "593instagram": {
-      "url": "/work/personal/593instagram",
+      "url": "/personal/593instagram",
       "name": "#593Instagram",
       "description": "A quick & dirty Instagram hashtag viewer.",
       "project": {
         "title": "#593Instagram",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, JS",
           "quote": "...quote..."
         },
         "summary": {
@@ -260,14 +257,14 @@
       }
     },
     "fatrin-portfolio": {
-      "url": "/work/personal/fatrin-portfolio",
+      "url": "/personal/fatrin-portfolio",
       "name": "Fatrin Portfolio",
       "description": "Portfolio website for musical composer Fatrin",
       "project": {
         "title": "Fatrin Portfolio",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "HTML, CSS, JS, PHP, PerchCMS",
           "quote": "...quote..."
         },
         "summary": {
@@ -284,14 +281,14 @@
   },
   "tools": {
     "gitolite-post-receive-hook": {
-      "url": "/work/tools/gitolite-post-receive-hook",
+      "url": "/tools/gitolite-post-receive-hook",
       "name": "Gitolite post-receive hook",
       "description": "NodeJS-based post-receive hook for Gitolite.",
       "project": {
         "title": "Gitolite post-receive hook",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "NodeJS, Git, Bash",
           "quote": "...quote..."
         },
         "summary": {
@@ -306,14 +303,14 @@
       }
     },
     "git-config": {
-      "url": "/work/tools/git-config",
+      "url": "/tools/git-config",
       "name": "Git Config",
       "description": "My personal .gitconfig file.",
       "project": {
         "title": "Git Config",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "Git",
           "quote": "...quote..."
         },
         "summary": {
@@ -328,14 +325,14 @@
       }
     },
     "sublime-settings": {
-      "url": "/work/tools/sublime-settings",
+      "url": "/tools/sublime-settings",
       "name": "Sublime Settings",
       "description": "My Sublime settings.",
       "project": {
         "title": "Sublime Settings",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "JSON",
           "quote": "...quote..."
         },
         "summary": {
@@ -350,14 +347,14 @@
       }
     },
     "oh-my-zsh": {
-      "url": "/work/tools/oh-my-zsh",
+      "url": "/tools/oh-my-zsh",
       "name": "Oh-My-Zsh",
       "description": "My personal oh-my-zsh fork.",
       "project": {
         "title": "Oh-My-Zsh",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "Zsh",
           "quote": "...quote..."
         },
         "summary": {
@@ -372,14 +369,14 @@
       }
     },
     "jquery.scrollsync": {
-      "url": "/work/tools/jquery.scrollsync",
+      "url": "/tools/jquery.scrollsync",
       "name": "jQuery.scrollSync",
       "description": "ScrollSync - a jQuery plugin.",
       "project": {
         "title": "jQuery.scrollSync",
         "lede": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
+          "copy": "JS, QUnit",
           "quote": "...quote..."
         },
         "summary": {

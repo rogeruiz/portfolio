@@ -16,7 +16,7 @@ define(function (require) {
   var Router = Backbone.Router.extend({
     routes: {
       'about': 'showAbout',
-      'work/:type/:project': 'showProject',
+      ':type/:project': 'showProject',
       '*actions': 'showDefault'
     }
   });

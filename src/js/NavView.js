@@ -31,12 +31,14 @@ define(function (require) {
           height: '' + (height) + 'px'
         }, {
           duration: 'fast',
-          step: function () {
-            self.isAnimating = true;
+          step: function (now, fx) {
+            if (fx.pos === 0) {
+              self.isAnimating = true;
+              self.$('.nav-coffin__toggler').addClass('is-open');
+              self.$('.nav-coffin__toggler').removeClass('is-closed');
+            }
           },
           complete: function () {
-            self.$('.nav-coffin__toggler').addClass('is-open');
-            self.$('.nav-coffin__toggler').removeClass('is-closed');
             self.isAnimating = false;
           }
         });
@@ -49,11 +51,13 @@ define(function (require) {
           height: '40px'
         }, {
           duration: 'fast',
-          step: function () {
-            self.isAnimating = true;
+          step: function (now, fx) {
+            if (fx.pos === 0) {
+              self.isAnimating = true;
+              self.$('.nav-coffin__toggler').removeClass('is-open');
+            }
           },
           complete: function () {
-            self.$('.nav-coffin__toggler').removeClass('is-open');
             self.$('.nav-coffin__toggler').addClass('is-closed');
             self.isAnimating = false;
           }
