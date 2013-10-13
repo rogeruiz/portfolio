@@ -17,7 +17,7 @@
   border-bottom: 1px solid @cl-tertiary-right;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  text-align: left;
+  text-align: center;
   &:last-child {
     border-bottom: 0;
     margin-bottom: 0;
@@ -31,9 +31,9 @@
 
 .nav__title {
   text-align: center;
-  color: @cl-quote;
+  color: fade(@cl-tldr, 50%);
   line-height: 0.5em;
-  margin-top: 0;
+  margin: 0.5em auto 0.75em;
 }
 
 .nav-coffin {
@@ -42,7 +42,9 @@
 .nav-coffin__inner {
   background-color: @cl-secondary-left;
   width: 100%;
+  margin-top: 10px;
   padding: 10px;
+  border-top: 1px solid @cl-tertiary-right;
 }
 
 .main--hat__contact {
@@ -57,7 +59,7 @@
   top: 0;
   right: 0;
   z-index: 5;
-  background: @cl-tertiary-left url(../img/hamburger@2x.png) 12px 10px no-repeat;
+  background: @cl-tertiary-right url(../img/hamburger@2x.png) 12px 10px no-repeat;
   background-size: 20px 20px;
   width: 40px;
   height: 40px;
@@ -67,6 +69,6 @@
   -o-transition: background-color 0.25s ease-in;
   transition: background-color 0.25s ease-in;
   &.is-open {
-    background-color: @cl-secondary-left;
+    background-color: transparent;
   }
 }

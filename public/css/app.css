@@ -633,7 +633,7 @@ b {
   border-bottom: 1px solid #e5fff1;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  text-align: left;
+  text-align: center;
 }
 .nav:last-child {
   border-bottom: 0;
@@ -646,14 +646,16 @@ b {
 }
 .nav__title {
   text-align: center;
-  color: #0072e5;
+  color: rgba(62, 108, 124, 0.5);
   line-height: 0.5em;
-  margin-top: 0;
+  margin: 0.5em auto 0.75em;
 }
 .nav-coffin__inner {
   background-color: #d1e2e8;
   width: 100%;
+  margin-top: 10px;
   padding: 10px;
+  border-top: 1px solid #e5fff1;
 }
 .main--hat__contact {
   margin: 0 auto;
@@ -666,7 +668,7 @@ b {
   top: 0;
   right: 0;
   z-index: 5;
-  background: #e5f2ff url(../img/hamburger@2x.png) 12px 10px no-repeat;
+  background: #e5fff1 url(../img/hamburger@2x.png) 12px 10px no-repeat;
   background-size: 20px 20px;
   width: 40px;
   height: 40px;
@@ -677,7 +679,7 @@ b {
   transition: background-color 0.25s ease-in;
 }
 .nav-coffin__toggler.is-open {
-  background-color: #d1e2e8;
+  background-color: transparent;
 }
 /* ==========================================================================
    Hero Styles
