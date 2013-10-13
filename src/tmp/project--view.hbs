@@ -1,5 +1,9 @@
-{{#if lede.copy.length}}<p class="project__description">{{lede.copy}}</p>{{/if}}
-{{#if summary.image.length}}<img src="{{summary.image}}" alt="" class="project__img">{{/if}}
+{{#if lede.copy.length}}<p class="project__description"><b>TL;DR</b>: {{lede.copy}}</p>{{/if}}
+{{#if summary.image.length}}
+<div class="img-mask img-mask--project">
+  <img src="{{summary.image}}" alt="" class="project__img project--view__img">
+</div>
+{{/if}}
 {{#if lede.quote.length}}<blockquote class="project--view__quote">{{lede.quote}}</blockquote>{{/if}}
 {{#if summary.copy.length}}<p class="project__description">{{summary.copy}}</p>{{/if}}
 {{#if codepen.url.length}}<iframe class="project--view__codepen" src="{{codepen.url}}" seamless frameborder="0"></iframe>{{/if}}

@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .project {
-  padding: 20px 20px;
+  padding: 20px;
 }
 
 .project__img {
@@ -63,17 +63,27 @@
    ========================================================================== */
 .project--view {}
 
+.img-mask--project {
+  
+}
+.project--view__img {
+  width: 100%;
+  border: 0;
+}
+
 .project--view__quote {
   font-family: @ff-lato;
   text-align: left;
   font-size: 14px;
+  border-top: 2px solid @cl-quote;
   color: @cl-quote;
-  width: 90%;
-  margin: 0.5em auto;
+  width: 50%;
+  margin: 1.2em auto 0.5em 1em;
+  float: right;
 }
 
 .project--view__codepen {
-  width: 100%;
+  width: 90%;
   max-width: 440px;
   height: 300px;
   display: block;

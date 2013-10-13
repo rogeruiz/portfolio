@@ -8,13 +8,14 @@
         "title": "Real Health",
         "lede": {
           "image": "/img/lede--real-health.jpg",
-          "copy": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why healthcare matters to them and suggests healthcare providers to connect with if they live in one of 14 states.",
-          "quote": "Stories about Real Health featuring four influencers."
+          "copy": "HTML, CSS, JS, PHP, NodeJS",
+          "quote": "Stories about Real Health"
         },
         "summary": {
-          "image": "/img/summary--real-health.jpg"
+          "image": "/img/summary--real-health.jpg",
+          "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."
         },
-        "conclusion": "###"
+        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why healthcare matters to them and suggests healthcare providers to connect with if they live in one of 14 states."
       }
     },
     "jetblue": {
@@ -24,12 +25,12 @@
       "project": {
         "title": "JetBlue",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -46,12 +47,12 @@
       "project": {
         "title": "Ford Escape Routes 2012",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -68,12 +69,12 @@
       "project": {
         "title": "Caesars Palace Casino",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -90,12 +91,12 @@
       "project": {
         "title": "ShopHouse",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -112,12 +113,12 @@
       "project": {
         "title": "Dish Network",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -134,12 +135,12 @@
       "project": {
         "title": "Canon Cinema EOS",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -158,12 +159,12 @@
       "project": {
         "title": "SVN to Git",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -199,12 +200,12 @@
       "project": {
         "title": "NXNW",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -221,12 +222,12 @@
       "project": {
         "title": "CDT Solarized Dark Theme",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -243,12 +244,12 @@
       "project": {
         "title": "#593Instagram",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -265,12 +266,12 @@
       "project": {
         "title": "Fatrin Portfolio",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -289,12 +290,12 @@
       "project": {
         "title": "Gitolite post-receive hook",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -311,12 +312,12 @@
       "project": {
         "title": "Git Config",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -333,12 +334,12 @@
       "project": {
         "title": "Sublime Settings",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -355,12 +356,12 @@
       "project": {
         "title": "Oh-My-Zsh",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
@@ -377,12 +378,12 @@
       "project": {
         "title": "jQuery.scrollSync",
         "lede": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },
         "summary": {
-          "image": "//placehold.it/440x239/e3e3e3/434343/&text=FPO",
+          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
           "copy": "...copy...",
           "quote": "...quote..."
         },

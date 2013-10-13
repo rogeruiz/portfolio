@@ -58,26 +58,34 @@
    ========================================================================== */
 
 .hero__title--project {
-  font-family: @ff-merriweather;
-  text-align: left;
-  font-size: 24px;
-  line-height: 1.15;
-  margin: 15% 0 0 -20px;
-  padding: 20px 20px 20px 40px;
   position: absolute !important;
+  bottom: 20px;
+  font-family: @ff-lato;
+  font-weight: 900;
+  text-align: left;
+  font-size: 18px;
+  text-align: left;
+  width: 100%;
+  margin: 0 0 0 -20px;
+  padding: 0;
   white-space: pre-line;
-  background: fade(@cl-main, 90%);
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  background: fade(@cl-main, 80%);
+  color: @cl-text;
+  > h2 {
+    margin: 0 0 0 20px;
+    line-height: 1;
+  }
 }
 
-.hero__img-mask {
+.img-mask {
   position: relative;
-  width: 80%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.img-mask--hero {
   min-height: 250px;
   margin: 0 auto -20px;
-  overflow: hidden;
-  // opacity: 0.25;
 }
 
 .hero__img--project {
