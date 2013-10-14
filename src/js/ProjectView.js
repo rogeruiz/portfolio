@@ -10,10 +10,11 @@ define(function (require) {
 
   var ProjectView = Backbone.View.extend({
     initialize: function (options) {
+      this.vent = options.vent;
       this.type = options.type;
       this.project = options.project;
     },
-    model: new ProjectModel,
+    model: new ProjectModel(),
     events: {},
     el: '#js-project',
     render: function() {
@@ -31,10 +32,11 @@ define(function (require) {
 
   var ProjectHeroView = Backbone.View.extend({
     initialize: function (options) {
+      this.vent = options.vent;
       this.type = options.type;
       this.project = options.project;
     },
-    model: new ProjectModel,
+    model: new ProjectModel(),
     events: {},
     el: '#js-hero',
     onShow: function () {

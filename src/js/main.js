@@ -1,4 +1,3 @@
-// Initialize the portfolio router
-
-
-require(['src/router']);
+// Initialize the Router
+// Handles everything...
+require(['src/Router']);

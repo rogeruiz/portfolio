@@ -7,13 +7,16 @@
 }
 
 .project__img {
-  width: 90%;
-  max-width: 440px;
+  width: 100%;
   display: block;
   border: 10px solid @cl-main;
   margin: 0 auto;
-  img {
+  > img {
     max-width: 100%;
+  }
+  .project--list & {
+    overflow: hidden;
+    max-height: 440px;
   }
 }
 
@@ -42,6 +45,7 @@
 }
 .project--about__skills {
   list-style: none;
+  padding: 0;
   .clearfix;
   > li {
     float: left;

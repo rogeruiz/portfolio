@@ -8,8 +8,10 @@ define(function (require) {
   var ProjectTemplate = require('hb!tmp/project--list.hbs');
 
   var ProjectListView = Backbone.View.extend({
-    initialize: function () {},
-    model: new ProjectModel,
+    initialize: function (options) {
+      this.vent = options.vent;
+    },
+    model: new ProjectModel(),
     events: {},
     el: '#js-project',
     render: function() {

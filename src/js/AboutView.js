@@ -26,7 +26,7 @@ define(function (require) {
 
   var AboutHero = Backbone.View.extend({
     initialize: function () {},
-    model: new AboutModel,
+    model: new AboutModel(),
     events: {},
     el: '#js-hero',
     onShow: function () {
@@ -46,7 +46,7 @@ define(function (require) {
 
   var AboutProject = Backbone.View.extend({
     initialize: function () {},
-    model: new AboutModel,
+    model: new AboutModel(),
     events: {},
     el: '#js-project',
     render: function() {

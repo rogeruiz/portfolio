@@ -30,7 +30,14 @@ define("backbone", ["underscore","jquery"], (function (global) {
     };
 }(this)));
 
-define('src/RegionManager',['jquery', 'backbone'], function ($, Backbone) {
+define('src/Events',['require','underscore','backbone'],function (require) {
+
+  var _ = require('underscore');
+  var Backbone = require('backbone');
+
+  return _.extend({}, Backbone.Events);
+});
+define('src/Manager',['jquery', 'backbone'], function ($, Backbone) {
 
   var Manager = function Manager() {
     var currentView;
@@ -949,8 +956,10 @@ define('src/HeroView',['require','jquery','underscore','backbone','handlebars','
   var HeroTemplate = require('hb!tmp/hero.hbs');
 
   var HeroView = Backbone.View.extend({
-    initialize: function () {},
-    model: new HeroModel,
+    initialize: function (options) {
+      this.vent = options.vent;
+    },
+    model: new HeroModel(),
     events: {
       'mouseover': 'stopUpdate',
       'mouseout': 'startUpdate',
@@ -984,12 +993,9 @@ define('src/HeroView',['require','jquery','underscore','backbone','handlebars','
     }
   });
 
-  // var hero = new HeroView;
-  // hero.render();
-
   return HeroView;
 });
-define('text!data/project.json',[],function () { return '{\n  "rokkan": {\n    "real-health": {\n      "url": "/rokkan/real-health",\n      "name": "Real Health",\n      "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "project": {\n        "title": "Real Health",\n        "lede": {\n          "image": "/img/lede--real-health.jpg",\n          "copy": "HTML, CSS, JS, Twig, PHP, NodeJS",\n          "quote": "Stories about Real Health"\n        },\n        "summary": {\n          "image": "/img/summary--real-health.jpg",\n          "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."\n        },\n        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why healthcare matters to them and suggests healthcare providers to connect with if they live in one of 14 states."\n      }\n    },\n    "jetblue": {\n      "url": "/rokkan/jetblue",\n      "name": "JetBlue",\n      "description": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "project": {\n        "title": "JetBlue",\n        "lede": {\n          "image": "/img/lede--jetblue.jpg",\n          "copy": "HTML, CSS, JS, RequireJS",\n          "quote": "A completely new way to book flights"\n        },\n        "summary": {\n          "image": "/img/summary--jetblue.jpg",\n          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign of their website. Since then, I\'ve worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."\n        },\n        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits later, I\'ve learn a lot about working with offshore teams, jQuery UI, Compass project integration, and RequireJS."\n      }\n    },\n    "ford-escape-routes-2012": {\n      "url": "/rokkan/ford-escape-routes-2012",\n      "name": "Ford Escape Routes 2012",\n      "description": "The sophmore year release of Ford Escape Routes.",\n      "project": {\n        "title": "Ford Escape Routes 2012",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, JS, Twig",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "caesars-palace-casino": {\n      "url": "/rokkan/caesars-palace-casino",\n      "name": "Caesars Palace Casino",\n      "description": "Caesars Palace Booking Redesign",\n      "project": {\n        "title": "Caesars Palace Casino",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, JS, Compass, Middleman",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "shophouse": {\n      "url": "/rokkan/shophouse",\n      "name": "ShopHouse",\n      "description": "Maintanence and Google Maps API for ShopHouse Kitchen.",\n      "project": {\n        "title": "ShopHouse",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, JS, Google Maps API",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "dish-network": {\n      "url": "/rokkan/dish-network",\n      "name": "Dish Network",\n      "description": "Dish Network 2013 redesign.",\n      "project": {\n        "title": "Dish Network",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, JS",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "canon-cinema-eos": {\n      "url": "/rokkan/canon-cinema-eos",\n      "name": "Canon Cinema EOS",\n      "description": "Canon Cinema EOS product launch site.",\n      "project": {\n        "title": "Canon Cinema EOS",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, JS",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    }\n  },\n  "talks": {\n    "svn-to-git": {\n      "url": "/talks/svn-to-git",\n      "name": "SVN to Git",\n      "description": "A git workflow primer given internally at Rokkan.",\n      "project": {\n        "title": "SVN to Git",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, RevealJS",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "introducing-grunt": {\n      "url": "/talks/introducing-grunt",\n      "name": "Introducing Grunt",\n      "description": "A grunt workflow primer given internally at Rokkan.",\n      "project": {\n        "title": "Introducing Grunt",\n        "lede": {\n          "image": "/img/lede--introducing-grunt.jpg",\n          "copy": "HTML, CSS, JS, BespokeJS",\n          "quote": "Change is hard."\n        },\n        "summary": {\n          "image": "/img/summary--introducing-grunt.jpg",\n          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt could be introduced into our workflow and that it is runs on top of NodeJS."\n        },\n        "conclusion": "foo"\n      }\n    }\n  },\n  "personal": {\n    "nxnw": {\n      "url": "/personal/nxnw",\n      "name": "NXNW",\n      "description": "A proof-of-concept list interface.",\n      "project": {\n        "title": "NXNW",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, JS, RequireJS, Hogan",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "cdt-solarized-dark-theme": {\n      "url": "/personal/cdt-solarized-dark-theme",\n      "name": "CDT Solarized Dark Theme",\n      "description": "Custom solarized theme for Chrome Dev Tools",\n      "project": {\n        "title": "CDT Solarized Dark Theme",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "Compass, Chrome Canary",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "593instagram": {\n      "url": "/personal/593instagram",\n      "name": "#593Instagram",\n      "description": "A quick & dirty Instagram hashtag viewer.",\n      "project": {\n        "title": "#593Instagram",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, JS",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "fatrin-portfolio": {\n      "url": "/personal/fatrin-portfolio",\n      "name": "Fatrin Portfolio",\n      "description": "Portfolio website for musical composer Fatrin",\n      "project": {\n        "title": "Fatrin Portfolio",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "HTML, CSS, JS, PHP, PerchCMS",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    }\n  },\n  "tools": {\n    "gitolite-post-receive-hook": {\n      "url": "/tools/gitolite-post-receive-hook",\n      "name": "Gitolite post-receive hook",\n      "description": "NodeJS-based post-receive hook for Gitolite.",\n      "project": {\n        "title": "Gitolite post-receive hook",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "NodeJS, Git, Bash",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "git-config": {\n      "url": "/tools/git-config",\n      "name": "Git Config",\n      "description": "My personal .gitconfig file.",\n      "project": {\n        "title": "Git Config",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "Git",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "sublime-settings": {\n      "url": "/tools/sublime-settings",\n      "name": "Sublime Settings",\n      "description": "My Sublime settings.",\n      "project": {\n        "title": "Sublime Settings",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "JSON",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "oh-my-zsh": {\n      "url": "/tools/oh-my-zsh",\n      "name": "Oh-My-Zsh",\n      "description": "My personal oh-my-zsh fork.",\n      "project": {\n        "title": "Oh-My-Zsh",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "Zsh",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    },\n    "jquery.scrollsync": {\n      "url": "/tools/jquery.scrollsync",\n      "name": "jQuery.scrollSync",\n      "description": "ScrollSync - a jQuery plugin.",\n      "project": {\n        "title": "jQuery.scrollSync",\n        "lede": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "JS, QUnit",\n          "quote": "...quote..."\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "...copy...",\n          "quote": "...quote..."\n        },\n        "conclusion": "...conclusion...",\n        "codepen": {\n          "url": "//codepen.io/rogeruiz/embed/bhBvA"\n        }\n      }\n    }\n  }\n}';});
+define('text!data/project.json',[],function () { return '{\n  "rokkan": {\n    "real-health": {\n      "url": "/rokkan/real-health",\n      "name": "Real Health",\n      "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "project": {\n        "title": "Real Health",\n        "lede": {\n          "image": "/img/lede--real-health.jpg",\n          "tldr": "HTML, CSS, JS, Twig, PHP, NodeJS",\n          "example": "http://real-health.com",\n          "quote": "Stories about Real Health"\n        },\n        "summary": {\n          "image": "/img/summary--real-health.jpg",\n          "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."\n        },\n        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why healthcare matters to them and suggests healthcare providers to connect with if they live in one of 14 states."\n      }\n    },\n    "jetblue": {\n      "url": "/rokkan/jetblue",\n      "name": "JetBlue",\n      "description": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "project": {\n        "title": "JetBlue",\n        "lede": {\n          "image": "/img/lede--jetblue.jpg",\n          "tldr": "HTML, CSS, JS, RequireJS",\n          "example": "http://jetblue.com",\n          "quote": "A completely new way to book flights"\n        },\n        "summary": {\n          "image": "/img/summary--jetblue.jpg",\n          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign of their website. Since then, I\'ve worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."\n        },\n        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits later, I\'ve learn a lot about working with offshore teams, jQuery UI, Compass project integration, and RequireJS."\n      }\n    },\n    "ford-escape-routes-2012": {\n      "url": "/rokkan/ford-escape-routes-2012",\n      "name": "Ford Escape Routes 2012",\n      "description": "The sophmore year release of Ford Escape Routes.",\n      "project": {\n        "title": "Ford Escape Routes 2012",\n        "lede": {\n          "image": "/img/lede--ford-escape-routes-2012.jpg",\n          "tldr": "HTML, CSS, JS, Twig",\n          "example": "http://escaperoutes.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--ford-escape-routes-2012.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "caesars-palace-casino": {\n      "url": "/rokkan/caesars-palace-casino",\n      "name": "Caesars Palace Casino",\n      "description": "Caesars Palace Booking Redesign",\n      "project": {\n        "title": "Caesars Palace Casino",\n        "lede": {\n          "image": "/img/lede--caesars-palace-casino.jpg",\n          "tldr": "HTML, CSS, JS, Compass, Middleman",\n          "example": "http://caesarspalace.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--caesars-palace-casino.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "shophouse": {\n      "url": "/rokkan/shophouse",\n      "name": "ShopHouse",\n      "description": "Maintanence and Google Maps API for ShopHouse Kitchen.",\n      "project": {\n        "title": "ShopHouse",\n        "lede": {\n          "image": "/img/lede--shophouse.jpg",\n          "tldr": "HTML, CSS, JS, Google Maps API",\n          "example": "http://shophousekitchen.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--shophouse.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "dish-network": {\n      "url": "/rokkan/dish-network",\n      "name": "Dish Network",\n      "description": "Dish Network 2013 redesign.",\n      "project": {\n        "title": "Dish Network",\n        "lede": {\n          "image": "/img/lede--dish-network.jpg",\n          "tldr": "HTML, CSS, JS",\n          "example": "http://dish.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--dish-network.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "canon-cinema-eos": {\n      "url": "/rokkan/canon-cinema-eos",\n      "name": "Canon Cinema EOS",\n      "description": "Canon Cinema EOS product launch site.",\n      "project": {\n        "title": "Canon Cinema EOS",\n        "lede": {\n          "image": "/img/lede--canon-eos.jpg",\n          "tldr": "HTML, CSS, JS",\n          "example": "http://cinemaeos.usa.canon.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--canon-eos.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    }\n  },\n  "talks": {\n    "svn-to-git": {\n      "url": "/talks/svn-to-git",\n      "name": "SVN to Git",\n      "description": "A git workflow primer given internally at Rokkan.",\n      "project": {\n        "title": "SVN to Git",\n        "lede": {\n          "image": "/img/lede--svn-to-git.jpg",\n          "tldr": "HTML, CSS, RevealJS",\n          "example": "http://rokkan.rogeruiz.com/git",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--svn-to-git.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "introducing-grunt": {\n      "url": "/talks/introducing-grunt",\n      "name": "Introducing Grunt",\n      "description": "A grunt workflow primer given internally at Rokkan.",\n      "project": {\n        "title": "Introducing Grunt",\n        "lede": {\n          "image": "/img/lede--introducing-grunt.jpg",\n          "tldr": "HTML, CSS, JS, BespokeJS",\n          "example": "http://rokkan.rogeruiz.com/grunt",\n          "quote": "Change is hard."\n        },\n        "summary": {\n          "image": "/img/summary--introducing-grunt.jpg",\n          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt could be introduced into our workflow and that it is runs on top of NodeJS."\n        },\n        "conclusion": "foo"\n      }\n    }\n  },\n  "personal": {\n    "nxnw": {\n      "url": "/personal/nxnw",\n      "name": "NXNW",\n      "description": "A proof-of-concept list interface.",\n      "project": {\n        "title": "NXNW",\n        "lede": {\n          "image": "/img/lede--nxnw.jpg",\n          "tldr": "HTML, CSS, JS, RequireJS, Hogan",\n          "example": "http://nxnw.rogeruiz.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--nxnw.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "cdt-solarized-dark-theme": {\n      "url": "/personal/cdt-solarized-dark-theme",\n      "name": "CDT Solarized Dark Theme",\n      "description": "Custom solarized theme for Chrome Dev Tools",\n      "project": {\n        "title": "CDT Solarized Dark Theme",\n        "lede": {\n          "image": "/img/lede--.jpg",\n          "tldr": "Compass, Chromcdt-solarized-dark-themee Canary",\n          "example": "https://github.com/rogeruiz/web-inspector-solarized",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--.jpg",\n          "copycdt-solarized-dark-theme": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "593instagram": {\n      "url": "/personal/593instagram",\n      "name": "#593Instagram",\n      "description": "A quick & dirty Instagram hashtag viewer.",\n      "project": {\n        "title": "#593Instagram",\n        "lede": {\n          "image": "/img/lede--593instagram.jpg",\n          "tldr": "HTML, CSS, JS",\n          "example": "http://rokkan.rogeruiz.com/instagram",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--593instagram.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "fatrin-portfolio": {\n      "url": "/personal/fatrin-portfolio",\n      "name": "Fatrin Portfolio",\n      "description": "Portfolio website for musical composer Fatrin",\n      "project": {\n        "title": "Fatrin Portfolio",\n        "lede": {\n          "image": "/img/lede--fatrin-portfolio.jpg",\n          "tldr": "HTML, CSS, JS, PHP, PerchCMS",\n          "example": "http://fatrin.com/",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--fatrin-portfolio.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    }\n  },\n  "tools": {\n    "gitolite-post-receive-hook": {\n      "url": "/tools/gitolite-post-receive-hook",\n      "name": "Gitolite post-receive hook",\n      "description": "NodeJS-based post-receive hook for Gitolite.",\n      "project": {\n        "title": "Gitolite post-receive hook",\n        "lede": {\n          "image": "/img/lede--.jpg",\n          "tldr": "NodeJS, Git, gitolite-post-receive-hookBash",\n          "quote": ""\n        },\n        "summary": {\n          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",\n          "copy": "/img/summary--.jpg",\n          "quotgitolite-post-receive-hooke": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "git-config": {\n      "url": "/tools/git-config",\n      "name": "Git Config",\n      "description": "My personal .gitconfig file.",\n      "project": {\n        "title": "Git Config",\n        "lede": {\n          "image": "/img/lede--git-config.jpg",\n          "tldr": "Git",\n          "example": "https://gist.github.com/rogeruiz/6082148",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--git-config.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "sublime-settings": {\n      "url": "/tools/sublime-settings",\n      "name": "Sublime Settings",\n      "description": "My Sublime settings.",\n      "project": {\n        "title": "Sublime Settings",\n        "lede": {\n          "image": "/img/lede--sublime-settings.jpg",\n          "tldr": "JSON",\n          "example": "https://github.com/rogeruiz/sublime-settings",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--sublime-settings.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "oh-my-zsh": {\n      "url": "/tools/oh-my-zsh",\n      "name": "Oh-My-Zsh",\n      "description": "My personal oh-my-zsh fork.",\n      "project": {\n        "title": "Oh-My-Zsh",\n        "lede": {\n          "image": "/img/lede--oh-my-zsh.jpg",\n          "tldr": "Zsh",\n          "example": "https://github.com/rogeruiz/oh-my-zsh",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--oh-my-zsh.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "jquery.scrollsync": {\n      "url": "/tools/jquery.scrollsync",\n      "name": "jQuery.scrollSync",\n      "description": "ScrollSync - a jQuery plugin.",\n      "project": {\n        "title": "jQuery.scrollSync",\n        "lede": {\n          "image": "/img/lede--jquery.scrollsync.jpg",\n          "tldr": "JS, QUnit",\n          "example": "https://github.com/rogeruiz/jQuery.scrollSync",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--jquery.scrollsync.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    }\n  }\n}';});
 
 define('src/NavModel',['require','backbone','text!data/project.json'],function (require) {
   var Backbone = require('backbone');
@@ -1029,7 +1035,7 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div class=\"nav-coffin__toggler js-coffin-toggle\"></div>\n<div class=\"nav-coffin__inner\">\n  <h3 class=\"nav__title\">Current Work</h3>\n  <nav class=\"nav\">";
+  buffer += "<a href=\"/\" class=\"js-back-button nav-coffin__back\"><</a>\n<div class=\"nav-coffin__toggler js-coffin-toggle\"></div>\n<div class=\"nav-coffin__inner\">\n  <h3 class=\"nav__title\">Current Work</h3>\n  <nav class=\"nav\">";
   stack1 = helpers.each.call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "</nav>\n  <nav class=\"nav\">";
@@ -1054,10 +1060,12 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
   var NavTemplate = require('hb!tmp/nav.hbs');
 
   var NavView = Backbone.View.extend({
-    initialize: function () {
+    initialize: function (options) {
+      _.bindAll(this, "toggleBack");
+      options.vent.bind("toggleBack", this.toggleBack);
       this.render();
     },
-    model: new NavModel,
+    model: new NavModel(),
     events: {
       'click .is-closed': 'open',
       'click .is-open': 'close'
@@ -1068,6 +1076,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
       this.$('.js-coffin-toggle').addClass('is-closed');
       return this;
     },
+    notHome: false,
     isAnimating: false,
     open: function () {
       var self = this;
@@ -1080,6 +1089,8 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
           step: function (now, fx) {
             if (fx.pos === 0) {
               self.isAnimating = true;
+              self.$el.addClass('is-open');
+              self.$el.removeClass('is-closed');
               self.$('.nav-coffin__toggler').addClass('is-open');
               self.$('.nav-coffin__toggler').removeClass('is-closed');
             }
@@ -1100,20 +1111,23 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
           step: function (now, fx) {
             if (fx.pos === 0) {
               self.isAnimating = true;
+              self.$el.removeClass('is-open');
+              self.$el.addClass('is-closed');
               self.$('.nav-coffin__toggler').removeClass('is-open');
+              self.$('.nav-coffin__toggler').addClass('is-closed');
             }
           },
           complete: function () {
-            self.$('.nav-coffin__toggler').addClass('is-closed');
+            
             self.isAnimating = false;
           }
         });
       }
+    },
+    toggleBack: function () {
+      this.$('.js-back-button').addClass('is-needed');
     }
   });
-
-  // var nav = new NavView;
-  // nav.render();
 
   return NavView;
 
@@ -1202,7 +1216,7 @@ define('src/AboutView',['require','jquery','underscore','backbone','handlebars',
 
   var AboutHero = Backbone.View.extend({
     initialize: function () {},
-    model: new AboutModel,
+    model: new AboutModel(),
     events: {},
     el: '#js-hero',
     onShow: function () {
@@ -1222,7 +1236,7 @@ define('src/AboutView',['require','jquery','underscore','backbone','handlebars',
 
   var AboutProject = Backbone.View.extend({
     initialize: function () {},
-    model: new AboutModel,
+    model: new AboutModel(),
     events: {},
     el: '#js-project',
     render: function() {
@@ -1309,8 +1323,10 @@ define('src/ProjectListView',['require','jquery','underscore','backbone','handle
   var ProjectTemplate = require('hb!tmp/project--list.hbs');
 
   var ProjectListView = Backbone.View.extend({
-    initialize: function () {},
-    model: new ProjectModel,
+    initialize: function (options) {
+      this.vent = options.vent;
+    },
+    model: new ProjectModel(),
     events: {},
     el: '#js-project',
     render: function() {
@@ -1337,40 +1353,53 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "<p class=\"project--view__description project__description\"><b>TL;DR</b>: "
-    + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.copy)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>";
+  buffer += "\n<p class=\"project--view__description project__description\"\n  ><b>TL;DR</b>: "
+    + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.tldr)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n</p>\n";
   return buffer;
   }
 
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<div class=\"media-mask media-mask--project\">\n  <img src=\""
-    + escapeExpression(((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.image)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" alt=\"\" class=\"project__img project--view__img\">\n</div>\n";
+  buffer += "\n<p class=\"project--view__description project__description\">\n  <b>View</b>: <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.example)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.example)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>\n</p>\n";
   return buffer;
   }
 
 function program5(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "<blockquote class=\"project--view__quote\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.quote)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</blockquote>";
+  var buffer = "", stack1, stack2;
+  buffer += "\n<div class=\"media-mask media-mask--project\">\n  <img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.image)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" alt=\"\" class=\"project__img project--view__img\">\n</div>\n  ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.quote)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
   return buffer;
   }
-
-function program7(depth0,data) {
+function program6(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "<p class=\"project--view__description project__description\">"
-    + escapeExpression(((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.copy)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>";
+  buffer += "\n  <blockquote class=\"project--view__quote\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.quote)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</blockquote>\n  ";
   return buffer;
   }
 
-function program9(depth0,data) {
+function program8(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<p class=\"project--view__description project__description\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.copy)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</p>\n";
+  return buffer;
+  }
+
+function program10(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n<div class=\"media-mask media-mask--project\">\n  <iframe class=\"project--view__codepen\" src=\""
@@ -1379,45 +1408,45 @@ function program9(depth0,data) {
   return buffer;
   }
 
-function program11(depth0,data) {
+function program12(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "<blockquote class=\"project--view__quote\">"
+  buffer += "\n<blockquote class=\"project--view__quote quote--summary\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.quote)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</blockquote>";
+    + "</blockquote>\n";
   return buffer;
   }
 
-function program13(depth0,data) {
+function program14(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "<p class=\"project--view__description project__description\">";
+  buffer += "\n<p class=\"project--view__description project__description\">";
   if (stack1 = helpers.conclusion) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.conclusion; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>";
+    + "</p>\n";
   return buffer;
   }
 
-  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.copy)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.tldr)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n";
-  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.image)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.example)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n";
-  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.quote)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.image)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n";
-  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.copy)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.copy)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n";
-  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.codepen),stack1 == null || stack1 === false ? stack1 : stack1.url)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(9, program9, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.codepen),stack1 == null || stack1 === false ? stack1 : stack1.url)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(10, program10, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n";
-  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.quote)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(11, program11, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.summary),stack1 == null || stack1 === false ? stack1 : stack1.quote)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(12, program12, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.conclusion),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(13, program13, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.conclusion),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(14, program14, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n";
   return buffer;
@@ -1449,10 +1478,11 @@ define('src/ProjectView',['require','jquery','underscore','backbone','handlebars
 
   var ProjectView = Backbone.View.extend({
     initialize: function (options) {
+      this.vent = options.vent;
       this.type = options.type;
       this.project = options.project;
     },
-    model: new ProjectModel,
+    model: new ProjectModel(),
     events: {},
     el: '#js-project',
     render: function() {
@@ -1470,10 +1500,11 @@ define('src/ProjectView',['require','jquery','underscore','backbone','handlebars
 
   var ProjectHeroView = Backbone.View.extend({
     initialize: function (options) {
+      this.vent = options.vent;
       this.type = options.type;
       this.project = options.project;
     },
-    model: new ProjectModel,
+    model: new ProjectModel(),
     events: {},
     el: '#js-hero',
     onShow: function () {
@@ -1497,11 +1528,12 @@ define('src/ProjectView',['require','jquery','underscore','backbone','handlebars
   };
 
 });
-define('src/router',['require','jquery','underscore','backbone','src/RegionManager','src/HeroView','src/NavView','src/AboutView','src/ProjectListView','src/ProjectView','src/ProjectModel'],function (require) {
+define('src/Router',['require','jquery','underscore','backbone','src/Events','src/Manager','src/HeroView','src/NavView','src/AboutView','src/ProjectListView','src/ProjectView','src/ProjectModel'],function (require) {
   var $ = require('jquery');
   var _ = require('underscore');
   var Backbone = require('backbone');
-  var RegionManager = require('src/RegionManager');
+  var Events = require('src/Events');
+  var Manager = require('src/Manager');
   var HeroView = require('src/HeroView');
   var NavView = require('src/NavView');
   var AboutView = require('src/AboutView');
@@ -1509,10 +1541,11 @@ define('src/router',['require','jquery','underscore','backbone','src/RegionManag
   var ProjectView = require('src/ProjectView');
   var ProjectModel = require('src/ProjectModel');
 
-  var HeroManager = new RegionManager;
-  var ProjectManager = new RegionManager;
+  var HeroManager = new Manager();
+  var ProjectManager = new Manager();
 
   var Router = Backbone.Router.extend({
+    initialize: function () {},
     routes: {
       'about': 'showAbout',
       ':type/:project': 'showProject',
@@ -1520,30 +1553,35 @@ define('src/router',['require','jquery','underscore','backbone','src/RegionManag
     }
   });
 
-  var routes = new Router;
+  var events = Events;
+  var routes = new Router({ vent: events });
 
   routes.on('route:showAbout', function () {
-    HeroManager.show(new AboutView.hero);
-    ProjectManager.show(new AboutView.project);
+    HeroManager.show(new AboutView.hero({ vent: events }));
+    ProjectManager.show(new AboutView.project({ vent: events }));
+    events.trigger("toggleBack");
   });
 
   routes.on('route:showDefault', function () {
-    HeroManager.show(new HeroView);
-    ProjectManager.show(new ProjectListView);
+    HeroManager.show(new HeroView({ vent: events }));
+    ProjectManager.show(new ProjectListView({ vent: events }));
   });
 
   routes.on('route:showProject', function (type, project) {
     HeroManager.show(new ProjectView.hero({
+      vent: events,
       type: type,
       project: project
     }));
     ProjectManager.show(new ProjectView.project({
+      vent: events,
       type: type,
       project: project
     }));
+    events.trigger("toggleBack");
   });
 
-  var navView = new NavView;
+  var navView = new NavView({ vent: events });
 
   Backbone.history.start({
     pushState: Modernizr.history
@@ -1551,9 +1589,8 @@ define('src/router',['require','jquery','underscore','backbone','src/RegionManag
 
   return function () {};
 });
-// Initialize the portfolio router
-
-
-require(['src/router']);
+// Initialize the Router
+// Handles everything...
+require(['src/Router']);
 
 define("js/main", function(){});

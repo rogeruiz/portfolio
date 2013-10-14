@@ -8,7 +8,8 @@
         "title": "Real Health",
         "lede": {
           "image": "/img/lede--real-health.jpg",
-          "copy": "HTML, CSS, JS, Twig, PHP, NodeJS",
+          "tldr": "HTML, CSS, JS, Twig, PHP, NodeJS",
+          "example": "http://real-health.com",
           "quote": "Stories about Real Health"
         },
         "summary": {
@@ -26,7 +27,8 @@
         "title": "JetBlue",
         "lede": {
           "image": "/img/lede--jetblue.jpg",
-          "copy": "HTML, CSS, JS, RequireJS",
+          "tldr": "HTML, CSS, JS, RequireJS",
+          "example": "http://jetblue.com",
           "quote": "A completely new way to book flights"
         },
         "summary": {
@@ -43,18 +45,19 @@
       "project": {
         "title": "Ford Escape Routes 2012",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, JS, Twig",
-          "quote": "...quote..."
+          "image": "/img/lede--ford-escape-routes-2012.jpg",
+          "tldr": "HTML, CSS, JS, Twig",
+          "example": "http://escaperoutes.com",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--ford-escape-routes-2012.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -65,18 +68,19 @@
       "project": {
         "title": "Caesars Palace Casino",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, JS, Compass, Middleman",
-          "quote": "...quote..."
+          "image": "/img/lede--caesars-palace-casino.jpg",
+          "tldr": "HTML, CSS, JS, Compass, Middleman",
+          "example": "http://caesarspalace.com",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--caesars-palace-casino.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -87,18 +91,19 @@
       "project": {
         "title": "ShopHouse",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, JS, Google Maps API",
-          "quote": "...quote..."
+          "image": "/img/lede--shophouse.jpg",
+          "tldr": "HTML, CSS, JS, Google Maps API",
+          "example": "http://shophousekitchen.com",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--shophouse.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -109,18 +114,19 @@
       "project": {
         "title": "Dish Network",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, JS",
-          "quote": "...quote..."
+          "image": "/img/lede--dish-network.jpg",
+          "tldr": "HTML, CSS, JS",
+          "example": "http://dish.com",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--dish-network.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -131,18 +137,19 @@
       "project": {
         "title": "Canon Cinema EOS",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, JS",
-          "quote": "...quote..."
+          "image": "/img/lede--canon-eos.jpg",
+          "tldr": "HTML, CSS, JS",
+          "example": "http://cinemaeos.usa.canon.com",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--canon-eos.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     }
@@ -155,18 +162,19 @@
       "project": {
         "title": "SVN to Git",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, RevealJS",
-          "quote": "...quote..."
+          "image": "/img/lede--svn-to-git.jpg",
+          "tldr": "HTML, CSS, RevealJS",
+          "example": "http://rokkan.rogeruiz.com/git",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--svn-to-git.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -178,7 +186,8 @@
         "title": "Introducing Grunt",
         "lede": {
           "image": "/img/lede--introducing-grunt.jpg",
-          "copy": "HTML, CSS, JS, BespokeJS",
+          "tldr": "HTML, CSS, JS, BespokeJS",
+          "example": "http://rokkan.rogeruiz.com/grunt",
           "quote": "Change is hard."
         },
         "summary": {
@@ -197,18 +206,19 @@
       "project": {
         "title": "NXNW",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, JS, RequireJS, Hogan",
-          "quote": "...quote..."
+          "image": "/img/lede--nxnw.jpg",
+          "tldr": "HTML, CSS, JS, RequireJS, Hogan",
+          "example": "http://nxnw.rogeruiz.com",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--nxnw.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -219,18 +229,19 @@
       "project": {
         "title": "CDT Solarized Dark Theme",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "Compass, Chrome Canary",
-          "quote": "...quote..."
+          "image": "/img/lede--.jpg",
+          "tldr": "Compass, Chromcdt-solarized-dark-themee Canary",
+          "example": "https://github.com/rogeruiz/web-inspector-solarized",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--.jpg",
+          "copycdt-solarized-dark-theme": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -241,18 +252,19 @@
       "project": {
         "title": "#593Instagram",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, JS",
-          "quote": "...quote..."
+          "image": "/img/lede--593instagram.jpg",
+          "tldr": "HTML, CSS, JS",
+          "example": "http://rokkan.rogeruiz.com/instagram",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--593instagram.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -263,18 +275,19 @@
       "project": {
         "title": "Fatrin Portfolio",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "HTML, CSS, JS, PHP, PerchCMS",
-          "quote": "...quote..."
+          "image": "/img/lede--fatrin-portfolio.jpg",
+          "tldr": "HTML, CSS, JS, PHP, PerchCMS",
+          "example": "http://fatrin.com/",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--fatrin-portfolio.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     }
@@ -287,18 +300,18 @@
       "project": {
         "title": "Gitolite post-receive hook",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "NodeJS, Git, Bash",
-          "quote": "...quote..."
+          "image": "/img/lede--.jpg",
+          "tldr": "NodeJS, Git, gitolite-post-receive-hookBash",
+          "quote": ""
         },
         "summary": {
           "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "copy": "/img/summary--.jpg",
+          "quotgitolite-post-receive-hooke": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -309,18 +322,19 @@
       "project": {
         "title": "Git Config",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "Git",
-          "quote": "...quote..."
+          "image": "/img/lede--git-config.jpg",
+          "tldr": "Git",
+          "example": "https://gist.github.com/rogeruiz/6082148",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--git-config.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -331,18 +345,19 @@
       "project": {
         "title": "Sublime Settings",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "JSON",
-          "quote": "...quote..."
+          "image": "/img/lede--sublime-settings.jpg",
+          "tldr": "JSON",
+          "example": "https://github.com/rogeruiz/sublime-settings",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--sublime-settings.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -353,18 +368,19 @@
       "project": {
         "title": "Oh-My-Zsh",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "Zsh",
-          "quote": "...quote..."
+          "image": "/img/lede--oh-my-zsh.jpg",
+          "tldr": "Zsh",
+          "example": "https://github.com/rogeruiz/oh-my-zsh",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--oh-my-zsh.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     },
@@ -375,18 +391,19 @@
       "project": {
         "title": "jQuery.scrollSync",
         "lede": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "JS, QUnit",
-          "quote": "...quote..."
+          "image": "/img/lede--jquery.scrollsync.jpg",
+          "tldr": "JS, QUnit",
+          "example": "https://github.com/rogeruiz/jQuery.scrollSync",
+          "quote": ""
         },
         "summary": {
-          "image": "//placehold.it/440/e3e3e3/434343/&text=FPO",
-          "copy": "...copy...",
-          "quote": "...quote..."
+          "image": "/img/summary--jquery.scrollsync.jpg",
+          "copy": "",
+          "quote": ""
         },
-        "conclusion": "...conclusion...",
+        "conclusion": "",
         "codepen": {
-          "url": "//codepen.io/rogeruiz/embed/bhBvA"
+          "url": ""
         }
       }
     }

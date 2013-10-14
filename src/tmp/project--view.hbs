@@ -1,15 +1,32 @@
-{{#if lede.copy.length}}<p class="project--view__description project__description"><b>TL;DR</b>: {{lede.copy}}</p>{{/if}}
+{{#if lede.tldr.length}}
+<p class="project--view__description project__description"
+  ><b>TL;DR</b>: {{lede.tldr}}
+</p>
+{{/if}}
+{{#if lede.example.length}}
+<p class="project--view__description project__description">
+  <b>View</b>: <a target="_blank" href="{{lede.example}}">{{lede.example}}</a>
+</p>
+{{/if}}
 {{#if summary.image.length}}
 <div class="media-mask media-mask--project">
   <img src="{{summary.image}}" alt="" class="project__img project--view__img">
 </div>
+  {{#if lede.quote.length}}
+  <blockquote class="project--view__quote">{{lede.quote}}</blockquote>
+  {{/if}}
 {{/if}}
-{{#if lede.quote.length}}<blockquote class="project--view__quote">{{lede.quote}}</blockquote>{{/if}}
-{{#if summary.copy.length}}<p class="project--view__description project__description">{{summary.copy}}</p>{{/if}}
+{{#if summary.copy.length}}
+<p class="project--view__description project__description">{{summary.copy}}</p>
+{{/if}}
 {{#if codepen.url.length}}
 <div class="media-mask media-mask--project">
   <iframe class="project--view__codepen" src="{{codepen.url}}" seamless frameborder="0"></iframe>
 </div>
 {{/if}}
-{{#if summary.quote.length}}<blockquote class="project--view__quote">{{summary.quote}}</blockquote>{{/if}}
-{{#if conclusion.length}}<p class="project--view__description project__description">{{conclusion}}</p>{{/if}}
+{{#if summary.quote.length}}
+<blockquote class="project--view__quote quote--summary">{{summary.quote}}</blockquote>
+{{/if}}
+{{#if conclusion.length}}
+<p class="project--view__description project__description">{{conclusion}}</p>
+{{/if}}

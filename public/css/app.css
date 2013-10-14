@@ -663,6 +663,21 @@ b {
   width: 70px;
   text-align: center;
 }
+.nav-coffin__back {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+  padding-left: 8px;
+  padding-top: 2px;
+}
+.nav-coffin__back.is-needed {
+  display: block;
+  text-decoration: none;
+}
 .nav-coffin__toggler {
   position: absolute;
   top: 0;
@@ -778,14 +793,17 @@ b {
   padding: 20px;
 }
 .project__img {
-  width: 90%;
-  max-width: 440px;
+  width: 100%;
   display: block;
   border: 10px solid #feffff;
   margin: 0 auto;
 }
-.project__img img {
+.project__img > img {
   max-width: 100%;
+}
+.project--list .project__img {
+  overflow: hidden;
+  max-height: 440px;
 }
 .project__description {
   font-size: 13px;
@@ -804,6 +822,7 @@ b {
 }
 .project--about__skills {
   list-style: none;
+  padding: 0;
   *zoom: 1;
   /* 3 */
 

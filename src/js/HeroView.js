@@ -8,8 +8,10 @@ define(function (require) {
   var HeroTemplate = require('hb!tmp/hero.hbs');
 
   var HeroView = Backbone.View.extend({
-    initialize: function () {},
-    model: new HeroModel,
+    initialize: function (options) {
+      this.vent = options.vent;
+    },
+    model: new HeroModel(),
     events: {
       'mouseover': 'stopUpdate',
       'mouseout': 'startUpdate',
@@ -42,9 +44,6 @@ define(function (require) {
       this.$('.hero__title').removeClass('is-active').eq(next).addClass('is-active');
     }
   });
-
-  // var hero = new HeroView;
-  // hero.render();
 
   return HeroView;
 });

@@ -8,10 +8,12 @@ define(function (require) {
   var NavTemplate = require('hb!tmp/nav.hbs');
 
   var NavView = Backbone.View.extend({
-    initialize: function () {
+    initialize: function (options) {
+      _.bindAll(this, "toggleBack");
+      options.vent.bind("toggleBack", this.toggleBack);
       this.render();
     },
-    model: new NavModel,
+    model: new NavModel(),
     events: {
       'click .is-closed': 'open',
       'click .is-open': 'close'
@@ -22,6 +24,7 @@ define(function (require) {
       this.$('.js-coffin-toggle').addClass('is-closed');
       return this;
     },
+    notHome: false,
     isAnimating: false,
     open: function () {
       var self = this;
@@ -34,6 +37,8 @@ define(function (require) {
           step: function (now, fx) {
             if (fx.pos === 0) {
               self.isAnimating = true;
+              self.$el.addClass('is-open');
+              self.$el.removeClass('is-closed');
               self.$('.nav-coffin__toggler').addClass('is-open');
               self.$('.nav-coffin__toggler').removeClass('is-closed');
             }
@@ -54,20 +59,23 @@ define(function (require) {
           step: function (now, fx) {
             if (fx.pos === 0) {
               self.isAnimating = true;
+              self.$el.removeClass('is-open');
+              self.$el.addClass('is-closed');
               self.$('.nav-coffin__toggler').removeClass('is-open');
+              self.$('.nav-coffin__toggler').addClass('is-closed');
             }
           },
           complete: function () {
-            self.$('.nav-coffin__toggler').addClass('is-closed');
+            
             self.isAnimating = false;
           }
         });
       }
+    },
+    toggleBack: function () {
+      this.$('.js-back-button').addClass('is-needed');
     }
   });
-
-  // var nav = new NavView;
-  // nav.render();
 
   return NavView;
 
