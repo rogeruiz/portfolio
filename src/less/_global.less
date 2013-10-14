@@ -19,6 +19,7 @@ a, a:visited {
   font-family: @ff-lato;
   color: @cl-link;
   text-decoration: none;
+  border-bottom: 1px dotted;
   &:hover {
     color: @cl-link-hover;
     text-decoration: underline;
@@ -50,8 +51,10 @@ b {
 
 .main--shoe__inner {
   padding: 10px;
-  a {
+  a, a:visited {
     display: block;
     text-align: center;
+    border: 0;
+    text-decoration: none;
   }
 }

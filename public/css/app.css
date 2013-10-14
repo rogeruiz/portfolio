@@ -569,6 +569,7 @@ a:visited {
   font-family: 'Lato', serif;
   color: #7f7f7f;
   text-decoration: none;
+  border-bottom: 1px dotted;
 }
 a:hover,
 a:visited:hover {
@@ -613,9 +614,12 @@ b {
 .main--shoe__inner {
   padding: 10px;
 }
-.main--shoe__inner a {
+.main--shoe__inner a,
+.main--shoe__inner a:visited {
   display: block;
   text-align: center;
+  border: 0;
+  text-decoration: none;
 }
 /* ==========================================================================
    Navigation Styles
@@ -640,9 +644,20 @@ b {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-.nav > a {
+.nav > a,
+.nav a:visited {
   display: block;
   padding: 5px 0;
+  margin: 5px 0;
+  border-bottom: 0;
+  text-decoration: none;
+}
+.nav > a:hover,
+.nav a:visited:hover,
+.nav > a.is-active,
+.nav a:visited.is-active {
+  background: rgba(229, 255, 241, 0.5);
+  color: #3f4040;
 }
 .nav__title {
   text-align: center;
@@ -676,6 +691,7 @@ b {
 }
 .nav-coffin__back.is-needed {
   display: block;
+  border: 0;
   text-decoration: none;
 }
 .nav-coffin__toggler {

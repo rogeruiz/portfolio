@@ -10,7 +10,9 @@ define(function (require) {
   var NavView = Backbone.View.extend({
     initialize: function (options) {
       _.bindAll(this, "toggleBack");
+      _.bindAll(this, "highlightNav");
       options.vent.bind("toggleBack", this.toggleBack);
+      options.vent.bind("highlightNav", this.highlightNav);
       this.render();
     },
     model: new NavModel(),
@@ -74,6 +76,9 @@ define(function (require) {
     },
     toggleBack: function () {
       this.$('.js-back-button').addClass('is-needed');
+    },
+    highlightNav: function (options) {
+      this.$('a[href="' + '/' + options.type + '/' + options.project + '"]').addClass('is-active');
     }
   });
 

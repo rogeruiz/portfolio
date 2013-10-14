@@ -48,7 +48,8 @@ define(function (require) {
       type: type,
       project: project
     }));
-    events.trigger("toggleBack");
+    events.trigger('highlightNav', { type: type, project: project });
+    events.trigger('toggleBack');
   });
 
   var navView = new NavView({ vent: events });

@@ -16,7 +16,7 @@
           "image": "/img/summary--real-health.jpg",
           "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."
         },
-        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why healthcare matters to them and suggests healthcare providers to connect with if they live in one of 14 states."
+        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why health care matters to them and suggests health care providers to connect with if they live in one of 14 states."
       }
     },
     "jetblue": {
@@ -29,19 +29,19 @@
           "image": "/img/lede--jetblue.jpg",
           "tldr": "HTML, CSS, JS, RequireJS",
           "example": "http://jetblue.com",
-          "quote": "A completely new way to book flights"
+          "quote": "An updated way to book flights"
         },
         "summary": {
           "image": "/img/summary--jetblue.jpg",
-          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign of their website. Since then, I've worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."
+          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign their main website. Since then, I've worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."
         },
-        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits later, I've learn a lot about working with offshore teams, jQuery UI, Compass project integration, and RequireJS."
+        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits, I've learn a lot about working with off-shore teams, jQuery UI, Compass project integration, and RequireJS."
       }
     },
     "ford-escape-routes-2012": {
       "url": "/rokkan/ford-escape-routes-2012",
       "name": "Ford Escape Routes 2012",
-      "description": "The sophmore year release of Ford Escape Routes.",
+      "description": "The sophomore year release of Ford Escape Routes.",
       "project": {
         "title": "Ford Escape Routes 2012",
         "lede": {
@@ -118,7 +118,7 @@
         "lede": {
           "image": "/img/lede--introducing-grunt.jpg",
           "tldr": "HTML, CSS, JS, BespokeJS",
-          "example": "http://rokkan.rogeruiz.com/grunt",
+          "example": "http://rokkan.rogeruiz.com/",
           "quote": "Change is hard."
         },
         "summary": {
