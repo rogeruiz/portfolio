@@ -2,8 +2,8 @@
 <div class="nav-coffin__toggler js-coffin-toggle"></div>
 <div class="nav-coffin__inner">
   <h3 class="nav__title">Current Work</h3>
-  <nav class="nav">{{#each rokkan}}<a href="{{url}}">{{name}}</a>{{/each}}</nav>
-  <nav class="nav">{{#each talks}}<a href="{{url}}">{{name}}</a>{{/each}}</nav>
-  <nav class="nav">{{#each personal}}<a href="{{url}}">{{name}}</a>{{/each}}</nav>
-  <nav class="nav">{{#each tools}}<a href="{{url}}">{{name}}</a>{{/each}}</nav>
+  {{#if rokkan}}<nav class="nav">{{#each rokkan}}<a href="{{url}}">{{name}}</a>{{/each}}</nav>{{/if}}
+  {{#if talks}}<nav class="nav">{{#each talks}}<a href="{{url}}">{{name}}</a>{{/each}}</nav>{{/if}}
+  {{#if personal}}<nav class="nav">{{#each personal}}<a href="{{url}}">{{name}}</a>{{/each}}</nav>{{/if}}
+  {{#if tools}}<nav class="nav">{{#each tools}}<a href="{{url}}">{{name}}</a>{{/each}}</nav>{{/if}}
 </div>

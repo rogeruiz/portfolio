@@ -798,7 +798,8 @@ b {
   border: 10px solid #feffff;
   margin: 0 auto;
 }
-.project__img > img {
+.project__img a,
+.project__img img {
   max-width: 100%;
 }
 .project--list .project__img {
