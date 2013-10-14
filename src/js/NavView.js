@@ -78,7 +78,7 @@ define(function (require) {
       this.$('.js-back-button').addClass('is-needed');
     },
     highlightNav: function (options) {
-      this.$('a[href="' + '/' + options.type + '/' + options.project + '"]').addClass('is-active');
+      this.$('a[href="' + options.url + '"]').addClass('is-active');
     }
   });
 

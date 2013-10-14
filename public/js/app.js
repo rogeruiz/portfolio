@@ -915,7 +915,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a> \n  on <a target=\"_blank\" href=\""
+    + "</a> \n  using <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -927,7 +927,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a> \n  on <a target=\"_blank\" href=\""
+    + "</a> \n  using <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -997,17 +997,19 @@ define('src/HeroView',['require','jquery','underscore','backbone','handlebars','
 });
 define('text!data/project.json',[],function () { return '{\n  "rokkan": {\n    "real-health": {\n      "url": "/rokkan/real-health",\n      "name": "Real Health",\n      "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "project": {\n        "title": "Real Health",\n        "lede": {\n          "image": "/img/lede--real-health.jpg",\n          "tldr": "HTML, CSS, JS, Twig, PHP, NodeJS",\n          "example": "http://real-health.com",\n          "quote": "Stories about Real Health"\n        },\n        "summary": {\n          "image": "/img/summary--real-health.jpg",\n          "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."\n        },\n        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why health care matters to them and suggests health care providers to connect with if they live in one of 14 states."\n      }\n    },\n    "jetblue": {\n      "url": "/rokkan/jetblue",\n      "name": "JetBlue",\n      "description": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "project": {\n        "title": "JetBlue",\n        "lede": {\n          "image": "/img/lede--jetblue.jpg",\n          "tldr": "HTML, CSS, JS, RequireJS",\n          "example": "http://jetblue.com",\n          "quote": "An updated way to book flights"\n        },\n        "summary": {\n          "image": "/img/summary--jetblue.jpg",\n          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign their main website. Since then, I\'ve worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."\n        },\n        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits, I\'ve learn a lot about working with off-shore teams, jQuery UI, Compass project integration, and RequireJS."\n      }\n    },\n    "ford-escape-routes-2012": {\n      "url": "/rokkan/ford-escape-routes-2012",\n      "name": "Ford Escape Routes 2012",\n      "description": "The sophomore year release of Ford Escape Routes.",\n      "project": {\n        "title": "Ford Escape Routes 2012",\n        "lede": {\n          "image": "/img/lede--ford-escape-routes-2012.jpg",\n          "tldr": "HTML, CSS, JS, Twig",\n          "example": "http://escaperoutes.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--ford-escape-routes-2012.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "dish-network": {\n      "url": "/rokkan/dish-network",\n      "name": "Dish Network",\n      "description": "Dish Network 2013 redesign.",\n      "project": {\n        "title": "Dish Network",\n        "lede": {\n          "image": "/img/lede--dish-network.jpg",\n          "tldr": "HTML, CSS, JS",\n          "example": "http://dish.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--dish-network.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    },\n    "canon-cinema-eos": {\n      "url": "/rokkan/canon-cinema-eos",\n      "name": "Canon Cinema EOS",\n      "description": "Canon Cinema EOS product launch site.",\n      "project": {\n        "title": "Canon Cinema EOS",\n        "lede": {\n          "image": "/img/lede--canon-eos.jpg",\n          "tldr": "HTML, CSS, JS",\n          "example": "http://cinemaeos.usa.canon.com",\n          "quote": ""\n        },\n        "summary": {\n          "image": "/img/summary--canon-eos.jpg",\n          "copy": "",\n          "quote": ""\n        },\n        "conclusion": "",\n        "codepen": {\n          "url": ""\n        }\n      }\n    }\n  },\n  "talks": {\n    "introducing-grunt": {\n      "url": "/talks/introducing-grunt",\n      "name": "Introducing Grunt",\n      "description": "A grunt workflow primer given internally at Rokkan.",\n      "project": {\n        "title": "Introducing Grunt",\n        "lede": {\n          "image": "/img/lede--introducing-grunt.jpg",\n          "tldr": "HTML, CSS, JS, BespokeJS",\n          "example": "http://rokkan.rogeruiz.com/",\n          "quote": "Change is hard."\n        },\n        "summary": {\n          "image": "/img/summary--introducing-grunt.jpg",\n          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt was introduced into our workflow and how to install it."\n        },\n        "conclusion": "When it isn\'t easy to convince someone of a new change, no matter how fervent I can get about it, it\'s usually better to show them how to do it themselves and what you\'ve used it for yourself. Having some beta-testers around doesn\'t hurt either."\n      }\n    }\n  }\n}';});
 
-define('src/NavModel',['require','backbone','text!data/project.json'],function (require) {
+define('src/NavModel',['require','backbone','text!data/project.json','text!data/hero.json'],function (require) {
   var Backbone = require('backbone');
-  var NavData = JSON.parse(require('text!data/project.json'));
+  var ProjectData = JSON.parse(require('text!data/project.json'));
+  var HeroData = JSON.parse(require('text!data/hero.json'));
 
   var NavModel = Backbone.Model.extend({
     initialize: function () {
       this.set({
-        rokkan: NavData.rokkan,
-        talks: NavData.talks,
-        personal: NavData.personal,
-        tools: NavData.tools
+        about: HeroData,
+        rokkan: ProjectData.rokkan,
+        talks: ProjectData.talks,
+        personal: ProjectData.personal,
+        tools: ProjectData.tools
       });
     }
   });
@@ -1018,16 +1020,14 @@ define('src/NavModel',['require','backbone','text!data/project.json'],function (
 define("hb!tmp/nav.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "<nav class=\"nav\">";
+  var stack1;
   stack1 = helpers.each.call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</nav>";
-  return buffer;
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
   }
 function program2(depth0,data) {
   
@@ -1046,47 +1046,51 @@ function program2(depth0,data) {
 
 function program4(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "<nav class=\"nav\">";
+  var stack1;
   stack1 = helpers.each.call(depth0, depth0.talks, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</nav>";
-  return buffer;
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
   }
 
 function program6(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "<nav class=\"nav\">";
+  var stack1;
   stack1 = helpers.each.call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</nav>";
-  return buffer;
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
   }
 
 function program8(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "<nav class=\"nav\">";
+  var stack1;
   stack1 = helpers.each.call(depth0, depth0.tools, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</nav>";
-  return buffer;
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
   }
 
-  buffer += "<a href=\"/\" class=\"js-back-button nav-coffin__back\"><</a>\n<div class=\"nav-coffin__toggler js-coffin-toggle\"></div>\n<div class=\"nav-coffin__inner\">\n  <h3 class=\"nav__title\">Current Work</h3>\n  ";
-  stack1 = helpers['if'].call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  ";
-  stack1 = helpers['if'].call(depth0, depth0.talks, {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  ";
-  stack1 = helpers['if'].call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  ";
-  stack1 = helpers['if'].call(depth0, depth0.tools, {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n</div>";
+  buffer += "<a href=\"/\" class=\"js-back-button nav-coffin__back\"><</a>\n<div class=\"nav-coffin__toggler js-coffin-toggle\"></div>\n<div class=\"nav-coffin__inner\">\n  <h3 class=\"nav__title\">About</h3>\n  <nav class=\"nav\">\n    <a href=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.main)),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.main)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>\n  </nav>\n  <h3 class=\"nav__title\">Current Work</h3>\n  <nav class=\"nav\">\n    ";
+  stack2 = helpers['if'].call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  stack2 = helpers['if'].call(depth0, depth0.talks, {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  stack2 = helpers['if'].call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  stack2 = helpers['if'].call(depth0, depth0.tools, {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n  </nav>\n  <h3 class=\"nav__title\">Around The Web</h3>\n  <nav class=\"nav\">\n    <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.github)),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">Github</a>\n    <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.twitter)),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">Twitter</a>\n    <a target=\"_blank\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.pinboard)),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">Pinboard</a>\n  </nav>\n</div>";
   return buffer;
   })});
 define('src/NavView',['require','jquery','underscore','backbone','handlebars','src/NavModel','hb!tmp/nav.hbs'],function (require) {
@@ -1169,15 +1173,14 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
       this.$('.js-back-button').addClass('is-needed');
     },
     highlightNav: function (options) {
-      console.log(options);
-      this.$('a[href="' + '/' + options.type + '/' + options.project + '"]').addClass('is-active');
+      this.$('a[href="' + options.url + '"]').addClass('is-active');
     }
   });
 
   return NavView;
 
 });
-define('text!data/about.json',[],function () { return '{\n  "name": "Roger Steve Ruiz",\n  "title": "Senior Developer",\n  "employer": "Rokkan",\n  "biography": [\n    "I was a prepress manager for years. I prepared jobs for an HP Indigo 5000 which could do some serious printing. I no longer do anything in the printing world, but it still fascinates me.",\n    "I\'m currently a senior developer at Rokkan. I build websites. I build interfaces. I build products. From concept to execution, I\'m interested in all aspects of user experience, interface design, and code optimizations. I\'ve worked with clients such as JetBlue, Caesars Casinos, WellPoint, Chipotle, Ford, and others.",\n    "I specialize in front-end web development. I\'m very passionate about the tools I use. I customize just about every little thing I can. I have years of web development experience, with a proven background in successfully handling all aspects of site development from initial design and architecture to site deployment."\n  ],\n  "skills": [\n    "HTML",\n    "CSS",\n    "Sass",\n    "Less",\n    "Javascript",\n    "jQuery",\n    "Backbone",\n    "RequireJS",\n    "QUnit",\n    "Node",\n    "Grunt",\n    "Bash",\n    "Z Shell",\n    "Git",\n    "SVN",\n    "Mac",\n    "Linux",\n    "Markdown",\n    "Vim",\n    "Sublime Text",\n    "BBEdit",\n    "/r[egx]{2,}p?/i",\n    "DevOps",\n    "Photoshop",\n    "Illustrator",\n    "InDesign"\n  ]\n}';});
+define('text!data/about.json',[],function () { return '{\n  "name": "Roger Steve Ruiz",\n  "title": "senior developer",\n  "employer": "Rokkan",\n  "biography": [\n    "I was a prepress manager for years. I prepared jobs for an HP Indigo 5000 which could do some serious printing. I no longer do anything in the printing world, but it still fascinates me.",\n    "I\'m currently a senior developer at Rokkan. I build websites. I build interfaces. I build products. From concept to execution, I\'m interested in all aspects of user experience, interface design, and code optimizations. I\'ve worked with clients such as JetBlue, Caesars Casinos, WellPoint, Chipotle, Ford, and others.",\n    "I specialize in front-end web development. I\'m very passionate about the tools I use. I customize just about every little thing I can. I have years of web development experience, with a proven background in successfully handling all aspects of site development from initial design and architecture to site deployment."\n  ],\n  "skills": [\n    "HTML",\n    "CSS",\n    "Sass",\n    "Less",\n    "Javascript",\n    "jQuery",\n    "Backbone",\n    "RequireJS",\n    "QUnit",\n    "Node",\n    "Grunt",\n    "Bash",\n    "Z Shell",\n    "Git",\n    "SVN",\n    "Mac",\n    "Linux",\n    "Markdown",\n    "Vim",\n    "Sublime Text",\n    "BBEdit",\n    "/r[egx]{2,}p?/i",\n    "DevOps",\n    "Photoshop",\n    "Illustrator",\n    "InDesign"\n  ]\n}';});
 
 define('src/AboutModel',['require','backbone','text!data/about.json'],function (require) {
   var Backbone = require('backbone');
@@ -1197,19 +1200,19 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<h2 class=\"hero--about__name\">";
+  buffer += "<h2 class=\"hero__title is-active\">I'm ";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</h2>\n<p class=\"hero--about__job\">";
+    + ", a ";
   if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n<p class=\"hero--about__employer\">";
+    + " at ";
   if (stack1 = helpers.employer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.employer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n\n";
+    + " in New York.</h2>";
   return buffer;
   })});
 define("hb!tmp/project--about.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1606,9 +1609,11 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
   var routes = new Router({ vent: events });
 
   routes.on('route:showAbout', function () {
+    var url = '/about';
+    events.trigger('highlightNav', { url: url });
+    events.trigger("toggleBack");
     HeroManager.show(new AboutView.hero({ vent: events }));
     ProjectManager.show(new AboutView.project({ vent: events }));
-    events.trigger("toggleBack");
   });
 
   routes.on('route:showDefault', function () {
@@ -1617,6 +1622,9 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
   });
 
   routes.on('route:showProject', function (type, project) {
+    var url = '/' + type + '/' + project + '';
+    events.trigger('highlightNav', { url: url });
+    events.trigger('toggleBack');
     HeroManager.show(new ProjectView.hero({
       vent: events,
       type: type,
@@ -1627,8 +1635,6 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
       type: type,
       project: project
     }));
-    events.trigger('highlightNav', { type: type, project: project });
-    events.trigger('toggleBack');
   });
 
   var navView = new NavView({ vent: events });

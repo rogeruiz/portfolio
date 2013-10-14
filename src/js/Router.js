@@ -27,9 +27,11 @@ define(function (require) {
   var routes = new Router({ vent: events });
 
   routes.on('route:showAbout', function () {
+    var url = '/about';
+    events.trigger('highlightNav', { url: url });
+    events.trigger("toggleBack");
     HeroManager.show(new AboutView.hero({ vent: events }));
     ProjectManager.show(new AboutView.project({ vent: events }));
-    events.trigger("toggleBack");
   });
 
   routes.on('route:showDefault', function () {
@@ -38,6 +40,9 @@ define(function (require) {
   });
 
   routes.on('route:showProject', function (type, project) {
+    var url = '/' + type + '/' + project + '';
+    events.trigger('highlightNav', { url: url });
+    events.trigger('toggleBack');
     HeroManager.show(new ProjectView.hero({
       vent: events,
       type: type,
@@ -48,8 +53,6 @@ define(function (require) {
       type: type,
       project: project
     }));
-    events.trigger('highlightNav', { type: type, project: project });
-    events.trigger('toggleBack');
   });
 
   var navView = new NavView({ vent: events });

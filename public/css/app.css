@@ -664,12 +664,12 @@ b {
   color: rgba(62, 108, 124, 0.5);
   line-height: 0.5em;
   margin: 0.5em auto 0.75em;
+  padding-top: 10px;
 }
 .nav-coffin__inner {
   background-color: #d1e2e8;
   width: 100%;
   margin-top: 10px;
-  padding: 10px;
   border-top: 1px solid #e5fff1;
 }
 .main--hat__contact {

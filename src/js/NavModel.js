@@ -1,14 +1,16 @@
 define(function (require) {
   var Backbone = require('backbone');
-  var NavData = JSON.parse(require('text!data/project.json'));
+  var ProjectData = JSON.parse(require('text!data/project.json'));
+  var HeroData = JSON.parse(require('text!data/hero.json'));
 
   var NavModel = Backbone.Model.extend({
     initialize: function () {
       this.set({
-        rokkan: NavData.rokkan,
-        talks: NavData.talks,
-        personal: NavData.personal,
-        tools: NavData.tools
+        about: HeroData,
+        rokkan: ProjectData.rokkan,
+        talks: ProjectData.talks,
+        personal: ProjectData.personal,
+        tools: ProjectData.tools
       });
     }
   });
