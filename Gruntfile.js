@@ -10,7 +10,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= pkg.dir.src.data %>/**/*.json', '<%= pkg.dir.src.js %>/**/*.js', '<%= pkg.dir.src.tmp %>/**/*.hbs'],
-        tasks: ['requirejs']
+        tasks: ['jshint', 'requirejs']
       }
     },
     copy: {
@@ -38,6 +38,9 @@ module.exports = function (grunt) {
           '<%= pkg.dir.public.css %>/app.css': '<%= pkg.dir.src.less %>/app.less'
         }
       }
+    },
+    jshint: {
+      all: ['Gruntfile.js', 'src/json/**', 'src/js/**']
     },
     requirejs: {
       compile: {
@@ -83,8 +86,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Tasks
-  grunt.registerTask('default', ['less', 'requirejs', 'watch']);
+  grunt.registerTask('default', ['less', 'jshint', 'requirejs', 'watch']);
 
 };
