@@ -1405,7 +1405,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<p class=\"project--view__description project__description\"\n  ><b>TL;DR</b>: "
+  buffer += "\n<p class=\"project--view__description project__description\"\n  ><b>tl;dr</b>: "
     + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.tldr)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\n</p>\n";
   return buffer;
@@ -1414,7 +1414,7 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n<p class=\"project--view__description project__description\">\n  <b>View</b>: <a target=\"_blank\" href=\""
+  buffer += "\n<p class=\"project--view__description project__description\">\n  <b>Launch</b>: <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.example)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.lede),stack1 == null || stack1 === false ? stack1 : stack1.example)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
