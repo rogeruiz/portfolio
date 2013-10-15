@@ -1113,7 +1113,8 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     model: new NavModel(),
     events: {
       'click .is-closed': 'open',
-      'click .is-open': 'close'
+      'click .is-open': 'close',
+      'click nav > a': 'close'
     },
     el: '#js-nav',
     render: function() {
@@ -1170,14 +1171,32 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
       }
     },
     toggleBack: function () {
-      this.$('.js-back-button').addClass('is-needed');
+      if (location.pathname !== '/') {
+        this.$('.js-back-button').addClass('is-needed');
+      } else {
+        this.$('.js-back-button').removeClass('is-needed');
+      }
     },
     highlightNav: function (options) {
+      this.$('a').removeClass('is-active');
       this.$('a[href="' + options.url + '"]').addClass('is-active');
     }
   });
 
-  return NavView;
+  var FooterView = Backbone.View.extend({
+    model: new NavModel(),
+    events: {
+      'click .js-back-to-top': 'toTop'
+    },
+    toTop: function () {
+      $(window).scrollTo(0);
+    }
+  });
+
+  return {
+    header: NavView,
+    footer: FooterView
+  };
 
 });
 define('text!data/about.json',[],function () { return '{\n  "name": "Roger Steve Ruiz",\n  "title": "senior developer",\n  "employer": "Rokkan",\n  "biography": [\n    "I was a prepress manager for years. I prepared jobs for an HP Indigo 5000 which could do some serious printing. I no longer do anything in the printing world, but it still fascinates me.",\n    "I\'m currently a senior developer at Rokkan. I build websites. I build interfaces. I build products. From concept to execution, I\'m interested in all aspects of user experience, interface design, and code optimizations. I\'ve worked with clients such as JetBlue, Caesars Casinos, WellPoint, Chipotle, Ford, and others.",\n    "I specialize in front-end web development. I\'m very passionate about the tools I use. I customize just about every little thing I can. I have years of web development experience, with a proven background in successfully handling all aspects of site development from initial design and architecture to site deployment."\n  ],\n  "skills": [\n    "HTML",\n    "CSS",\n    "Sass",\n    "Less",\n    "Javascript",\n    "jQuery",\n    "Backbone",\n    "RequireJS",\n    "QUnit",\n    "Node",\n    "Grunt",\n    "Bash",\n    "Z Shell",\n    "Git",\n    "SVN",\n    "Mac",\n    "Linux",\n    "Markdown",\n    "Vim",\n    "Sublime Text",\n    "BBEdit",\n    "/r[egx]{2,}p?/i",\n    "DevOps",\n    "Photoshop",\n    "Illustrator",\n    "InDesign"\n  ]\n}';});
@@ -1602,6 +1621,9 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
       'about': 'showAbout',
       ':type/:project': 'showProject',
       '*actions': 'showDefault'
+    },
+    transition: function (e) {
+
     }
   });
 
@@ -1611,12 +1633,14 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
   routes.on('route:showAbout', function () {
     var url = '/about';
     events.trigger('highlightNav', { url: url });
-    events.trigger("toggleBack");
+    events.trigger('toggleBack');
     HeroManager.show(new AboutView.hero({ vent: events }));
     ProjectManager.show(new AboutView.project({ vent: events }));
   });
 
   routes.on('route:showDefault', function () {
+    events.trigger('toggleBack');
+    events.trigger('highlightNav', { url: '' });
     HeroManager.show(new HeroView({ vent: events }));
     ProjectManager.show(new ProjectListView({ vent: events }));
   });
@@ -1637,10 +1661,23 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
     }));
   });
 
-  var navView = new NavView({ vent: events });
+  var navView = new NavView.header({ vent: events });
+  var footerView = new NavView.footer({ vent: events });
 
   Backbone.history.start({
     pushState: Modernizr.history
+  });
+
+  $(document).on('click', 'a:not([target])', function(evt) {
+    var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
+    var root = location.protocol + '//' + location.host;
+
+    // console.log(href.prop && href.prop.slice(0, root.length) === root);
+
+    if (href.prop && href.prop.slice(0, root.length) === root) {
+      evt.preventDefault();
+      Backbone.history.navigate(href.attr, true);
+    }
   });
 
   return function () {};

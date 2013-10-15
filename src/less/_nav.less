@@ -66,11 +66,19 @@
   position: absolute;
   top: 0;
   left: 0;
+  background: @cl-tertiary-right;
   width: 40px;
   height: 40px;
   font-size: 26px;
-  padding-left: 8px;
+  padding-left: 12px;
   padding-top: 2px;
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  -o-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in;
+  .is-open & {
+    background-color: transparent;
+  }
   &.is-needed {
     display: block;
     border: 0;

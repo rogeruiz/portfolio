@@ -20,6 +20,9 @@ define(function (require) {
       'about': 'showAbout',
       ':type/:project': 'showProject',
       '*actions': 'showDefault'
+    },
+    transition: function (e) {
+
     }
   });
 
@@ -29,12 +32,14 @@ define(function (require) {
   routes.on('route:showAbout', function () {
     var url = '/about';
     events.trigger('highlightNav', { url: url });
-    events.trigger("toggleBack");
+    events.trigger('toggleBack');
     HeroManager.show(new AboutView.hero({ vent: events }));
     ProjectManager.show(new AboutView.project({ vent: events }));
   });
 
   routes.on('route:showDefault', function () {
+    events.trigger('toggleBack');
+    events.trigger('highlightNav', { url: '' });
     HeroManager.show(new HeroView({ vent: events }));
     ProjectManager.show(new ProjectListView({ vent: events }));
   });
@@ -55,10 +60,23 @@ define(function (require) {
     }));
   });
 
-  var navView = new NavView({ vent: events });
+  var navView = new NavView.header({ vent: events });
+  var footerView = new NavView.footer({ vent: events });
 
   Backbone.history.start({
     pushState: Modernizr.history
+  });
+
+  $(document).on('click', 'a:not([target])', function(evt) {
+    var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
+    var root = location.protocol + '//' + location.host;
+
+    // console.log(href.prop && href.prop.slice(0, root.length) === root);
+
+    if (href.prop && href.prop.slice(0, root.length) === root) {
+      evt.preventDefault();
+      Backbone.history.navigate(href.attr, true);
+    }
   });
 
   return function () {};
