@@ -1104,6 +1104,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
 
   var NavView = Backbone.View.extend({
     initialize: function (options) {
+      this.vent = options.vent;
       _.bindAll(this, "toggleBack");
       _.bindAll(this, "highlightNav");
       options.vent.bind("toggleBack", this.toggleBack);
@@ -1112,9 +1113,9 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     },
     model: new NavModel(),
     events: {
-      'click .is-closed': 'open',
-      'click .is-open': 'close',
-      'click nav > a': 'close'
+      'click .is-closed': 'openNav',
+      'click .is-open': 'closeNav',
+      'click nav > a': 'closeNav'
     },
     el: '#js-nav',
     render: function() {
@@ -1124,7 +1125,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     },
     notHome: false,
     isAnimating: false,
-    open: function () {
+    openNav: function () {
       var self = this;
       var height = parseInt((this.$('.nav-coffin__inner').outerHeight(true) + $('.main--hat').outerHeight(true)), 10);
       if (!this.isAnimating) {
@@ -1147,7 +1148,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
         });
       }
     },
-    close: function () {
+    closeNav: function () {
       var self = this;
       if (!self.isAnimating) {
         $('.main--hat').animate({
@@ -1168,6 +1169,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
             self.isAnimating = false;
           }
         });
+        this.vent.trigger('toTop');
       }
     },
     toggleBack: function () {
@@ -1175,7 +1177,9 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
         this.$('.js-back-button').addClass('is-needed');
       } else {
         this.$('.js-back-button').removeClass('is-needed');
+        this.closeNav();
       }
+      
     },
     highlightNav: function (options) {
       this.$('a').removeClass('is-active');
@@ -1184,12 +1188,18 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
   });
 
   var FooterView = Backbone.View.extend({
+    initialize: function (options) {
+      this.vent = options.vent;
+      _.bindAll(this, 'toTop');
+      options.vent.bind('toTop', this.toTop);
+    },
+    el: '#js-footer',
     model: new NavModel(),
     events: {
-      'click .js-back-to-top': 'toTop'
+      'click #js-back-to-top': 'toTop'
     },
-    toTop: function () {
-      $(window).scrollTo(0);
+    toTop: function (evt) {
+      $(window).scrollTop(0);
     }
   });
 
@@ -1616,7 +1626,18 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
   var ProjectManager = new Manager();
 
   var Router = Backbone.Router.extend({
-    initialize: function () {},
+    initialize: function () {
+      $(document).on('click', 'a:not([target])', function(evt) {
+        var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
+        var root = location.protocol + '//' + location.host;
+
+        if (href.prop && href.prop.slice(0, root.length) === root) {
+          evt.preventDefault();
+          Backbone.history.navigate(href.attr, true);
+        }
+      });
+
+    },
     routes: {
       'about': 'showAbout',
       ':type/:project': 'showProject',
@@ -1666,18 +1687,6 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
 
   Backbone.history.start({
     pushState: Modernizr.history
-  });
-
-  $(document).on('click', 'a:not([target])', function(evt) {
-    var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
-    var root = location.protocol + '//' + location.host;
-
-    // console.log(href.prop && href.prop.slice(0, root.length) === root);
-
-    if (href.prop && href.prop.slice(0, root.length) === root) {
-      evt.preventDefault();
-      Backbone.history.navigate(href.attr, true);
-    }
   });
 
   return function () {};

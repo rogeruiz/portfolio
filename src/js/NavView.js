@@ -9,6 +9,7 @@ define(function (require) {
 
   var NavView = Backbone.View.extend({
     initialize: function (options) {
+      this.vent = options.vent;
       _.bindAll(this, "toggleBack");
       _.bindAll(this, "highlightNav");
       options.vent.bind("toggleBack", this.toggleBack);
@@ -17,9 +18,9 @@ define(function (require) {
     },
     model: new NavModel(),
     events: {
-      'click .is-closed': 'open',
-      'click .is-open': 'close',
-      'click nav > a': 'close'
+      'click .is-closed': 'openNav',
+      'click .is-open': 'closeNav',
+      'click nav > a': 'closeNav'
     },
     el: '#js-nav',
     render: function() {
@@ -29,7 +30,7 @@ define(function (require) {
     },
     notHome: false,
     isAnimating: false,
-    open: function () {
+    openNav: function () {
       var self = this;
       var height = parseInt((this.$('.nav-coffin__inner').outerHeight(true) + $('.main--hat').outerHeight(true)), 10);
       if (!this.isAnimating) {
@@ -52,7 +53,7 @@ define(function (require) {
         });
       }
     },
-    close: function () {
+    closeNav: function () {
       var self = this;
       if (!self.isAnimating) {
         $('.main--hat').animate({
@@ -73,6 +74,7 @@ define(function (require) {
             self.isAnimating = false;
           }
         });
+        this.vent.trigger('toTop');
       }
     },
     toggleBack: function () {
@@ -80,7 +82,9 @@ define(function (require) {
         this.$('.js-back-button').addClass('is-needed');
       } else {
         this.$('.js-back-button').removeClass('is-needed');
+        this.closeNav();
       }
+      
     },
     highlightNav: function (options) {
       this.$('a').removeClass('is-active');
@@ -89,12 +93,18 @@ define(function (require) {
   });
 
   var FooterView = Backbone.View.extend({
+    initialize: function (options) {
+      this.vent = options.vent;
+      _.bindAll(this, 'toTop');
+      options.vent.bind('toTop', this.toTop);
+    },
+    el: '#js-footer',
     model: new NavModel(),
     events: {
-      'click .js-back-to-top': 'toTop'
+      'click #js-back-to-top': 'toTop'
     },
-    toTop: function () {
-      $(window).scrollTo(0);
+    toTop: function (evt) {
+      $(window).scrollTop(0);
     }
   });
 

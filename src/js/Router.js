@@ -15,7 +15,18 @@ define(function (require) {
   var ProjectManager = new Manager();
 
   var Router = Backbone.Router.extend({
-    initialize: function () {},
+    initialize: function () {
+      $(document).on('click', 'a:not([target])', function(evt) {
+        var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
+        var root = location.protocol + '//' + location.host;
+
+        if (href.prop && href.prop.slice(0, root.length) === root) {
+          evt.preventDefault();
+          Backbone.history.navigate(href.attr, true);
+        }
+      });
+
+    },
     routes: {
       'about': 'showAbout',
       ':type/:project': 'showProject',
@@ -65,18 +76,6 @@ define(function (require) {
 
   Backbone.history.start({
     pushState: Modernizr.history
-  });
-
-  $(document).on('click', 'a:not([target])', function(evt) {
-    var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
-    var root = location.protocol + '//' + location.host;
-
-    // console.log(href.prop && href.prop.slice(0, root.length) === root);
-
-    if (href.prop && href.prop.slice(0, root.length) === root) {
-      evt.preventDefault();
-      Backbone.history.navigate(href.attr, true);
-    }
   });
 
   return function () {};
