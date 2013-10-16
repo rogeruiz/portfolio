@@ -10,10 +10,12 @@ define(function (require) {
   var NavView = Backbone.View.extend({
     initialize: function (options) {
       this.vent = options.vent;
-      _.bindAll(this, "toggleBack");
-      _.bindAll(this, "highlightNav");
-      options.vent.bind("toggleBack", this.toggleBack);
-      options.vent.bind("highlightNav", this.highlightNav);
+      _.bindAll(this, 'toggleBack');
+      _.bindAll(this, 'highlightNav');
+      _.bindAll(this, 'closeNav');
+      options.vent.bind('toggleBack', this.toggleBack);
+      options.vent.bind('highlightNav', this.highlightNav);
+      options.vent.bind('closeNav', this.closeNav);
       this.render();
     },
     model: new NavModel(),
@@ -103,8 +105,10 @@ define(function (require) {
     events: {
       'click #js-back-to-top': 'toTop'
     },
-    toTop: function (evt) {
+    toTop: function () {
       $(window).scrollTop(0);
+      this.vent.trigger('closeNav');
+      return false;
     }
   });
 
