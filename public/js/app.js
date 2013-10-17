@@ -1108,9 +1108,9 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
       _.bindAll(this, 'toggleBack');
       _.bindAll(this, 'highlightNav');
       _.bindAll(this, 'closeNav');
-      options.vent.bind('toggleBack', this.toggleBack);
-      options.vent.bind('highlightNav', this.highlightNav);
-      options.vent.bind('closeNav', this.closeNav);
+      this.vent.bind('toggleBack', this.toggleBack);
+      this.vent.bind('highlightNav', this.highlightNav);
+      this.vent.bind('closeNav', this.closeNav);
       this.render();
     },
     model: new NavModel(),
@@ -1193,7 +1193,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     initialize: function (options) {
       this.vent = options.vent;
       _.bindAll(this, 'toTop');
-      options.vent.bind('toTop', this.toTop);
+      this.vent.bind('toTop', this.toTop);
     },
     el: '#js-footer',
     model: new NavModel(),
@@ -1201,8 +1201,11 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
       'click #js-back-to-top': 'toTop'
     },
     toTop: function () {
-      $(window).scrollTop(0);
-      this.vent.trigger('closeNav');
+      if ($(window).scrollTop() !== 0) {
+        $('html, body').animate({
+          scrollTop: '0'
+        }, 250);
+      }
       return false;
     }
   });
@@ -1423,7 +1426,6 @@ define('src/ProjectListView',['require','jquery','underscore','backbone','handle
       this.$el.removeClass('project--list');
       this.$el.children().remove();
       this.unbind();
-      
     }
   });
 
@@ -1630,7 +1632,9 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
   var ProjectManager = new Manager();
 
   var Router = Backbone.Router.extend({
-    initialize: function () {
+    initialize: function (options) {
+      var self = this;
+      this.vent = options.vent;
       $(document).on('click', 'a:not([target])', function(evt) {
         var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
         var root = location.protocol + '//' + location.host;
@@ -1638,6 +1642,7 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
         if (href.prop && href.prop.slice(0, root.length) === root) {
           evt.preventDefault();
           Backbone.history.navigate(href.attr, true);
+          self.vent.trigger('toTop');
         }
       });
 

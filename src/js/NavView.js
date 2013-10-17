@@ -13,9 +13,9 @@ define(function (require) {
       _.bindAll(this, 'toggleBack');
       _.bindAll(this, 'highlightNav');
       _.bindAll(this, 'closeNav');
-      options.vent.bind('toggleBack', this.toggleBack);
-      options.vent.bind('highlightNav', this.highlightNav);
-      options.vent.bind('closeNav', this.closeNav);
+      this.vent.bind('toggleBack', this.toggleBack);
+      this.vent.bind('highlightNav', this.highlightNav);
+      this.vent.bind('closeNav', this.closeNav);
       this.render();
     },
     model: new NavModel(),
@@ -98,7 +98,7 @@ define(function (require) {
     initialize: function (options) {
       this.vent = options.vent;
       _.bindAll(this, 'toTop');
-      options.vent.bind('toTop', this.toTop);
+      this.vent.bind('toTop', this.toTop);
     },
     el: '#js-footer',
     model: new NavModel(),
@@ -106,8 +106,11 @@ define(function (require) {
       'click #js-back-to-top': 'toTop'
     },
     toTop: function () {
-      $(window).scrollTop(0);
-      this.vent.trigger('closeNav');
+      if ($(window).scrollTop() !== 0) {
+        $('html, body').animate({
+          scrollTop: '0'
+        }, 250);
+      }
       return false;
     }
   });

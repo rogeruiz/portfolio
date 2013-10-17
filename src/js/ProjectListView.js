@@ -23,7 +23,6 @@ define(function (require) {
       this.$el.removeClass('project--list');
       this.$el.children().remove();
       this.unbind();
-      
     }
   });
 
