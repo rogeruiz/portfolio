@@ -963,6 +963,7 @@ define('src/HeroView',['require','jquery','underscore','backbone','handlebars','
     events: {
       'mouseover': 'stopUpdate',
       'mouseout': 'startUpdate',
+      'touchstart .js-hero-change': 'update',
       'click .js-hero-change': 'update'
     },
     el: '#js-hero',
@@ -976,16 +977,19 @@ define('src/HeroView',['require','jquery','underscore','backbone','handlebars','
       this.$el.children().remove();
       this.unbind();
     },
-    startUpdate: function () {
+    startUpdate: function (evt) {
       var self = this;
       this.interval = setInterval(function () {
         self.update();
       }, 5000);
     },
-    stopUpdate: function () {
+    stopUpdate: function (evt) {
       window.clearInterval(this.interval);
     },
-    update: function () {
+    update: function (evt) {
+      if (evt && evt.originalEvent.type === 'touchstart') {
+        evt.preventDefault();
+      }
       var total = this.$('.hero__title').length;
       var index = this.$('.is-active').index();
       var next = index + 1 < total ? index + 1 : 0;
@@ -1117,10 +1121,8 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     events: {
       'touchstart .is-closed': 'openNav',
       'touchstart .is-open': 'closeNav',
-      'touchstart nav > a': 'closeNav',
       'click .is-closed': 'openNav',
-      'click .is-open': 'closeNav',
-      'click nav > a': 'closeNav'
+      'click .is-open': 'closeNav'
     },
     el: '#js-nav',
     render: function() {
@@ -1176,7 +1178,6 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
             }
           },
           complete: function () {
-            
             self.isAnimating = false;
           }
         });
@@ -1207,6 +1208,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     el: '#js-footer',
     model: new NavModel(),
     events: {
+      'touchstart #js-back-to-top': 'toTop',
       'click #js-back-to-top': 'toTop'
     },
     toTop: function () {
@@ -1644,26 +1646,24 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
     initialize: function (options) {
       var self = this;
       this.vent = options.vent;
-      $(document).on('click touchstart', 'a:not([target])', function(evt) {
-
+      $(document).on('click', 'a:not([target])', function(evt) {
         var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
         var root = location.protocol + '//' + location.host;
-
         if (href.prop && href.prop.slice(0, root.length) === root) {
-          evt.preventDefault();
-          Backbone.history.navigate(href.attr, true);
-          self.vent.trigger('toTop');
+          self.transition(evt, href);
         }
       });
-
     },
     routes: {
       'about': 'showAbout',
       ':type/:project': 'showProject',
       '*actions': 'showDefault'
     },
-    transition: function (e) {
-
+    transition: function (evt, href) {
+      evt.preventDefault();
+      Backbone.history.navigate(href.attr, true);
+      this.vent.trigger('toTop');
+      this.vent.trigger('closeNav');
     }
   });
 

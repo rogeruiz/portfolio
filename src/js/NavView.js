@@ -22,10 +22,8 @@ define(function (require) {
     events: {
       'touchstart .is-closed': 'openNav',
       'touchstart .is-open': 'closeNav',
-      'touchstart nav > a': 'closeNav',
       'click .is-closed': 'openNav',
-      'click .is-open': 'closeNav',
-      'click nav > a': 'closeNav'
+      'click .is-open': 'closeNav'
     },
     el: '#js-nav',
     render: function() {
@@ -81,7 +79,6 @@ define(function (require) {
             }
           },
           complete: function () {
-            
             self.isAnimating = false;
           }
         });
@@ -112,7 +109,7 @@ define(function (require) {
     el: '#js-footer',
     model: new NavModel(),
     events: {
-      'click #js-back-to-top': 'toTop',
+      'touchstart #js-back-to-top': 'toTop',
       'click #js-back-to-top': 'toTop'
     },
     toTop: function () {
