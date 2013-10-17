@@ -18,7 +18,8 @@ define(function (require) {
     initialize: function (options) {
       var self = this;
       this.vent = options.vent;
-      $(document).on('click', 'a:not([target])', function(evt) {
+      $(document).on('click touchstart', 'a:not([target])', function(evt) {
+
         var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
         var root = location.protocol + '//' + location.host;
 

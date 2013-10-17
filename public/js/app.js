@@ -1115,6 +1115,9 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     },
     model: new NavModel(),
     events: {
+      'touchstart .is-closed': 'openNav',
+      'touchstart .is-open': 'closeNav',
+      'touchstart nav > a': 'closeNav',
       'click .is-closed': 'openNav',
       'click .is-open': 'closeNav',
       'click nav > a': 'closeNav'
@@ -1127,7 +1130,10 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
     },
     notHome: false,
     isAnimating: false,
-    openNav: function () {
+    openNav: function (evt) {
+      if (evt && evt.originalEvent.type === 'touchstart') {
+        evt.preventDefault();
+      }
       var self = this;
       var height = parseInt((this.$('.nav-coffin__inner').outerHeight(true) + $('.main--hat').outerHeight(true)), 10);
       if (!this.isAnimating) {
@@ -1150,7 +1156,10 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
         });
       }
     },
-    closeNav: function () {
+    closeNav: function (evt) {
+      if (evt && evt.originalEvent.type === 'touchstart') {
+        evt.preventDefault();
+      }
       var self = this;
       if (!self.isAnimating) {
         $('.main--hat').animate({
@@ -1174,7 +1183,7 @@ define('src/NavView',['require','jquery','underscore','backbone','handlebars','s
         this.vent.trigger('toTop');
       }
     },
-    toggleBack: function () {
+    toggleBack: function (evt) {
       if (location.pathname !== '/') {
         this.$('.js-back-button').addClass('is-needed');
       } else {
@@ -1635,7 +1644,8 @@ define('src/Router',['require','jquery','underscore','backbone','src/Events','sr
     initialize: function (options) {
       var self = this;
       this.vent = options.vent;
-      $(document).on('click', 'a:not([target])', function(evt) {
+      $(document).on('click touchstart', 'a:not([target])', function(evt) {
+
         var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
         var root = location.protocol + '//' + location.host;
 

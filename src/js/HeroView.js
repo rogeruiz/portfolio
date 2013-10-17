@@ -15,6 +15,7 @@ define(function (require) {
     events: {
       'mouseover': 'stopUpdate',
       'mouseout': 'startUpdate',
+      'touchstart .js-hero-change': 'update',
       'click .js-hero-change': 'update'
     },
     el: '#js-hero',
@@ -28,16 +29,19 @@ define(function (require) {
       this.$el.children().remove();
       this.unbind();
     },
-    startUpdate: function () {
+    startUpdate: function (evt) {
       var self = this;
       this.interval = setInterval(function () {
         self.update();
       }, 5000);
     },
-    stopUpdate: function () {
+    stopUpdate: function (evt) {
       window.clearInterval(this.interval);
     },
-    update: function () {
+    update: function (evt) {
+      if (evt && evt.originalEvent.type === 'touchstart') {
+        evt.preventDefault();
+      }
       var total = this.$('.hero__title').length;
       var index = this.$('.is-active').index();
       var next = index + 1 < total ? index + 1 : 0;

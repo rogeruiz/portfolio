@@ -20,6 +20,9 @@ define(function (require) {
     },
     model: new NavModel(),
     events: {
+      'touchstart .is-closed': 'openNav',
+      'touchstart .is-open': 'closeNav',
+      'touchstart nav > a': 'closeNav',
       'click .is-closed': 'openNav',
       'click .is-open': 'closeNav',
       'click nav > a': 'closeNav'
@@ -32,7 +35,10 @@ define(function (require) {
     },
     notHome: false,
     isAnimating: false,
-    openNav: function () {
+    openNav: function (evt) {
+      if (evt && evt.originalEvent.type === 'touchstart') {
+        evt.preventDefault();
+      }
       var self = this;
       var height = parseInt((this.$('.nav-coffin__inner').outerHeight(true) + $('.main--hat').outerHeight(true)), 10);
       if (!this.isAnimating) {
@@ -55,7 +61,10 @@ define(function (require) {
         });
       }
     },
-    closeNav: function () {
+    closeNav: function (evt) {
+      if (evt && evt.originalEvent.type === 'touchstart') {
+        evt.preventDefault();
+      }
       var self = this;
       if (!self.isAnimating) {
         $('.main--hat').animate({
@@ -79,7 +88,7 @@ define(function (require) {
         this.vent.trigger('toTop');
       }
     },
-    toggleBack: function () {
+    toggleBack: function (evt) {
       if (location.pathname !== '/') {
         this.$('.js-back-button').addClass('is-needed');
       } else {
@@ -103,6 +112,7 @@ define(function (require) {
     el: '#js-footer',
     model: new NavModel(),
     events: {
+      'click #js-back-to-top': 'toTop',
       'click #js-back-to-top': 'toTop'
     },
     toTop: function () {
