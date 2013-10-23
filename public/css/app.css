@@ -611,6 +611,11 @@ b {
   min-height: 40px;
   background: #d1e2e8;
 }
+@media screen and (min-width: 900px) {
+  .main--shoe {
+    display: none;
+  }
+}
 .main--shoe__inner {
   padding: 10px;
 }
@@ -629,6 +634,15 @@ b {
   height: 40px;
   overflow: hidden;
   background: #d1e2e8;
+}
+@media screen and (min-width: 900px) {
+  .main--hat {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 11;
+    width: 30%;
+  }
 }
 .main--hat__inner {
   padding: 10px;
@@ -666,6 +680,10 @@ b {
   margin: 0.5em auto 0.75em;
   padding-top: 10px;
 }
+.nav-coffin.is-open {
+  position: relative;
+  z-index: 10;
+}
 .nav-coffin__inner {
   background-color: #d1e2e8;
   width: 100%;
@@ -696,6 +714,8 @@ b {
 }
 .is-open .nav-coffin__back {
   background-color: transparent;
+  top: -43px;
+  left: -10px;
 }
 .nav-coffin__back.is-needed {
   display: block;
@@ -719,6 +739,8 @@ b {
 }
 .nav-coffin__toggler.is-open {
   background-color: transparent;
+  top: -43px;
+  right: -10px;
 }
 /* ==========================================================================
    Hero Styles
@@ -744,6 +766,16 @@ b {
 .hero:after {
   clear: both;
 }
+@media screen and (min-width: 900px) {
+  .hero {
+    width: 30%;
+    position: fixed;
+    left: 0;
+    top: 40px;
+    height: 100%;
+    z-index: 10;
+  }
+}
 .hero__title {
   position: absolute;
   top: -999px;
@@ -767,10 +799,24 @@ b {
   -o-transition: opacity 0.125s ease-in;
   transition: opacity 0.125s ease-in;
 }
+@media screen and (min-width: 900px) {
+  .hero__title {
+    opacity: 0.5;
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 2;
+  }
+}
 .hero__button {
   position: relative;
   z-index: 3;
   float: right;
+}
+@media screen and (min-width: 900px) {
+  .hero__button {
+    display: none;
+  }
 }
 /* ==========================================================================
    About Styles
@@ -780,6 +826,7 @@ b {
    ========================================================================== */
 .hero__title--project {
   position: absolute !important;
+  z-index: 11;
   bottom: 20px;
   font-family: 'Lato', serif;
   font-weight: 900;
@@ -795,6 +842,12 @@ b {
 .hero__title--project > h2 {
   margin: 0 0 0 20px;
   line-height: 1;
+}
+@media screen and (min-width: 900px) {
+  .hero__title--project {
+    top: 175px;
+    bottom: auto;
+  }
 }
 .media-mask {
   position: relative;
@@ -815,6 +868,11 @@ b {
    ========================================================================== */
 .project {
   padding: 20px;
+}
+@media screen and (min-width: 900px) {
+  .project {
+    padding-left: 31.7%;
+  }
 }
 .project__img {
   width: 100%;
@@ -879,6 +937,11 @@ b {
 /* ==========================================================================
    Single Item Styles
    ========================================================================== */
+@media screen and (min-width: 900px) {
+  .project--view {
+    max-width: 63.4%;
+  }
+}
 .project--view__img {
   width: 100%;
   border: 0;

@@ -4,6 +4,9 @@
 
 .project {
   padding: 20px;
+  @media screen and (min-width: @mq-med--min) {
+    padding-left: 31.7%;
+  }
 }
 
 .project__img {
@@ -28,6 +31,19 @@
 /* ==========================================================================
    List Styles
    ========================================================================== */
+
+.project--list__item {
+  // @media screen and (min-width: @mq-sml--min) {
+  //   position: relative;
+  //   float: left;
+  //   width: 40%;
+  //   min-height: 400px;
+  //   margin-left: 10%;
+  //   &:first-child, &:last-child {
+  //     margin-left: 0;
+  //   }
+  // }
+}
 
 .project--list__title {
   margin-bottom: 0;
@@ -65,7 +81,11 @@
 /* ==========================================================================
    Single Item Styles
    ========================================================================== */
-.project--view {}
+.project--view {
+  @media screen and (min-width: @mq-med--min) {
+    max-width: 63.4%;
+  }
+}
 
 .media-mask--project {
   
