@@ -38,7 +38,7 @@ define(function (require) {
       this.unbind();
     },
     startUpdate: function (evt) {
-      if (!!this.index && this.ifMedium) {
+      if (this.ifMedium) {
         this.$el.children().eq(this.next).siblings().removeClass('is-active');
       }
       var self = this;
