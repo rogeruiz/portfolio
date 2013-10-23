@@ -13,15 +13,23 @@ define(function (require) {
     },
     model: new HeroModel(),
     events: {
-      'mouseover': 'stopUpdate',
-      'mouseout': 'startUpdate',
+      'mouseover .hero__title': 'stopUpdate',
+      'mouseout .hero__title': 'startUpdate',
       'touchstart .js-hero-change': 'update',
       'click .js-hero-change': 'update'
     },
+    speed: 5000,
+    ifMedium: Modernizr.mq('(min-width: 900px)'),
+    index: 0,
     el: '#js-hero',
     render: function () {
       this.$el.html(HeroTemplate(this.model.attributes));
+      if (Modernizr.mq('(min-width: 900px)')) {
+        this.speed = 2500;
+      }
+
       this.startUpdate();
+      
       return this;
     },
     close: function () {
@@ -30,12 +38,18 @@ define(function (require) {
       this.unbind();
     },
     startUpdate: function (evt) {
+      if (!!this.index && this.ifMedium) {
+        this.$el.children().eq(this.next).siblings().removeClass('is-active');
+      }
       var self = this;
       this.interval = setInterval(function () {
         self.update();
-      }, 5000);
+      }, this.speed);
     },
     stopUpdate: function (evt) {
+      if (this.ifMedium) {
+        this.$el.children().addClass('is-active');
+      }
       window.clearInterval(this.interval);
     },
     update: function (evt) {
@@ -43,9 +57,9 @@ define(function (require) {
         evt.preventDefault();
       }
       var total = this.$('.hero__title').length;
-      var index = this.$('.is-active').index();
-      var next = index + 1 < total ? index + 1 : 0;
-      this.$('.hero__title').removeClass('is-active').eq(next).addClass('is-active');
+      this.index = this.$('.is-active').index();
+      this.next = this.index + 1 < total ? this.index + 1 : 0;
+      this.$('.hero__title').removeClass('is-active').eq(this.next).addClass('is-active');
     }
   });
 
