@@ -889,6 +889,11 @@ b {
   overflow: hidden;
   max-height: 440px;
 }
+@media screen and (min-width: 440px) {
+  .project__img {
+    margin-left: 0;
+  }
+}
 .project__description {
   font-size: 13px;
 }
