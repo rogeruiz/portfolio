@@ -1,4 +1,25 @@
 {
+  "conde-nast": {
+    "coffin-navigation": {
+      "url": "/rokkan/coffin-navigation",
+      "name": "Coffin Navigation",
+      "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",
+      "project": {
+        "title": "Coffin Navigation",
+        "lede": {
+          "image": "/img/lede--coffin-navigation.jpg",
+          "tldr": "HTML, CSS, JS, Twig, PHP, NodeJS",
+          "example": "http://video.vanityfair.com",
+          "quote": "Stories about Real Health"
+        },
+        "summary": {
+          "image": "/img/summary--coffin-navigation.jpg",
+          "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."
+        },
+        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why health care matters to them and suggests health care providers to connect with if they live in one of 14 states."
+      }
+    }
+  },
   "rokkan": {
     "real-health": {
       "url": "/rokkan/real-health",
