@@ -4,8 +4,8 @@ define(function (require) {
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
-  var HeroModel = require('src/HeroModel');
-  var HeroTemplate = require('hb!tmp/hero.hbs');
+  var HeroModel = require('source/HeroModel');
+  var HeroTemplate = require('rjs-handlebars!templates/hero.hbs');
 
   var HeroView = Backbone.View.extend({
     initialize: function (options) {
@@ -29,7 +29,7 @@ define(function (require) {
       }
 
       this.startUpdate();
-      
+
       return this;
     },
     close: function () {

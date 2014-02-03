@@ -4,9 +4,9 @@ define(function (require) {
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
-  var AboutModel = require('src/AboutModel');
-  var HeroTemplate = require('hb!tmp/hero--about.hbs');
-  var ProjectTemplate = require('hb!tmp/project--about.hbs');
+  var AboutModel = require('source/AboutModel');
+  var HeroTemplate = require('rjs-handlebars!templates/hero--about.hbs');
+  var ProjectTemplate = require('rjs-handlebars!templates/project--about.hbs');
 
   Handlebars.registerHelper('list', function(context, options) {
     var ret = '<ul class="project--about__skills">';

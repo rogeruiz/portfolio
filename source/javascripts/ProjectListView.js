@@ -4,8 +4,8 @@ define(function (require) {
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
-  var ProjectModel = require('src/ProjectModel');
-  var ProjectTemplate = require('hb!tmp/project--list.hbs');
+  var ProjectModel = require('source/ProjectModel');
+  var ProjectTemplate = require('rjs-handlebars!templates/project--list.hbs');
 
   var ProjectListView = Backbone.View.extend({
     initialize: function (options) {

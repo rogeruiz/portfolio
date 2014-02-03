@@ -2,14 +2,14 @@ define(function (require) {
   var $ = require('jquery');
   var _ = require('underscore');
   var Backbone = require('backbone');
-  var Events = require('src/Events');
-  var Manager = require('src/Manager');
-  var HeroView = require('src/HeroView');
-  var NavView = require('src/NavView');
-  var AboutView = require('src/AboutView');
-  var ProjectListView = require('src/ProjectListView');
-  var ProjectView = require('src/ProjectView');
-  var ProjectModel = require('src/ProjectModel');
+  var Events = require('source/Events');
+  var Manager = require('source/Manager');
+  var HeroView = require('source/HeroView');
+  var NavView = require('source/NavView');
+  var AboutView = require('source/AboutView');
+  var ProjectListView = require('source/ProjectListView');
+  var ProjectView = require('source/ProjectView');
+  var ProjectModel = require('source/ProjectModel');
 
   var HeroManager = new Manager();
   var ProjectManager = new Manager();
