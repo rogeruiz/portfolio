@@ -5,25 +5,25 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       css: {
-        files: '<%= pkg.dir.src.less %>/**/*.less',
+        files: '<%= pkg.directories.source.stylesheets %>/**/*.less',
         tasks: ['less:compile']
       },
       js: {
-        files: ['<%= pkg.dir.src.data %>/**/*.json', '<%= pkg.dir.src.js %>/**/*.js', '<%= pkg.dir.src.tmp %>/**/*.hbs'],
+        files: ['<%= pkg.directories.source.data %>/**/*.json', '<%= pkg.directories.source.javascripts %>/**/*.js', '<%= pkg.directories.source.templates %>/**/*.hbs'],
         tasks: ['jshint', 'requirejs']
       }
     },
     copy: {
       init: {
         files: {
-          '<%= pkg.dir.src.less %>/_main.less': 'bower_components/html5-boilerplate/css/main.css',
-          '<%= pkg.dir.src.less %>/_normalize.less': 'bower_components/html5-boilerplate/css/normalize.css',
-          '<%= pkg.dir.public.js %>/lib/backbone.js': 'bower_components/backbone-amd/backbone-min.js',
-          '<%= pkg.dir.public.js %>/lib/backbone.map': 'bower_components/backbone-amd/backbone-min.map',
-          '<%= pkg.dir.public.js %>/lib/jquery.js': 'bower_components/jquery/jquery.min.js',
-          '<%= pkg.dir.public.js %>/lib/jquery.min.map': 'bower_components/jquery/jquery.min.map',
-          '<%= pkg.dir.public.js %>/lib/modernizr.js': 'bower_components/modernizr/modernizr.js',
-          '<%= pkg.dir.public.js %>/lib/require.js': 'bower_components/requirejs/require.js'
+          '<%= pkg.directories.source.stylesheets %>/_main.less': 'bower_components/html5-boilerplate/css/main.css',
+          '<%= pkg.directories.source.stylesheets %>/_normalize.less': 'bower_components/html5-boilerplate/css/normalize.css',
+          '<%= pkg.directories.public.javascripts %>/lib/backbone.js': 'bower_components/backbone-amd/backbone-min.js',
+          '<%= pkg.directories.public.javascripts %>/lib/backbone.map': 'bower_components/backbone-amd/backbone-min.map',
+          '<%= pkg.directories.public.javascripts %>/lib/jquery.js': 'bower_components/jquery/jquery.min.js',
+          '<%= pkg.directories.public.javascripts %>/lib/jquery.min.map': 'bower_components/jquery/jquery.min.map',
+          '<%= pkg.directories.public.javascripts %>/lib/modernizr.js': 'bower_components/modernizr/modernizr.js',
+          '<%= pkg.directories.public.javascripts %>/lib/require.js': 'bower_components/requirejs/require.js'
         }
       },
       markup: {
@@ -35,28 +35,28 @@ module.exports = function (grunt) {
     less: {
       compile: {
         files: {
-          '<%= pkg.dir.public.css %>/app.css': '<%= pkg.dir.src.less %>/app.less'
+          '<%= pkg.directories.public.stylesheets %>/app.css': '<%= pkg.directories.source.stylesheets %>/app.less'
         }
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'src/json/**', 'src/js/**']
+      all: ['Gruntfile.js', 'source/json/**', 'source/javascripts/**']
     },
     requirejs: {
       compile: {
         options: {
-          baseUrl: 'src/',
-          name: 'js/main',
+          baseUrl: 'source/',
+          name: 'javascripts/main',
           paths: {
-            'src': 'js',
-            'tmp': '../<%= pkg.dir.src.tmp %>',
-            'data': '../<%= pkg.dir.src.data %>',
-            'jquery': '../<%= pkg.dir.public.js %>/lib/jquery',
-            'underscore': '../<%= pkg.dir.public.js %>/lib/underscore',
-            'backbone': '../<%= pkg.dir.public.js %>/lib/backbone',
-            'handlebars': '../<%= pkg.dir.public.js %>/lib/handlebars.runtime',
-            'text': '../<%= pkg.dir.public.js %>/lib/text',
-            'hb': '../<%= pkg.dir.public.js %>/lib/hb'
+            'source': 'javascripts',
+            'templates': '../<%= pkg.directories.source.templates %>',
+            'data': '../<%= pkg.directories.source.data %>',
+            'jquery': '../<%= pkg.directories.public.javascripts %>/lib/jquery',
+            'underscore': '../<%= pkg.directories.public.javascripts %>/lib/underscore',
+            'backbone': '../<%= pkg.directories.public.javascripts %>/lib/backbone',
+            'handlebars': '../<%= pkg.directories.public.javascripts %>/lib/handlebars.runtime',
+            'text': '../<%= pkg.directories.public.javascripts %>/lib/text',
+            'rjs-handlebars': '../<%= pkg.directories.public.javascripts %>/lib/hb'
           },
           shim: {
             underscore: {
@@ -70,11 +70,11 @@ module.exports = function (grunt) {
               exports: 'Handlebars'
             }
           },
-          out: 'public/js/app.js',
+          out: 'public/javascripts/app.js',
           optimize: 'none'
         }
       }
-    } 
+    }
   });
 
   // Load plugins

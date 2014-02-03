@@ -8,20 +8,20 @@
   },
   "author": {
     "name": "Roger Steve Ruiz",
-    "email": "firstworldman@gmail.com",
+    "email": "hi@rog.gr",
     "url": "http://rog.gr"
   },
-  "dir": {
-    "src": {
-      "tmp": "src/tmp",
-      "data": "src/data",
-      "js": "src/js",
-      "less": "src/less"
+  "directories": {
+    "source": {
+      "templates": "source/templates",
+      "data": "source/data",
+      "javascripts": "source/javascripts",
+      "stylesheets": "source/stylesheets"
     },
     "public": {
-      "js": "public/js",
-      "css": "public/css",
-      "img": "public/img"
+      "javascripts": "public/javascripts",
+      "stylesheets": "public/stylesheets",
+      "images": "public/images"
     }
   },
   "license": "MIT",

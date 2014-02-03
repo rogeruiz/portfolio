@@ -4,9 +4,9 @@ define(function (require) {
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
-  var ProjectModel = require('src/ProjectModel');
-  var ProjectTemplate = require('hb!tmp/project--view.hbs');
-  var HeroTemplate = require('hb!tmp/hero--project.hbs');
+  var ProjectModel = require('source/ProjectModel');
+  var ProjectTemplate = require('rjs-handlebars!templates/project--view.hbs');
+  var HeroTemplate = require('rjs-handlebars!templates/hero--project.hbs');
 
   var ProjectView = Backbone.View.extend({
     initialize: function (options) {
@@ -26,7 +26,7 @@ define(function (require) {
       this.$el.removeClass('project--view');
       this.$el.children().remove();
       this.unbind();
-      
+
     }
   });
 

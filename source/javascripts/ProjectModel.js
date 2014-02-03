@@ -5,6 +5,7 @@ define(function (require) {
   var ProjectModel = Backbone.Model.extend({
     initialize: function () {
       this.set({
+        cne: ProjectData.cne,
         rokkan: ProjectData.rokkan,
         talks: ProjectData.talks,
         personal: ProjectData.personal,

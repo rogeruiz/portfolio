@@ -4,8 +4,8 @@ define(function (require) {
   var _ = require('underscore');
   var Backbone = require('backbone');
   var Handlebars = require('handlebars');
-  var NavModel = require('src/NavModel');
-  var NavTemplate = require('hb!tmp/nav.hbs');
+  var NavModel = require('source/NavModel');
+  var NavTemplate = require('rjs-handlebars!templates/nav.hbs');
 
   var NavView = Backbone.View.extend({
     initialize: function (options) {
@@ -92,7 +92,7 @@ define(function (require) {
         this.$('.js-back-button').removeClass('is-needed');
         this.closeNav();
       }
-      
+
     },
     highlightNav: function (options) {
       this.$('a').removeClass('is-active');

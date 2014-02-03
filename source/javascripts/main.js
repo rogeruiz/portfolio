@@ -1,3 +1,3 @@
 // Initialize the Router
 // Handles everything...
-require(['src/Router']);
+require(['source/Router']);
