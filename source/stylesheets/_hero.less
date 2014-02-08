@@ -24,6 +24,10 @@
   left: -999px;
   opacity: 0;
   z-index: 0;
+  -webkit-transition: opacity 0.125s ease-in;
+  -moz-transition: opacity 0.125s ease-in;
+  -o-transition: opacity 0.125s ease-in;
+  transition: opacity 0.125s ease-in;
   a, a:visited {
     text-decoration: none;
     border-bottom: 1px dotted;
@@ -34,10 +38,6 @@
     left: auto;
     z-index: 2;
     opacity: 1;
-    -webkit-transition: opacity 0.125s ease-in;
-    -moz-transition: opacity 0.125s ease-in;
-    -o-transition: opacity 0.125s ease-in;
-    transition: opacity 0.125s ease-in;
   }
   @media screen and (min-width: @mq-med--min) {
     opacity: 0.5;
@@ -65,10 +65,10 @@
 
 }
 .hero--about__job {
-  
+
 }
 .hero--about__employer {
-  
+
 }
 
 /* ==========================================================================
@@ -118,8 +118,8 @@
 }
 
 .hero--about__job {
-  
+
 }
 .hero--about__employer {
-  
+
 }

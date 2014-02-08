@@ -961,13 +961,15 @@ define('source/HeroView',['require','jquery','underscore','backbone','handlebars
     },
     model: new HeroModel(),
     events: {
-      'mouseover .hero__title': 'stopUpdate',
-      'mouseout .hero__title': 'startUpdate',
+      'mouseenter': 'stopUpdate',
+      'mouseleave': 'startUpdate',
       'touchstart .js-hero-change': 'update',
       'click .js-hero-change': 'update'
     },
     speed: 5000,
-    ifMedium: Modernizr.mq('(min-width: 900px)'),
+    ifMedium: function () {
+      return Modernizr.mq('(min-width: 900px)');
+    },
     index: 0,
     el: '#js-hero',
     render: function () {
@@ -986,27 +988,37 @@ define('source/HeroView',['require','jquery','underscore','backbone','handlebars
       this.unbind();
     },
     startUpdate: function (evt) {
-      if (this.ifMedium) {
-        this.$el.children().eq(this.next).siblings().removeClass('is-active');
+      if (this.ifMedium()) {
+        this.$el.children().eq(this.index).siblings().removeClass('is-active');
       }
       var self = this;
-      this.interval = setInterval(function () {
-        self.update();
-      }, this.speed);
+      if (typeof this.interval === 'undefined' || this.interval === null) {
+          this.interval = setInterval(function () {
+            self.update();
+          }, this.speed);
+      }
     },
     stopUpdate: function (evt) {
-      if (this.ifMedium) {
+      if (this.ifMedium()) {
+        this.storeActiveTitle();
         this.$el.children().addClass('is-active');
       }
       window.clearInterval(this.interval);
+      this.interval = null;
     },
-    update: function (evt) {
-      if (evt && evt.originalEvent.type === 'touchstart') {
-        evt.preventDefault();
-      }
+    storeActiveTitle: function () {
       var total = this.$('.hero__title').length;
       this.index = this.$('.is-active').index();
       this.next = this.index + 1 < total ? this.index + 1 : 0;
+    },
+    update: function (evt) {
+      if (evt && (evt.type === 'click' || evt.type === 'touchstart')) {
+        console.log(evt);
+        evt.preventDefault();
+        window.clearInterval(this.interval);
+        this.interval = null;
+      }
+      this.storeActiveTitle();
       this.$('.hero__title').removeClass('is-active').eq(this.next).addClass('is-active');
     }
   });

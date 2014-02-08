@@ -782,6 +782,10 @@ b {
   left: -999px;
   opacity: 0;
   z-index: 0;
+  -webkit-transition: opacity 0.125s ease-in;
+  -moz-transition: opacity 0.125s ease-in;
+  -o-transition: opacity 0.125s ease-in;
+  transition: opacity 0.125s ease-in;
 }
 .hero__title a,
 .hero__title a:visited {
@@ -794,10 +798,6 @@ b {
   left: auto;
   z-index: 2;
   opacity: 1;
-  -webkit-transition: opacity 0.125s ease-in;
-  -moz-transition: opacity 0.125s ease-in;
-  -o-transition: opacity 0.125s ease-in;
-  transition: opacity 0.125s ease-in;
 }
 @media screen and (min-width: 900px) {
   .hero__title {
