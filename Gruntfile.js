@@ -18,12 +18,12 @@ module.exports = function (grunt) {
         files: {
           '<%= pkg.directories.source.stylesheets %>/_main.less': 'bower_components/html5-boilerplate/css/main.css',
           '<%= pkg.directories.source.stylesheets %>/_normalize.less': 'bower_components/html5-boilerplate/css/normalize.css',
-          '<%= pkg.directories.public.javascripts %>/lib/backbone.js': 'bower_components/backbone-amd/backbone-min.js',
-          '<%= pkg.directories.public.javascripts %>/lib/backbone.map': 'bower_components/backbone-amd/backbone-min.map',
           '<%= pkg.directories.public.javascripts %>/lib/jquery.js': 'bower_components/jquery/jquery.min.js',
           '<%= pkg.directories.public.javascripts %>/lib/jquery.min.map': 'bower_components/jquery/jquery.min.map',
           '<%= pkg.directories.public.javascripts %>/lib/modernizr.js': 'bower_components/modernizr/modernizr.js',
-          '<%= pkg.directories.public.javascripts %>/lib/require.js': 'bower_components/requirejs/require.js'
+          '<%= pkg.directories.public.javascripts %>/lib/jquery.hammer.min.js': 'bower_components/jquery-hammerjs/jquery.hammer.min.js',
+          '<%= pkg.directories.public.javascripts %>/lib/jquery.hammer.min.map': 'bower_components/jquery-hammerjs/jquery.hammer.min.map',
+          '<%= pkg.directories.public.javascripts %>/lib/ember.js': 'bower_components/ember/ember.min.js'
         }
       },
       markup: {
