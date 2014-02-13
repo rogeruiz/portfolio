@@ -1005,6 +1005,7 @@ define('source/HeroView',['require','jquery','underscore','backbone','handlebars
       }
       window.clearInterval(this.interval);
       this.interval = null;
+
     },
     storeActiveTitle: function () {
       var total = this.$('.hero__title').length;
@@ -1012,11 +1013,20 @@ define('source/HeroView',['require','jquery','underscore','backbone','handlebars
       this.next = this.index + 1 < total ? this.index + 1 : 0;
     },
     update: function (evt) {
+      var self = this;
       if (evt && (evt.type === 'click' || evt.type === 'touchstart')) {
-        console.log(evt);
         evt.preventDefault();
         window.clearInterval(this.interval);
         this.interval = null;
+      }
+      if (evt && evt.type === 'touchstart') {
+        $(window).on('touchend', function (evt) {
+          $target = $(evt.target).parents('#js-hero').length || $(evt.target).is('#js-hero');
+          if (!$target) {
+            $(window).off('touchend');
+            self.startUpdate();
+          }
+        });
       }
       this.storeActiveTitle();
       this.$('.hero__title').removeClass('is-active').eq(this.next).addClass('is-active');
