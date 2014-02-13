@@ -23,7 +23,9 @@ module.exports = function (grunt) {
           '<%= pkg.directories.public.javascripts %>/lib/modernizr.js': 'bower_components/modernizr/modernizr.js',
           '<%= pkg.directories.public.javascripts %>/lib/jquery.hammer.min.js': 'bower_components/jquery-hammerjs/jquery.hammer.min.js',
           '<%= pkg.directories.public.javascripts %>/lib/jquery.hammer.min.map': 'bower_components/jquery-hammerjs/jquery.hammer.min.map',
-          '<%= pkg.directories.public.javascripts %>/lib/ember.js': 'bower_components/ember/ember.min.js'
+          '<%= pkg.directories.public.javascripts %>/lib/ember.js': 'bower_components/ember/ember.min.js',
+          '<%= pkg.directories.public.javascripts %>/lib/coffee-script.js': 'bower_components/coffee-script/index.js',
+          '<%= pkg.directories.public.javascripts %>/lib/cs.js': 'bower_components/require-cs/cs.js'
         }
       },
       markup: {
@@ -40,7 +42,7 @@ module.exports = function (grunt) {
       }
     },
     jshint: {
-      all: ['Gruntfile.js', 'source/json/**', 'source/javascripts/**']
+      all: ['Gruntfile.js', 'source/json/**', 'source/javascripts/**/*.js']
     },
     requirejs: {
       compile: {
@@ -56,7 +58,9 @@ module.exports = function (grunt) {
             'backbone': '../<%= pkg.directories.public.javascripts %>/lib/backbone',
             'handlebars': '../<%= pkg.directories.public.javascripts %>/lib/handlebars.runtime',
             'text': '../<%= pkg.directories.public.javascripts %>/lib/text',
-            'rjs-handlebars': '../<%= pkg.directories.public.javascripts %>/lib/hb'
+            'rjs-handlebars': '../<%= pkg.directories.public.javascripts %>/lib/hb',
+            'coffee-script': '../<%= pkg.directories.public.javascripts %>/lib/coffee-script',
+            'cs': '../<%= pkg.directories.public.javascripts %>/lib/cs'
           },
           shim: {
             underscore: {
