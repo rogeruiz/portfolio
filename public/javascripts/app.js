@@ -1021,7 +1021,7 @@ define('source/HeroView',['require','jquery','underscore','backbone','handlebars
       }
       if (evt && evt.type === 'touchstart') {
         $(window).on('touchend', function (evt) {
-          $target = $(evt.target).parents('#js-hero').length || $(evt.target).is('#js-hero');
+          var $target = $(evt.target).parents('#js-hero').length || $(evt.target).is('#js-hero');
           if (!$target) {
             $(window).off('touchend');
             self.startUpdate();
