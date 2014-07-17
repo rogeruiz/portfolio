@@ -1,4 +1,3 @@
-
 /*! jQuery v2.0.3 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
 //@ sourceMappingURL=jquery.min.map
 */
@@ -820,6 +819,7 @@ define('text',['module'], function (module) {
     return text;
 });
 
+
 define('text!data/hero.json',[],function () { return '{\n  "main": {\n    "nameUrl": "mailto:hi@rog.gr",\n    "name": "Roger Steve Ruiz",\n    "roleUrl": "/about",\n    "role": "software engineer",\n    "placeUrl": "http://condenast.com",\n    "place": "Condé Nast"\n  },\n  "github": {\n    "nameUrl": "https://github.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://github.com/rogeruiz?tab=repositories",\n    "role": "regular contributor",\n    "placeUrl": "https://github.com",\n    "place": "Github"\n  },\n  "twitter": {\n    "nameUrl": "https://twitter.com/rogeruiz",\n    "name": "@rogeruiz",\n    "roleUrl": "https://twitter.com/rogeruiz/lists",\n    "role": "involved follower",\n    "placeUrl": "https://twitter.com",\n    "place": "Twitter"\n  },\n  "pinboard": {\n    "nameUrl": "https://pinboard.in/u:rogeruiz",\n    "name": "u:rogeruiz",\n    "roleUrl": "https://pinboard.in/u:rogeruiz/",\n    "role": "avid collector",\n    "placeUrl": "https://pinboard.in",\n    "place": "Pinboard"\n  }\n}';});
 
 define('source/HeroModel',['require','backbone','text!data/hero.json'],function (require) {
@@ -888,6 +888,7 @@ define('rjs-handlebars',['text', 'handlebars'], function(text, handlebars) {
         write: write
     };
 });
+
 
 define("rjs-handlebars!templates/hero.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
@@ -1035,6 +1036,7 @@ define('source/HeroView',['require','jquery','underscore','backbone','handlebars
 
   return HeroView;
 });
+
 define('text!data/project.json',[],function () { return '{\n  "cne": {\n    "coffin-navigation": {\n      "url": "/cne/coffin-navigation",\n      "name": "Coffin Navigation",\n      "description": "A touch-focused coffin navigaiton for 8 sites.",\n      "project": {\n        "title": "Coffin Navigation",\n        "lede": {\n          "image": "/images/lede--coffin-navigation.jpg",\n          "tldr": "HTML, Sass, Coffeescript, ERB, Ruby",\n          "example": "http://video.vanityfair.com",\n          "quote": "Eight Navs for Eight Sites"\n        },\n        "summary": {\n          "image": "/images/summary--coffin-navigation.jpg",\n          "copy": ""\n        },\n        "conclusion": ""\n      }\n    }\n  },\n  "rokkan": {\n    "real-health": {\n      "url": "/rokkan/real-health",\n      "name": "Real Health",\n      "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "project": {\n        "title": "Real Health",\n        "lede": {\n          "image": "/images/lede--real-health.jpg",\n          "tldr": "HTML, CSS, JS, Twig, PHP, NodeJS",\n          "example": "http://real-health.com",\n          "quote": "Stories about Real Health"\n        },\n        "summary": {\n          "image": "/images/summary--real-health.jpg",\n          "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."\n        },\n        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why health care matters to them and suggests health care providers to connect with if they live in one of 14 states."\n      }\n    },\n    "jetblue": {\n      "url": "/rokkan/jetblue",\n      "name": "JetBlue",\n      "description": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "project": {\n        "title": "JetBlue",\n        "lede": {\n          "image": "/images/lede--jetblue.jpg",\n          "tldr": "HTML, CSS, JS, RequireJS",\n          "example": "http://jetblue.com",\n          "quote": "An updated way to book flights"\n        },\n        "summary": {\n          "image": "/images/summary--jetblue.jpg",\n          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign their main website. Since then, I\'ve worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."\n        },\n        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits, I\'ve learn a lot about working with off-shore teams, jQuery UI, Compass project integration, and RequireJS."\n      }\n    }\n  },\n  "talks": {\n    "introducing-grunt": {\n      "url": "/talks/introducing-grunt",\n      "name": "Introducing Grunt",\n      "description": "A grunt workflow primer given internally at Rokkan.",\n      "project": {\n        "title": "Introducing Grunt",\n        "lede": {\n          "image": "/images/lede--introducing-grunt.jpg",\n          "tldr": "HTML, CSS, JS, BespokeJS",\n          "example": "http://rokkan.rogeruiz.com/",\n          "quote": "Change is hard."\n        },\n        "summary": {\n          "image": "/images/summary--introducing-grunt.jpg",\n          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt was introduced into our workflow and how to install it."\n        },\n        "conclusion": "When it isn\'t easy to convince someone of a new change, no matter how fervent I can get about it, it\'s usually better to show them how to do it themselves and what you\'ve used it for yourself. Having some beta-testers around doesn\'t hurt either."\n      }\n    }\n  }\n}';});
 
 define('source/NavModel',['require','backbone','text!data/project.json','text!data/hero.json'],function (require) {
@@ -1057,6 +1059,7 @@ define('source/NavModel',['require','backbone','text!data/project.json','text!da
 
   return NavModel;
 });
+
 
 define("rjs-handlebars!templates/nav.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
@@ -1275,6 +1278,7 @@ define('source/NavView',['require','jquery','underscore','backbone','handlebars'
   };
 
 });
+
 define('text!data/about.json',[],function () { return '{\n  "name": "Roger Steve Ruiz",\n  "title": "software engineer",\n  "employer": "Condé Nast",\n  "biography": [\n    "I was a prepress manager for years. I prepared jobs for an HP Indigo 5000 which could do some serious printing. I no longer do anything in the printing world, but it still fascinates me.",\n    "I\'m currently a software engineer at Condé Nast. I build websites. I build interfaces. I build products. From concept to execution, I\'m interested in all aspects of user experience, interface design, and code optimizations. I\'ve worked with clients such as JetBlue, Caesars Casinos, WellPoint, Chipotle, Ford, and others.",\n    "I specialize in front-end web development. I\'m very passionate about the tools I use. I customize just about every little thing I can. I have years of web development experience, with a proven background in successfully handling all aspects of site development from initial design and architecture to site deployment."\n  ],\n  "skills": [\n    "HTML",\n    "CSS",\n    "Sass",\n    "Less",\n    "Javascript",\n    "jQuery",\n    "Backbone",\n    "RequireJS",\n    "QUnit",\n    "Node",\n    "Grunt",\n    "Bash",\n    "Z Shell",\n    "Git",\n    "SVN",\n    "Mac",\n    "Linux",\n    "Markdown",\n    "Vim",\n    "Sublime Text",\n    "BBEdit",\n    "/r[egx]{2,}p?/i",\n    "DevOps",\n    "Photoshop",\n    "Illustrator",\n    "InDesign"\n  ]\n}';});
 
 define('source/AboutModel',['require','backbone','text!data/about.json'],function (require) {
@@ -1289,6 +1293,7 @@ define('source/AboutModel',['require','backbone','text!data/about.json'],functio
 
   return AboutModel;
 });
+
 define("rjs-handlebars!templates/hero--about.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -1310,6 +1315,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + " in New York.</h2>";
   return buffer;
   })});
+
 define("rjs-handlebars!templates/project--about.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -1418,6 +1424,7 @@ define('source/ProjectModel',['require','backbone','text!data/project.json'],fun
 
   return ProjectModel;
 });
+
 define("rjs-handlebars!templates/project--list.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -1495,6 +1502,7 @@ define('source/ProjectListView',['require','jquery','underscore','backbone','han
   return ProjectListView;
 
 });
+
 define("rjs-handlebars!templates/project--view.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -1601,6 +1609,7 @@ function program14(depth0,data) {
   buffer += "\n";
   return buffer;
   })});
+
 define("rjs-handlebars!templates/hero--project.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -1767,3 +1776,4 @@ define('source/Router',['require','jquery','underscore','backbone','source/Event
 require(['source/Router']);
 
 define("javascripts/main", function(){});
+
