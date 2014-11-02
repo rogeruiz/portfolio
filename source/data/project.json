@@ -89,7 +89,7 @@
         "lede": {
           "image": "/images/lede--introducing-grunt.jpg",
           "tldr": "HTML, CSS, JS, BespokeJS",
-          "example": "http://rokkan.rogeruiz.com/",
+          "example": "http://rogeruiz.com/rokkan-talks-grunt",
           "quote": "Change is hard."
         },
         "summary": {
