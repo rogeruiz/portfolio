@@ -1,5 +1,24 @@
 {
   "cne": {
+    "in-video-subscribe": {
+      "url": "/cne/in-video-subscribe",
+      "name": "In Video Subscribe",
+      "description": "In Video Subscribe for Condé Nast Videos",
+      "project": {
+        "title": "The Scene",
+        "lede": {
+          "image": "/images/lede--in-video-subscribe.png",
+          "tldr": "Rails, Sass, Javascript",
+          "example": "http://thescene.com/watch/pbs/shanks-fx-star-trek-teleport-effect",
+          "quote": "The Best Videos Deserve Your Attention"
+        },
+        "summary": {
+          "image": "/images/summary--in-video-subscribe.gif",
+          "copy": "Needing to increase the number of subscribers to The Scene. I implemented an in-video subscribe feature to our custom player to bring our subscriber-base up 550% in the first 15 days of launch."
+        },
+        "conclusion": ""
+      }
+    },
     "the-scene": {
       "url": "/cne/the-scene",
       "name": "The Scene",
