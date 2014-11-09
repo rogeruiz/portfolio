@@ -2,10 +2,10 @@
   "cne": {
     "in-video-subscribe": {
       "url": "/cne/in-video-subscribe",
-      "name": "In Video Subscribe",
-      "description": "In Video Subscribe for Condé Nast Videos",
+      "name": "In-Video Subscribe",
+      "description": "In-Video Subscribe for Condé Nast Videos",
       "project": {
-        "title": "The Scene",
+        "title": "In-Video Subscribe",
         "lede": {
           "image": "/images/lede--in-video-subscribe.png",
           "tldr": "Rails, Sass, Javascript",
