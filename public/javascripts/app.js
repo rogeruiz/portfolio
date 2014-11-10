@@ -1121,7 +1121,7 @@ function program10(depth0,data) {
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.main)),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.main)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\n    <a href=\"resume.pdf\">Resume</a>\n  </nav>\n  <h3 class=\"nav__title\">Latest Work</h3>\n  <nav class=\"nav\">\n    ";
+    + "</a>\n    <a href=\"resume.pdf\" target=\"_blank\">Resume</a>\n  </nav>\n  <h3 class=\"nav__title\">Latest Work</h3>\n  <nav class=\"nav\">\n    ";
   stack2 = helpers['if'].call(depth0, depth0.cne, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n    ";
