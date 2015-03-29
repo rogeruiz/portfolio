@@ -1,4 +1,44 @@
 {
+  "colab": {
+    "acuity-elm": {
+      "url": "/colab/acuity-elm",
+      "name": "Acuity ELM",
+      "description": "Thoughtfully CMS'd WordPress website for Acuity Management Solutions.",
+      "project": {
+        "title": "Acuity ELM built on WordPress",
+        "lede": {
+          "image": "/images/lede--acuity-elm.png",
+          "tldr": "PHP, WP, Gulp, Sass, Flexbox, oEmbed, ES6, QUnit",
+          "example": "http://www.acuityelm.com",
+          "quote": "Ambient video heroes are used throughout the site to augment the user experience."
+        },
+        "summary": {
+          "image": "/images/summary--acuity-elm.png",
+          "copy": "Heavy use of flexbox allowed for this website to have a fully-responsive experience which looks great on any screen. Custom post types allow for scalable-publishing of new employees and new products."
+          },
+        "conclusion": ""
+      }
+    },
+    "iggbo-now": {
+      "url": "/colab/iggbo-now",
+      "name": "Iggbo micro-site",
+      "description": "4 day turnaround end-to-end, design through build.",
+      "project": {
+        "title": "Iggbo micro-site built on WordPress",
+        "lede": {
+          "image": "/images/lede--iggbo-now.png",
+          "tldr": "PHP, WP, Gulp, Sass, ES6, QUnit",
+          "example": "http://www.iggbonow.com",
+          "quote": "Uber for the professional phlebotomy industry in Virginia."
+        },
+        "summary": {
+          "image": "/images/summary--iggbo-now.png",
+          "copy": "With a tight deadline, I was able to integrate a simple micro-site within the necessary timeline into WP. Post launch, a colleague assisted me with converting my injected markup and styles into the WordPress CMS."
+          },
+        "conclusion": ""
+      }
+    }
+  },
   "cne": {
     "in-video-subscribe": {
       "url": "/cne/in-video-subscribe",

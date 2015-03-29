@@ -7,6 +7,7 @@ define(function (require) {
     initialize: function () {
       this.set({
         about: HeroData,
+        colab: ProjectData.colab,
         cne: ProjectData.cne,
         rokkan: ProjectData.rokkan,
         talks: ProjectData.talks,

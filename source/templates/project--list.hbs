@@ -1,3 +1,12 @@
+{{#each colab}}
+<div class="project--list__item">
+  <h4 class="project--list__title"><a href="{{url}}">{{name}}</a></h4>
+  <p class="project__description">{{description}}</p>
+  <div  class="project__img">
+    <a href="{{url}}"><img src="{{project.lede.image}}" alt=""></a>
+  </div>
+</div>
+{{/each}}
 {{#each cne}}
 <div class="project--list__item">
   <h4 class="project--list__title"><a href="{{url}}">{{name}}</a></h4>

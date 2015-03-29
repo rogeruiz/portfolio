@@ -1035,7 +1035,7 @@ define('source/HeroView',['require','jquery','underscore','backbone','handlebars
 
   return HeroView;
 });
-define('text!data/project.json',[],function () { return '{\n  "cne": {\n    "in-video-subscribe": {\n      "url": "/cne/in-video-subscribe",\n      "name": "In-Video Subscribe",\n      "description": "In-Video Subscribe for Condé Nast Videos",\n      "project": {\n        "title": "In-Video Subscribe",\n        "lede": {\n          "image": "/images/lede--in-video-subscribe.png",\n          "tldr": "Rails, Sass, Javascript",\n          "example": "http://thescene.com/watch/pbs/shanks-fx-star-trek-teleport-effect",\n          "quote": "550% increase in subscribers in the first 15 days"\n        },\n        "summary": {\n          "image": "/images/summary--in-video-subscribe.gif",\n          "copy": "Needing to increase the number of subscribers to The Scene. I implemented an in-video subscribe feature to our custom player to bring our subscriber-base up 550% in the first 15 days of launch."\n        },\n        "conclusion": ""\n      }\n    },\n    "the-scene": {\n      "url": "/cne/the-scene",\n      "name": "The Scene",\n      "description": "A Condé Nast Entertainment aggregate video site.",\n      "project": {\n        "title": "The Scene",\n        "lede": {\n          "image": "/images/lede--the-scene.jpg",\n          "tldr": "Ruby, HAML, Sass, Coffeescript, EmberJS",\n          "example": "http://thescene.com",\n          "quote": "The Best Videos Deserve Your Attention"\n        },\n        "summary": {\n          "image": "/images/summary--the-scene.jpg",\n          "copy": "In the summer of 2014, CNÉ launched The Scene. It\'s an ambitious aggregate video site built on EmberJS."\n        },\n        "conclusion": ""\n      }\n    },\n    "coffin-navigation": {\n      "url": "/cne/coffin-navigation",\n      "name": "Coffin Navigation",\n      "description": "A touch-focused coffin navigaiton for 8 sites.",\n      "project": {\n        "title": "Coffin Navigation",\n        "lede": {\n          "image": "/images/lede--coffin-navigation.jpg",\n          "tldr": "HTML, Sass, Coffeescript, ERB, Ruby",\n          "example": "http://video.vanityfair.com",\n          "quote": "Eight Navs for Eight Sites"\n        },\n        "summary": {\n          "image": "/images/summary--coffin-navigation.jpg",\n          "copy": "Coffin navigations can be difficult to recreate with web applications. It\'s important to meet user\'s expectations of how native applications perform the animation. Using CSS3 transforms, my team and I were able to get GPU performance to handle the buttery-smooth animations."\n        },\n        "conclusion": ""\n      }\n    }\n  },\n  "rokkan": {\n    "real-health": {\n      "url": "/rokkan/real-health",\n      "name": "Real Health",\n      "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "project": {\n        "title": "Real Health",\n        "lede": {\n          "image": "/images/lede--real-health.jpg",\n          "tldr": "HTML, CSS, JS, Twig, PHP, NodeJS",\n          "example": "http://real-health.com",\n          "quote": "Stories about Real Health"\n        },\n        "summary": {\n          "image": "/images/summary--real-health.jpg",\n          "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."\n        },\n        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why health care matters to them and suggests health care providers to connect with if they live in one of 14 states."\n      }\n    },\n    "jetblue": {\n      "url": "/rokkan/jetblue",\n      "name": "JetBlue",\n      "description": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "project": {\n        "title": "JetBlue",\n        "lede": {\n          "image": "/images/lede--jetblue.jpg",\n          "tldr": "HTML, CSS, JS, RequireJS",\n          "example": "http://jetblue.com",\n          "quote": "An updated way to book flights"\n        },\n        "summary": {\n          "image": "/images/summary--jetblue.jpg",\n          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign their main website. Since then, I\'ve worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."\n        },\n        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits, I\'ve learn a lot about working with off-shore teams, jQuery UI, Compass project integration, and RequireJS."\n      }\n    }\n  },\n  "talks": {\n    "introducing-grunt": {\n      "url": "/talks/introducing-grunt",\n      "name": "Introducing Grunt",\n      "description": "A grunt workflow primer given internally at Rokkan.",\n      "project": {\n        "title": "Introducing Grunt",\n        "lede": {\n          "image": "/images/lede--introducing-grunt.jpg",\n          "tldr": "HTML, CSS, JS, BespokeJS",\n          "example": "http://rogeruiz.com/rokkan-talks-grunt",\n          "quote": "Change is hard."\n        },\n        "summary": {\n          "image": "/images/summary--introducing-grunt.jpg",\n          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt was introduced into our workflow and how to install it."\n        },\n        "conclusion": "When it isn\'t easy to convince someone of a new change, no matter how fervent I can get about it, it\'s usually better to show them how to do it themselves and what you\'ve used it for yourself. Having some beta-testers around doesn\'t hurt either."\n      }\n    }\n  }\n}\n';});
+define('text!data/project.json',[],function () { return '{\n  "colab": {\n    "acuity-elm": {\n      "url": "/colab/acuity-elm",\n      "name": "Acuity ELM",\n      "description": "Thoughtfully CMS\'d WordPress website for Acuity Management Solutions.",\n      "project": {\n        "title": "Acuity ELM built on WordPress",\n        "lede": {\n          "image": "/images/lede--acuity-elm.png",\n          "tldr": "PHP, WP, Gulp, Sass, Flexbox, oEmbed, ES6, QUnit",\n          "example": "http://www.acuityelm.com",\n          "quote": "Ambient video heroes are used throughout the site to augment the user experience."\n        },\n        "summary": {\n          "image": "/images/summary--acuity-elm.png",\n          "copy": "Heavy use of flexbox allowed for this website to have a fully-responsive experience which looks great on any screen. Custom post types allow for scalable-publishing of new employees and new products."\n          },\n        "conclusion": ""\n      }\n    },\n    "iggbo-now": {\n      "url": "/colab/iggbo-now",\n      "name": "Iggbo micro-site",\n      "description": "4 day turnaround end-to-end, design through build.",\n      "project": {\n        "title": "Iggbo micro-site built on WordPress",\n        "lede": {\n          "image": "/images/lede--iggbo-now.png",\n          "tldr": "PHP, WP, Gulp, Sass, ES6, QUnit",\n          "example": "http://www.iggbonow.com",\n          "quote": "Uber for the professional phlebotomy industry in Virginia."\n        },\n        "summary": {\n          "image": "/images/summary--iggbo-now.png",\n          "copy": "With a tight deadline, I was able to integrate a simple micro-site within the necessary timeline into WP. Post launch, a colleague assisted me with converting my injected markup and styles into the WordPress CMS."\n          },\n        "conclusion": ""\n      }\n    }\n  },\n  "cne": {\n    "in-video-subscribe": {\n      "url": "/cne/in-video-subscribe",\n      "name": "In-Video Subscribe",\n      "description": "In-Video Subscribe for Condé Nast Videos",\n      "project": {\n        "title": "In-Video Subscribe",\n        "lede": {\n          "image": "/images/lede--in-video-subscribe.png",\n          "tldr": "Rails, Sass, Javascript",\n          "example": "http://thescene.com/watch/pbs/shanks-fx-star-trek-teleport-effect",\n          "quote": "550% increase in subscribers in the first 15 days"\n        },\n        "summary": {\n          "image": "/images/summary--in-video-subscribe.gif",\n          "copy": "Needing to increase the number of subscribers to The Scene. I implemented an in-video subscribe feature to our custom player to bring our subscriber-base up 550% in the first 15 days of launch."\n        },\n        "conclusion": ""\n      }\n    },\n    "the-scene": {\n      "url": "/cne/the-scene",\n      "name": "The Scene",\n      "description": "A Condé Nast Entertainment aggregate video site.",\n      "project": {\n        "title": "The Scene",\n        "lede": {\n          "image": "/images/lede--the-scene.jpg",\n          "tldr": "Ruby, HAML, Sass, Coffeescript, EmberJS",\n          "example": "http://thescene.com",\n          "quote": "The Best Videos Deserve Your Attention"\n        },\n        "summary": {\n          "image": "/images/summary--the-scene.jpg",\n          "copy": "In the summer of 2014, CNÉ launched The Scene. It\'s an ambitious aggregate video site built on EmberJS."\n        },\n        "conclusion": ""\n      }\n    },\n    "coffin-navigation": {\n      "url": "/cne/coffin-navigation",\n      "name": "Coffin Navigation",\n      "description": "A touch-focused coffin navigaiton for 8 sites.",\n      "project": {\n        "title": "Coffin Navigation",\n        "lede": {\n          "image": "/images/lede--coffin-navigation.jpg",\n          "tldr": "HTML, Sass, Coffeescript, ERB, Ruby",\n          "example": "http://video.vanityfair.com",\n          "quote": "Eight Navs for Eight Sites"\n        },\n        "summary": {\n          "image": "/images/summary--coffin-navigation.jpg",\n          "copy": "Coffin navigations can be difficult to recreate with web applications. It\'s important to meet user\'s expectations of how native applications perform the animation. Using CSS3 transforms, my team and I were able to get GPU performance to handle the buttery-smooth animations."\n        },\n        "conclusion": ""\n      }\n    }\n  },\n  "rokkan": {\n    "real-health": {\n      "url": "/rokkan/real-health",\n      "name": "Real Health",\n      "description": "An informational website about the Affordable Care Act and information about the Exchange portals.",\n      "project": {\n        "title": "Real Health",\n        "lede": {\n          "image": "/images/lede--real-health.jpg",\n          "tldr": "HTML, CSS, JS, Twig, PHP, NodeJS",\n          "example": "http://real-health.com",\n          "quote": "Stories about Real Health"\n        },\n        "summary": {\n          "image": "/images/summary--real-health.jpg",\n          "copy": "Finding information on the ACA is difficult. This website helps by presenting a personal perspective about health insurance. Early on in the project, I helped establish that people would most likely be viewing this site on mobile devices. Since then, the development team and I have handled both performance and layout audits."\n        },\n        "conclusion": "The Patient Protection and Affordable Care Act, ACA for short, was signed in to effect on the 23rd of March 2010. This website, created for Americans needing information on the ACA, offers inspiration on why health care matters to them and suggests health care providers to connect with if they live in one of 14 states."\n      }\n    },\n    "jetblue": {\n      "url": "/rokkan/jetblue",\n      "name": "JetBlue",\n      "description": "JetBlue 2012 / TrueBlue 2013 redesign.",\n      "project": {\n        "title": "JetBlue",\n        "lede": {\n          "image": "/images/lede--jetblue.jpg",\n          "tldr": "HTML, CSS, JS, RequireJS",\n          "example": "http://jetblue.com",\n          "quote": "An updated way to book flights"\n        },\n        "summary": {\n          "image": "/images/summary--jetblue.jpg",\n          "copy": "In 2011, JetBlue made Rokkan Agency of Record (AOR). As the AOR, we had to redesign their main website. Since then, I\'ve worked both as a part of a team and as project lead in the development of the booking engine, TrueBlue redesign, and the recently launched TrueBlue Family Pooling point-sharing program."\n        },\n        "conclusion": "This project had me cut my teeth on a lot of new techniques. Over the course of 1.5 years and 795 commits, I\'ve learn a lot about working with off-shore teams, jQuery UI, Compass project integration, and RequireJS."\n      }\n    }\n  },\n  "talks": {\n    "introducing-grunt": {\n      "url": "/talks/introducing-grunt",\n      "name": "Introducing Grunt",\n      "description": "A grunt workflow primer given internally at Rokkan.",\n      "project": {\n        "title": "Introducing Grunt",\n        "lede": {\n          "image": "/images/lede--introducing-grunt.jpg",\n          "tldr": "HTML, CSS, JS, BespokeJS",\n          "example": "http://rogeruiz.com/rokkan-talks-grunt",\n          "quote": "Change is hard."\n        },\n        "summary": {\n          "image": "/images/summary--introducing-grunt.jpg",\n          "copy": "Getting people excited about a new tools might be harder than it sounds. They can be complicated and interfere with proven processes. This talk concentrated on showing examples of how Grunt was introduced into our workflow and how to install it."\n        },\n        "conclusion": "When it isn\'t easy to convince someone of a new change, no matter how fervent I can get about it, it\'s usually better to show them how to do it themselves and what you\'ve used it for yourself. Having some beta-testers around doesn\'t hurt either."\n      }\n    }\n  }\n}\n';});
 
 define('source/NavModel',['require','backbone','text!data/project.json','text!data/hero.json'],function (require) {
   var Backbone = require('backbone');
@@ -1046,6 +1046,7 @@ define('source/NavModel',['require','backbone','text!data/project.json','text!da
     initialize: function () {
       this.set({
         about: HeroData,
+        colab: ProjectData.colab,
         cne: ProjectData.cne,
         rokkan: ProjectData.rokkan,
         talks: ProjectData.talks,
@@ -1066,7 +1067,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var stack1;
-  stack1 = helpers.each.call(depth0, depth0.cne, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  stack1 = helpers.each.call(depth0, depth0.colab, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
   if(stack1 || stack1 === 0) { return stack1; }
   else { return ''; }
   }
@@ -1088,7 +1089,7 @@ function program2(depth0,data) {
 function program4(depth0,data) {
   
   var stack1;
-  stack1 = helpers.each.call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  stack1 = helpers.each.call(depth0, depth0.cne, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
   if(stack1 || stack1 === 0) { return stack1; }
   else { return ''; }
   }
@@ -1096,7 +1097,7 @@ function program4(depth0,data) {
 function program6(depth0,data) {
   
   var stack1;
-  stack1 = helpers.each.call(depth0, depth0.talks, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  stack1 = helpers.each.call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
   if(stack1 || stack1 === 0) { return stack1; }
   else { return ''; }
   }
@@ -1104,12 +1105,20 @@ function program6(depth0,data) {
 function program8(depth0,data) {
   
   var stack1;
-  stack1 = helpers.each.call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  stack1 = helpers.each.call(depth0, depth0.talks, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
   if(stack1 || stack1 === 0) { return stack1; }
   else { return ''; }
   }
 
 function program10(depth0,data) {
+  
+  var stack1;
+  stack1 = helpers.each.call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
+  }
+
+function program12(depth0,data) {
   
   var stack1;
   stack1 = helpers.each.call(depth0, depth0.tools, {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
@@ -1122,19 +1131,22 @@ function program10(depth0,data) {
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.main)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</a>\n    <a href=\"resume.pdf\" target=\"_blank\">Resume</a>\n  </nav>\n  <h3 class=\"nav__title\">Latest Work</h3>\n  <nav class=\"nav\">\n    ";
-  stack2 = helpers['if'].call(depth0, depth0.cne, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  stack2 = helpers['if'].call(depth0, depth0.colab, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n    ";
-  stack2 = helpers['if'].call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
+  stack2 = helpers['if'].call(depth0, depth0.cne, {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n    ";
-  stack2 = helpers['if'].call(depth0, depth0.talks, {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  stack2 = helpers['if'].call(depth0, depth0.rokkan, {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n    ";
-  stack2 = helpers['if'].call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  stack2 = helpers['if'].call(depth0, depth0.talks, {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n    ";
-  stack2 = helpers['if'].call(depth0, depth0.tools, {hash:{},inverse:self.noop,fn:self.program(10, program10, data),data:data});
+  stack2 = helpers['if'].call(depth0, depth0.personal, {hash:{},inverse:self.noop,fn:self.program(10, program10, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    ";
+  stack2 = helpers['if'].call(depth0, depth0.tools, {hash:{},inverse:self.noop,fn:self.program(12, program12, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  </nav>\n  <h3 class=\"nav__title\">Around The Web</h3>\n  <nav class=\"nav\">\n    <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.about),stack1 == null || stack1 === false ? stack1 : stack1.github)),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -1407,6 +1419,7 @@ define('source/ProjectModel',['require','backbone','text!data/project.json'],fun
   var ProjectModel = Backbone.Model.extend({
     initialize: function () {
       this.set({
+        colab: ProjectData.colab,
         cne: ProjectData.cne,
         rokkan: ProjectData.rokkan,
         talks: ProjectData.talks,
@@ -1418,6 +1431,7 @@ define('source/ProjectModel',['require','backbone','text!data/project.json'],fun
 
   return ProjectModel;
 });
+
 define("rjs-handlebars!templates/project--list.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -1448,6 +1462,9 @@ function program1(depth0,data) {
   return buffer;
   }
 
+  stack1 = helpers.each.call(depth0, depth0.colab, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
   stack1 = helpers.each.call(depth0, depth0.cne, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n";
@@ -1462,6 +1479,7 @@ function program1(depth0,data) {
   buffer += "\n";
   stack1 = helpers.each.call(depth0, depth0.tools, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
   return buffer;
   })});
 define('source/ProjectListView',['require','jquery','underscore','backbone','handlebars','source/ProjectModel','rjs-handlebars!templates/project--list.hbs'],function (require) {
