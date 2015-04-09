@@ -899,23 +899,23 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>, \n  a <a href=\""
+    + "</a>,\n  a <a href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a> \n  at <a target=\"_blank\" href=\""
+    + "</a>\n  at <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.main),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a> \n  in New York.\n</h2>\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\""
+    + "</a>\n  in RVA.\n</h2>\n<h2 class=\"hero__title\">\n  I'm <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>, \n  a <a target=\"_blank\" href=\""
+    + "</a>,\n  a <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a> \n  using <a target=\"_blank\" href=\""
+    + "</a>\n  using <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.github),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -923,11 +923,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>, \n  an <a target=\"_blank\" href=\""
+    + "</a>,\n  an <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a> \n  using <a target=\"_blank\" href=\""
+    + "</a>\n  using <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.twitter),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -935,15 +935,15 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.nameUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>, \n  an <a target=\"_blank\" href=\""
+    + "</a>,\n  an <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.roleUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.role)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a> \n  using <a target=\"_blank\" href=\""
+    + "</a>\n  using <a target=\"_blank\" href=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.placeUrl)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.pinboard),stack1 == null || stack1 === false ? stack1 : stack1.place)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>.\n</h2>\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">And?</a>";
+    + "</a>.\n</h2>\n<a href=\"javascript:\" class=\"js-hero-change button hero__button\">And?</a>\n";
   return buffer;
   })});
 define('source/HeroView',['require','jquery','underscore','backbone','handlebars','source/HeroModel','rjs-handlebars!templates/hero.hbs'],function (require) {
@@ -1319,7 +1319,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.employer) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.employer; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " in New York.</h2>\n";
+    + " in RVA.</h2>\n";
   return buffer;
   })});
 define("rjs-handlebars!templates/project--about.hbs", ["handlebars"], function(handlebars) {return handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
